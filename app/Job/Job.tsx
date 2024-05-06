@@ -1,5 +1,43 @@
 import Image from "next/image";
 import React from "react";
+import { ListJobs, ObjList } from "./JobList";
+
+function Card(props: { data: ObjList }) {
+  return (
+    <>
+      <div className="p-4 rounded-xl shadow-md mt-12 bg-gray-100">
+        <div className=" w-12/12 font-bold flex justify-between">
+          <p className="text-2xl">{props.data.company}</p>
+          <p className="text-2xl">{props.data.jobName}</p>
+          <p className="text-2xl">
+            {props.data.date.getDate()}/{props.data.date.getMonth() + 1}/
+            {props.data.date.getFullYear()}
+          </p>
+        </div>
+        <div className="flex justify-center mt-4">
+          {props.data.path !== "" ? (
+            <iframe
+              src={props.data.path}
+              style={{ width: "100%", height: "60rem", border: "none" }}
+              title={`${props.data.company} Preview`}
+            />
+          ) : (
+            <Image
+              alt={props.data.alt || "Descriptive text about the image"}
+              width={1920}
+              height={1080}
+              src={props.data.imgCover}
+              className="w-full h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer"
+              objectFit="cover"
+            />
+          )}
+        </div>
+        <p className="font-bold mt-8 text-xl">Description: </p>
+        <p className="mt-2">{props.data.description}</p>
+      </div>
+    </>
+  );
+}
 
 export default function Job() {
   return (
@@ -7,35 +45,17 @@ export default function Job() {
       <div className="w-11/12 mx-auto mt-12">
         <div className="space-y-2">
           <h1 className="text-8xl font-bold">SELECTED WORK</h1>
-          <h1 className="text-8xl font-bold">(2018 — 2023)</h1>
+          <h1 className="text-8xl font-bold">(2020 — 2023)</h1>
         </div>
         <div className="mt-12">
           <p className="text-2xl mt-12 w-5/12">
-            Have a look at some of the projects I’ve worked on. Clients vary
-            from lifestyle to tech and design companies.
+            Have a look at some of the projects I&apos;ve worked on. Clients
+            vary from lifestyle to tech and design companies.
           </p>
         </div>
-        <div className="mt-12 w-12/12 flex justify-between">
-          <p className="text-2xl">Lorem ipsum dolor sit amet.</p>
-          <p className="text-2xl">Lorem ipsum dolor sit amet.</p>
-          <p className="text-2xl">Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="flex justify-center mt-2">
-          <Image
-            alt=""
-            width={1920}
-            height={1080}
-            src="https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            className="w-full h-[60rem] rounded-xl "
-            objectFit="cover"
-          />
-        </div>
-        <p className="mt-56">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-          molestias repellat unde. Aspernatur cumque architecto quas laborum?
-          Qui voluptate tempora exercitationem facilis quo repellendus corporis
-          facere nostrum amet soluta. Libero.
-        </p>
+        {ListJobs.map((job, index) => (
+          <Card key={index} data={job} />
+        ))}
       </div>
     </div>
   );
