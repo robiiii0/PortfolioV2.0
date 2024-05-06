@@ -14,9 +14,10 @@ function Card(props: { data: ObjList }) {
             {props.data.date.getFullYear()}
           </p>
         </div>
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center mt-4 relative overflow-hidden">
           {props.data.path !== "" ? (
             <iframe
+              className="rounded-2xl shadow-2xl transform-gpu hover:scale-105 transition-transform duration-300"
               src={props.data.path}
               style={{ width: "100%", height: "60rem", border: "none" }}
               title={`${props.data.company} Preview`}
@@ -27,7 +28,7 @@ function Card(props: { data: ObjList }) {
               width={1920}
               height={1080}
               src={props.data.imgCover}
-              className="w-full h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer"
+              className="w-full h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform-gpu hover:scale-105 transition-transform duration-300"
               objectFit="cover"
             />
           )}
