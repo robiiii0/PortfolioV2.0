@@ -1,35 +1,40 @@
 "use client"
 import { motion } from "framer-motion";
-import { ListJobs, ObjList } from "@/app/Job/JobList";
+
 import Image from "next/image";
 import { useState } from "react";
+import { dataHomePage, DataHomePage, ObjList, ExempleListJobs } from "./data";
+import Link from "next/link";
 
 
-
-function Card(props: { data: ObjList }) {
+function Card(props: { data: ObjList, dataHomePage: DataHomePage }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <>
       <div
-        className="p-4 mt-48 relative rounded-2xl"
+        className="p-4 mt-48 relative rounded-2xl overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
+        <div className={`transition-opacity duration-500 ease-in-out absolute inset-0 bg-black bg-opacity-50 rounded-2xl flex justify-center items-center ${isHovered ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
+          <button className="rounded-full bg-white p-4 text-black hover:bg-gray-200 transition duration-300">
+            View More
+          </button>
+        </div>
 
-        <div className=" w-12/12  font-thin flex justify-between">
-          <p className="text-2xl">00{props.data.index} at {props.data.company}</p>
+        <div className="w-full font-thin flex justify-between">
+          <p className="text-2xl">(00{props.data.index} at {props.data.company})</p>
           <p className="text-2xl">
             {props.data.date.getDate()}/{props.data.date.getMonth() + 1}/
             {props.data.date.getFullYear()}
           </p>
         </div>
-        <div className="flex justify-center mt-4 relative overflow-hidden">
+        <div className="flex justify-center mt-4">
           {props.data.path !== "" ? (
             <iframe
-              className="rounded-2xl shadow-2xl transform-gpu hover:scale-105 transition-transform duration-300"
+              className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-[60rem] border-none"
               src={props.data.path}
-              style={{ width: "100%", height: "60rem", border: "none" }}
               title={`${props.data.company} Preview`}
             />
           ) : (
@@ -38,11 +43,22 @@ function Card(props: { data: ObjList }) {
               width={1920}
               height={1080}
               src={props.data.imgCover}
-              className="w-full h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform-gpu hover:scale-105 transition-transform duration-300"
-              objectFit="cover"
+              className="w-full h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300 object-cover"
             />
           )}
         </div>
+      </div>
+      <div className="mt-80">
+      <div className="mt-20 flex items-start space-x-44">
+  <div className="flex-1">
+    <p>(00{props.data.index})</p>
+  </div>
+  <div className="flex-4">
+    <p className="text-5xl w-10/12">{props.dataHomePage.description}</p>
+    <p className="mt-24 text-5xl w-10/12">{props.dataHomePage.description2}</p>
+  </div>
+</div>
+
       </div>
     </>
   );
@@ -111,10 +127,51 @@ export default function Home() {
         </motion.div>
         <div className="w-11/12 mx-auto mt-48">
 
-        {ListJobs.map((job, index) => (
-          <Card key={index} data={job} />
+        {ExempleListJobs.map((job, index) => (
+          <Card key={index} data={job} dataHomePage={dataHomePage[index]} />
         ))}
         </div>
+      </div>
+
+      <div className="mt-80">
+      <div className="w-full">
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }} 
+          transition={{ duration: 0.5, delay: 0.2 }} 
+          className="w-11/12 mx-auto mt-[5%] font-montserrat"
+        >
+          <div className="space-y-2">
+            <motion.h1
+              initial={{ y: 50, opacity: 0 }} 
+              animate={{ y: 0, opacity: 1 }} 
+              transition={{ duration: 0.5, delay: 0.4 }} 
+              className="text-8xl font-bold"
+            >
+              Robin Chabert
+            </motion.h1>
+            <motion.h1
+              initial={{ y: 50, opacity: 0 }} 
+              animate={{ y: 0, opacity: 1 }} 
+              transition={{ duration: 0.5, delay: 0.6 }} 
+              className="text-8xl ml-12"
+            >
+              Web and software developer
+            </motion.h1>
+          </div>
+          </motion.div>
+          </div>
+          <div className="w-11/12 mx-auto font-semibold text-xl">
+          <div className="flex justify-between space-x-8 mb-12 mt-8">
+            <div className="flex justify-between space-x-8 ">
+              <Link href={"https://www.instagram.com/robin_chabb/"}>Instagram</Link>
+              <Link href={"https://www.linkedin.com/in/robin-chabert-863105232/"}>Linkedlin</Link>
+              <Link href={"https://github.com/robiiii0"}>Github</Link>
+            </div>
+            <div>coc</div>
+            <div>Copyright©RobinChabert</div>
+          </div>
+          </div>
       </div>
     </>
   );
