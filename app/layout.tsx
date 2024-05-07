@@ -20,10 +20,7 @@ export default function RootLayout({
     <>
       <Head>
         <meta charSet="UTF-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,30 +32,28 @@ export default function RootLayout({
       </Head>
       <html>
         <body>
+          <div className="w-full">
+            <nav className="w-11/12 mx-auto p-4">
+              <div className="flex justify-between items-center">
+                <NavLink title={true} link={"/"} className="cursor-pointer">
+                  Robin©
+                </NavLink>
+                <div className="space-x-2">
+                  <NavLink title={false} link={"/Aboutme"}>
+                    About me,
+                  </NavLink>
 
-
-      <div className="w-full">
-        <nav className="w-11/12 mx-auto p-4">
-          <div className="flex justify-between items-center">
-            <NavLink title={true} link={"/"} className="cursor-pointer">
-              Robin©
-            </NavLink>
-            <div className="space-x-2">
-              <NavLink title={false} link={"/Aboutme"}>
-                About me,
-              </NavLink>
-
-              <NavLink title={false} link={"/Job"}>
-                Jobs
-              </NavLink>
-            </div>
-            <NavLink title={false} link={"/Contact"}>
-              Contact
-            </NavLink>
+                  <NavLink title={false} link={"/Job"}>
+                    Jobs
+                  </NavLink>
+                </div>
+                <NavLink title={false} link={"/Contact"}>
+                  Contact
+                </NavLink>
+              </div>
+            </nav>
           </div>
-        </nav>
-      </div>
-      <div>{children}</div>
+          <div>{children}</div>
         </body>
       </html>
     </>

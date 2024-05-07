@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
@@ -47,43 +47,43 @@ export default function Job() {
     <div className="w-full font-montserrat">
       <div className="w-11/12 mx-auto mt-12">
         <div className="space-y-2">
-        <motion.h1
-              initial={{ y: 50, opacity: 0 }} 
-              animate={{ y: 0, opacity: 1 }} 
-              transition={{ duration: 0.5, delay: 0.4 }} 
-              className="text-8xl font-bold"
-            >
-              SELECTED WORK
-            </motion.h1>
-            <motion.h1
-              initial={{ y: 50, opacity: 0 }} 
-              animate={{ y: 0, opacity: 1 }} 
-              transition={{ duration: 0.5, delay: 0.4 }} 
-              className="text-8xl font-bold"
-            >
-              (2020 — 2023)
-            </motion.h1>
+          <motion.h1
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-8xl font-bold"
+          >
+            SELECTED WORK
+          </motion.h1>
+          <motion.h1
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-8xl font-bold"
+          >
+            (2020 — 2023)
+          </motion.h1>
         </div>
         <div className="mt-12">
-          
           <motion.h1
-              initial={{ y: 50, opacity: 0 }} 
-              animate={{ y: 0, opacity: 1 }} 
-              transition={{ duration: 0.5, delay: 0.4 }} 
-              className="text-2xl mt-12 w-5/12"
-            >
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-2xl mt-12 w-5/12"
+          >
             Have a look at some of the projects I&apos;ve worked on. Clients
             vary from lifestyle to tech and design companies.
-            </motion.h1>
+          </motion.h1>
         </div>
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-80">
-        {ListJobs.map((job, index) => (
-          <Card key={index} data={job} />
-        ))}
+          className="mt-80"
+        >
+          {ListJobs.map((job, index) => (
+            <Card key={index} data={job} />
+          ))}
         </motion.div>
       </div>
     </div>

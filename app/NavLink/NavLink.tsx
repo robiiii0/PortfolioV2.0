@@ -19,18 +19,20 @@ export default function NavLink({
 
   return (
     <>
-        <motion.a
+      <motion.a
         href={link}
-          className={`relative ${title ? "text-4xl font-bold" : "text-xl font-medium"} font-montserrat`}
-        >
-          {children}
-          <motion.div
-            className="absolute bottom-0 left-0 w-full h-[0.05rem] bg-black"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: active ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
-          />
-        </motion.a>
+        className={`relative ${
+          title ? "text-4xl font-bold" : "text-xl font-medium"
+        } font-montserrat`}
+      >
+        {children}
+        <motion.div
+          className="absolute bottom-0 left-0 w-full h-[0.05rem] bg-black"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: active ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
+        />
+      </motion.a>
     </>
   );
 }
