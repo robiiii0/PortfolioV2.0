@@ -35,21 +35,7 @@ export default function RootLayout({
           <div className="w-full">
             <nav className="w-11/12 mx-auto p-4">
               <div className="flex justify-between items-center">
-                <NavLink title={true} link={"/"} className="cursor-pointer">
-                  Robin©
-                </NavLink>
-                <div className="space-x-2">
-                  <NavLink title={false} link={"/Aboutme"}>
-                    About me,
-                  </NavLink>
-
-                  <NavLink title={false} link={"/Job"}>
-                    Jobs
-                  </NavLink>
-                </div>
-                <NavLink title={false} link={"/Contact"}>
-                  Contact
-                </NavLink>
+                <NavLink />
               </div>
             </nav>
           </div>

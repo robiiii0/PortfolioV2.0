@@ -30,33 +30,33 @@ import img5 from "@/public/enedis.png";
 export const dataHomePage: DataHomePage[] = [
   {
     description:
-      "As a digital designer and art director I help companies and organisations around the world connect with their audience and grow their business.",
+      "As a web developer, I help companies and organizations around the world build effective digital solutions and enhance their online presence.",
     descriptionEng:
-      "As a digital designer and art director I help companies and organisations around the world connect with their audience and grow their business.",
+      "As a web developer, I help companies and organizations around the world build effective digital solutions and enhance their online presence.",
     description2:
-      "Projects can be done directly with clients or in a supporting role for agencies and studios from around the world.",
+      "I collaborate directly with clients or provide support to agencies and studios globally, ensuring tailored digital experiences.",
     description2Eng:
-      "Projects can be done directly with clients or in a supporting role for agencies and studios from around the world.",
+      "I collaborate directly with clients or provide support to agencies and studios globally, ensuring tailored digital experiences.",
   },
   {
     description:
-      "As a digital designer and art director I help companies and organisations around the world connect with their audience and grow their business.",
+      "I am passionate about computer science and software development, constantly seeking to improve and deliver innovative solutions.",
     descriptionEng:
-      "As a digital designer and art director I help companies and organisations around the world connect with their audience and grow their business.",
+      "I am passionate about computer science and software development, constantly seeking to improve and deliver innovative solutions.",
     description2:
-      "Projects can be done directly with clients or in a supporting role for agencies and studios from around the world.",
+      "I work closely with clients or in collaboration with agencies and studios worldwide to deliver impactful digital projects.",
     description2Eng:
-      "Projects can be done directly with clients or in a supporting role for agencies and studios from around the world.",
+      "I work closely with clients or in collaboration with agencies and studios worldwide to deliver impactful digital projects.",
   },
   {
     description:
-      "As a digital designer and art director I help companies and organisations around the world connect with their audience and grow their business.",
+      "With a strong background in programming, I enjoy solving complex problems and building efficient, scalable digital solutions.",
     descriptionEng:
-      "As a digital designer and art director I help companies and organisations around the world connect with their audience and grow their business.",
+      "With a strong background in programming, I enjoy solving complex problems and building efficient, scalable digital solutions.",
     description2:
-      "Projects can be done directly with clients or in a supporting role for agencies and studios from around the world.",
+      "I partner directly with clients or support agencies and studios worldwide, focusing on building meaningful digital experiences.",
     description2Eng:
-      "Projects can be done directly with clients or in a supporting role for agencies and studios from around the world.",
+      "I partner directly with clients or support agencies and studios worldwide, focusing on building meaningful digital experiences.",
   },
 ];
 

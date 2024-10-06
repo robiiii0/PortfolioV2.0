@@ -11,63 +11,57 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
 
   return (
     <>
-      <div
-        className="p-4 mt-12 md:mt-48 relative rounded-2xl overflow-hidden"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div
-          className={`transition-opacity duration-500 ease-in-out absolute inset-0 bg-black bg-opacity-50 rounded-2xl flex justify-center items-center ${
-            isHovered ? "opacity-100 z-10" : "opacity-0 z-0"
-          }`}
-        >
-          <button className="rounded-full bg-white p-4 text-black hover:bg-gray-200 transition duration-300">
-            View More
-          </button>
-        </div>
-
-        <div className="w-full font-thin flex justify-between">
-          <p className="text-lg md:text-2xl">
-            (00{props.data.index} at {props.data.company})
-          </p>
-          <p className="text-lg md:text-2xl">
-            {props.data.date.getDate()}/{props.data.date.getMonth() + 1}/
-            {props.data.date.getFullYear()}
-          </p>
-        </div>
-        <div className="flex justify-center mt-4">
-          {props.data.path !== "" ? (
-            <iframe
-              className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
-              src={props.data.path}
-              title={`${props.data.company} Preview`}
-            />
-          ) : (
-            <Image
-              alt={props.data.alt || "Descriptive text about the image"}
-              width={1920}
-              height={1080}
-              src={props.data.imgCover}
-              className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300 object-cover"
-            />
-          )}
-        </div>
-      </div>
-      <div className="mt-20 md:mt-80">
-        <div className="flex flex-col md:flex-row items-start md:space-x-44">
-          <div className="flex-1">
-            <p className="text-lg md:text-2xl">(00{props.data.index})</p>
+      <button>
+        <Link href={`/Job/${props.data.company}`}>
+          <div
+            className="p-4 mt-12 md:mt-48 relative rounded-2xl overflow-hidden"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <div className="w-full font-thin flex justify-between">
+              <p className="text-lg md:text-2xl">
+                (00{props.data.index} at {props.data.company})
+              </p>
+              <p className="text-lg md:text-2xl">
+                {props.data.date.getDate()}/{props.data.date.getMonth() + 1}/
+                {props.data.date.getFullYear()}
+              </p>
+            </div>
+            <div className="flex justify-center mt-4">
+              {props.data.path !== "" ? (
+                <iframe
+                  className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
+                  src={props.data.path}
+                  title={`${props.data.company} Preview`}
+                />
+              ) : (
+                <Image
+                  alt={props.data.alt || "Descriptive text about the image"}
+                  width={1920}
+                  height={1080}
+                  src={props.data.imgCover}
+                  className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300 object-cover"
+                />
+              )}
+            </div>
           </div>
-          <div className="flex-1 md:flex-4">
-            <p className="text-3xl md:text-5xl w-full md:w-10/12">
-              {props.dataHomePage.description}
-            </p>
-            <p className="mt-12 md:mt-24 text-3xl md:text-5xl w-full md:w-10/12">
-              {props.dataHomePage.description2}
-            </p>
+          <div className="mt-20 md:mt-80">
+            <div className="flex flex-col md:flex-row items-start md:space-x-44">
+              <div className="flex-1">
+                <p className="text-lg md:text-2xl">(00{props.data.index})</p>
+              </div>
+              <div className="flex-1 md:flex-4">
+                <p className="text-3xl md:text-5xl w-full md:w-10/12">
+                  {props.dataHomePage.description}
+                </p>
+                <p className="mt-12 md:mt-24 text-3xl md:text-5xl w-full md:w-10/12">
+                  {props.dataHomePage.description2}
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </Link>
+      </button>
     </>
   );
 }
@@ -109,10 +103,9 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 1 }}
               className="text-md md:text-xl md:w-5/12"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-              commodi modi magni saepe officia placeat aspernatur nobis! Modi,
-              soluta, similique doloribus sunt nihil vitae eius quo in incidunt,
-              temporibus laudantium.
+              Welcome to my portfolio! Here, you can explore the websites
+              I&apos;ve developed, the companies I&apos;ve collaborated with,
+              and learn more about me and my professional journey.
             </motion.p>
           </div>
           <div className="mt-12">
