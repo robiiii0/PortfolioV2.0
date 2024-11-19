@@ -2,7 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Montserrat Regular (normal) */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Montserrat Font Family */
 .font-montserrat {
   font-family: "Montserrat", sans-serif;
+}
+
+/* Montserrat Weight Variants */
+.font-montserrat-thin {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
+}
+
+.font-montserrat-extra-light {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+}
+
+.font-montserrat-light {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+.font-montserrat-regular {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.font-montserrat-medium {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.font-montserrat-semibold {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.font-montserrat-bold {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.font-montserrat-extra-bold {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+}
+
+.font-montserrat-black {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+}
+
+/* Optional: Italic Variants */
+.font-montserrat-italic {
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
 }

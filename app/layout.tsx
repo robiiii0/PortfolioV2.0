@@ -34,7 +34,7 @@ export default function RootLayout({
         <body>
           <div className="w-full">
             <nav className="w-11/12 mx-auto p-4">
-              <div className="flex justify-between items-center">
+              <div>
                 <NavLink />
               </div>
             </nav>

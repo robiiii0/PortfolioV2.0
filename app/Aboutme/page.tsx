@@ -5,6 +5,7 @@ import Image from "next/image";
 import imgDCU from "@/public/DCU.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Footer from "../components/Footer";
 
 export default function page() {
   const isFrench = true;
@@ -22,145 +23,106 @@ export default function page() {
   return (
     <>
       <div className="w-full font-montserrat">
-        <div className="w-11/12 mx-auto mt-24">
-          <div className="grid grid-rows-3 grid-flow-col gap-4">
-            <div className="col-span-2 space-y-2 pl-10">
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-              >
-                <h1 className="text-8xl font-bold">ABOUT ME</h1>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-              >
-                <h1 className="text-6xl ml-24 font-bold">WHO AM I</h1>
-              </motion.div>
-            </div>
-            <div className="row-span-2 col-span-2 ">
-              <div className="flex justify-center items-center  flex-col lg:flex-row ">
-                <div className="lg:ml-24 text-sm  lg:text-lg">
+        <div className="w-10/12 mx-auto mt-12 lg:mt-24">
+          <div className="flex flex-col lg:flex-row justify-between items-starp-8 ">
+            {/* Partie 1 - Titre et Infos personnelles */}
+            <div className="w-full lg:w-1/2 space-y-6">
+              <div className="flex flex-col">
+                <div>
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.7 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
                   >
-                    <hr className="w-full h-1 mx-auto my-4 bg-gray-300 border-0 rounded lg:my-10 dark:bg-gray-700" />
+                    <h1 className="text-6xl sm:text-6xl  text-center  md:text-left lg:text-8xl font-bold">
+                      ABOUT ME
+                    </h1>
                   </motion.div>
+
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.8 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
                   >
-                    <div className="flex">
-                      <p className="font-monserrat">
-                        {isFrench ? "Prénom : " : "First Name: "}
-                        <span className="text-blue-400">Robin</span>
-                      </p>
-                    </div>
-
-                    {/* <div className="flex mt-2">
-                      <p className="font-monserrat">
-                        {isFrench ? "Surnom : " : "Nickname: "}
-                        <span className="text-blue-400">Rob</span>
-                      </p>
-                    </div> */}
-
-                    <div className="flex mt-2">
-                      <p className="font-monserrat">
-                        {isFrench ? "Âge : " : "Age: "}
-                        <span className="text-blue-400">
-                          {calculateAge("2003-02-09")}
-                        </span>
-                      </p>
-                    </div>
-
-                    <div className="flex mt-2">
-                      <p className="font-monserrat">
-                        {isFrench ? "Statut : " : "Status: "}
-                        <span className="text-blue-400">
-                          {isFrench
-                            ? "Étudiant à Epitech"
-                            : "Student at Epitech"}
-                        </span>
-                      </p>
-                    </div>
-
-                    <div className="flex mt-2">
-                      <p className="font-monserrat">
-                        {isFrench ? "Nationalité : " : "Nationality: "}
-                        <span className="text-blue-400">
-                          {isFrench ? "Français 🇫🇷" : "French 🇫🇷"}
-                        </span>
-                      </p>
-                    </div>
-
-                    <div className="flex mt-2">
-                      <p className="font-monserrat">
-                        {isFrench ? "Langues parlées : " : "Spoken Languages: "}
-                      </p>
-                    </div>
-
-                    <div className="flex mt-2">
-                      <p className="font-monserrat ">
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        {isFrench ? "Français :" : "French: "}
-                        &nbsp;
-                      </p>
-                      <p className="text-blue-400 font-monserrat">
-                        {isFrench ? "langue maternelle" : "native"}
-                      </p>
-                    </div>
-
-                    <div className="flex">
-                      <p className="font-monserrat">
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        {isFrench ? "Anglais: " : "English:"}
-                        &nbsp;
-                      </p>
-                      <p className="text-blue-400 font-monserrat">
-                        {isFrench
-                          ? "Niveau professionnel complet"
-                          : "Full professional capacity"}
-                      </p>
-                    </div>
-
-                    <div className="flex mt-2">
-                      <p className="font-monserrat">
-                        {isFrench ? "Loisirs:" : "Hobbies:"}&nbsp;
-                      </p>
-                      <p className="text-blue-400 font-monserrat">
-                        {isFrench
-                          ? "natation, ski, programmation"
-                          : "swimming, skiing, programming"}
-                      </p>
-                    </div>
-
-                    <hr className="w-full h-1 mx-auto my-4 bg-gray-300 border-0 rounded lg:my-10 dark:bg-gray-700" />
+                    <h2 className="text-3xl md:mt-0 mt-6 sm:text-5xl lg:text-6xl font-semibold  text-center  md:text-left">
+                      WHO AM I
+                    </h2>
                   </motion.div>
                 </div>
-              </div>
-            </div>
-            <div className="row-span-3">
-              <div className="flex justify-center pr-10 mt-12">
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                  className="ml-12 mt-12"
                 >
-                  <Image
-                    src={imgMe}
-                    alt="Me"
-                    width={600}
-                    height={780}
-                    className="w-8/12 h-8/12 rounded-xl shadow-2xl cursor-pointer"
-                    objectFit="cover"
-                  />
+                  <div className="space-y-4 text-lg">
+                    <p>
+                      {isFrench ? "Prénom : " : "First Name: "}
+                      <span className="text-blue-400">Robin</span>
+                    </p>
+                    <p>
+                      {isFrench ? "Âge : " : "Age: "}
+                      <span className="text-blue-400">
+                        {calculateAge("2003-02-09")}
+                      </span>
+                    </p>
+                    <p>
+                      {isFrench ? "Statut : " : "Status: "}
+                      <span className="text-blue-400">
+                        {isFrench ? "Étudiant à Epitech" : "Student at Epitech"}
+                      </span>
+                    </p>
+                    <p>
+                      {isFrench ? "Nationalité : " : "Nationality: "}
+                      <span className="text-blue-400">
+                        {isFrench ? "Français 🇫🇷" : "French 🇫🇷"}
+                      </span>
+                    </p>
+                    <p>
+                      {isFrench ? "Langues parlées : " : "Spoken Languages:"}
+                    </p>
+                    <ul className="ml-4 space-y-1">
+                      <li>
+                        {isFrench ? "Français :" : "French:"}{" "}
+                        <span className="text-blue-400">
+                          {isFrench ? "langue maternelle" : "native"}
+                        </span>
+                      </li>
+                      <li>
+                        {isFrench ? "Anglais :" : "English:"}{" "}
+                        <span className="text-blue-400">
+                          {isFrench
+                            ? "Niveau professionnel complet"
+                            : "Full professional capacity"}
+                        </span>
+                      </li>
+                    </ul>
+                    <p>
+                      {isFrench ? "Loisirs:" : "Hobbies:"}{" "}
+                      <span className="text-blue-400">
+                        {isFrench
+                          ? "natation, ski, programmation"
+                          : "swimming, skiing, programming"}
+                      </span>
+                    </p>
+                  </div>
                 </motion.div>
               </div>
+            </div>
+
+            {/* Partie 2 - Image */}
+            <div className="w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+              >
+                <Image
+                  src={imgMe}
+                  alt="Me"
+                  className="w-auto h-auto max-h-[600px] rounded-xl shadow-2xl cursor-pointer object-cover"
+                />
+              </motion.div>
             </div>
           </div>
         </div>
@@ -266,51 +228,7 @@ export default function page() {
             </div>
           </div>
         </div>
-        <div className="mt-80 md:mt-100">
-          <div className="w-full">
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-11/12 mx-auto mt-[5%] font-montserrat"
-            >
-              <div className="space-y-2">
-                <motion.h1
-                  initial={{ y: 50, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  className="text-4xl md:text-8xl font-bold"
-                >
-                  Robin Chabert
-                </motion.h1>
-                <motion.h1
-                  initial={{ y: 50, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                  className="text-3xl md:text-8xl ml-6 md:ml-12"
-                >
-                  Web and software developer
-                </motion.h1>
-              </div>
-            </motion.div>
-          </div>
-          <div className="w-11/12 mx-auto font-semibold text-md md:text-xl">
-            <div className="flex flex-col md:flex-row justify-between space-x-0 md:space-x-8 mb-12 mt-8">
-              <div className="flex justify-between space-x-4 md:space-x-8">
-                <Link href={"https://www.instagram.com/robin_chabb/"}>
-                  Instagram
-                </Link>
-                <Link
-                  href={"https://www.linkedin.com/in/robin-chabert-863105232/"}
-                >
-                  LinkedIn
-                </Link>
-                <Link href={"https://github.com/robiiii0"}>Github</Link>
-              </div>
-              <div>© Robin Chabert</div>
-            </div>
-          </div>
-        </div>
+        <Footer />
       </div>
     </>
   );
