@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import { ListJobs, ObjList } from "./JobList";
+import Link from "next/link";
 
 function Card(props: { data: ObjList }) {
   return (
     <>
+    <Link href={`/Job/${props.data.company}`}>
       <div className="p-4 rounded-xl shadow-md mt-12 bg-gray-100/65">
         <div className="w-full font-bold flex flex-col sm:flex-row justify-between sm:space-x-4">
           <p className="text-2xl text-center sm:text-left">{props.data.company}</p>
@@ -38,13 +40,14 @@ function Card(props: { data: ObjList }) {
         <p className="font-bold mt-8 text-2xl md:text-xl">Description: </p>
         <p className="mt-2 text-md md:text-lg">{props.data.description}</p>
       </div>
+      </Link>
     </>
   );
 }
 
 export default function Job() {
   return (
-    <div className="w-full font-montserrat">
+    <div className="w-full font-montserrat text-white bg-black m-0 p-0">
       <div className="w-11/12 mx-auto mt-12">
         <div className="space-y-2">
           <motion.h1

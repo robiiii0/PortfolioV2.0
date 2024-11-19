@@ -4,9 +4,9 @@ import Footer from "../components/Footer";
 
 export default function page() {
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <Job />
-      <Footer />
+      <Footer color="black"/>
     </div>
   );
 }

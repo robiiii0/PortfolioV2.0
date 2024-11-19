@@ -3,9 +3,18 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function Footer() {
+// Défini un type pour la prop 'color' qui peut être soit 'black' soit 'white'
+interface FooterProps {
+  color: "black" | "white"; // L'argument attendu
+}
+
+export default function Footer({ color }: FooterProps) {
+  // On applique les classes dynamiquement en fonction de la prop 'color'
+  const bgColor = color === "black" ? "bg-black" : "bg-white";
+  const textColor = color === "black" ? "text-white" : "text-black";
+
   return (
-    <div>
+    <div className={`${bgColor} ${textColor} w-full`}>
       <div className="mt-20 md:mt-100">
         <div className="w-full">
           <motion.div
