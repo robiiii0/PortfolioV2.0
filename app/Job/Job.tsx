@@ -10,7 +10,7 @@ function Card(props: { data: ObjList }) {
   return (
     <>
       <Link href={`/Job/${props.data.company}`}>
-        <div className="p-4 rounded-xl shadow-md mt-12 bg-gray-100/65">
+        <div className="p-4 rounded-xl shadow-md mt-12 bg-gray-900">
           <div className="w-full font-bold flex flex-col sm:flex-row justify-between sm:space-x-4">
             <p className="text-2xl text-center sm:text-left">
               {props.data.company}
@@ -51,18 +51,8 @@ function Card(props: { data: ObjList }) {
 }
 
 export default function Job() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) return null;
   return (
     <div className="w-full font-montserrat text-white bg-black m-0 p-0">
-      <div className="w-10/12 mx-auto mt-4">
-        <NavLink colorScheme="white" />
-      </div>
       <div className="w-11/12 mx-auto mt-24">
         <div className="space-y-2">
           <motion.h1

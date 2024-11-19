@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import imgMe from "@/public/me.jpg";
 import Image from "next/image";
 import imgDCU from "@/public/DCU.jpg";
 import { motion, AnimatePresence } from "framer-motion";
@@ -122,8 +121,11 @@ export default function page() {
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
                 <Image
-                  src={imgMe}
+                  src="/me.jpg"
                   alt="Me"
+                  width={600}
+                  height={600}
+                  priority
                   className="w-auto h-auto max-h-[600px] rounded-xl shadow-2xl cursor-pointer object-cover"
                 />
               </motion.div>

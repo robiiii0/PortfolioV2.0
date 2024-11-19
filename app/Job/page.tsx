@@ -5,7 +5,10 @@ import NavLink from "../NavLink/NavLink";
 
 export default function page() {
   return (
-    <div className="w-full ">
+    <div className="w-full bg-black">
+      <div className="w-10/12 mx-auto pt-4">
+        <NavLink colorScheme="black" />
+      </div>
       <Job />
       <Footer color="black" />
     </div>
