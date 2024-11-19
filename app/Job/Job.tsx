@@ -7,11 +7,11 @@ import { ListJobs, ObjList } from "./JobList";
 function Card(props: { data: ObjList }) {
   return (
     <>
-      <div className="p-4 rounded-xl shadow-md mt-12 bg-gray-100/65  ">
-        <div className=" w-12/12 font-bold flex justify-between">
-          <p className="text-2xl">{props.data.company}</p>
-          <p className="text-2xl">{props.data.jobName}</p>
-          <p className="text-2xl">
+      <div className="p-4 rounded-xl shadow-md mt-12 bg-gray-100/65">
+        <div className="w-full font-bold flex flex-col sm:flex-row justify-between sm:space-x-4">
+          <p className="text-2xl text-center sm:text-left">{props.data.company}</p>
+          <p className="text-md md:text-2xl mt-4 text-center sm:text-left">{props.data.jobName}</p>
+          <p className="text-md md:text-2xl mt-4 text-center sm:text-left">
             {props.data.date.getDate()}/{props.data.date.getMonth() + 1}/
             {props.data.date.getFullYear()}
           </p>
@@ -21,7 +21,7 @@ function Card(props: { data: ObjList }) {
             <iframe
               className="rounded-2xl shadow-2xl transform-gpu hover:scale-105 transition-transform duration-300"
               src={props.data.path}
-              style={{ width: "100%", height: "60rem", border: "none" }}
+              style={{ width: "100%", height: "40rem" }}
               title={`${props.data.company} Preview`}
             />
           ) : (
@@ -30,13 +30,13 @@ function Card(props: { data: ObjList }) {
               width={1920}
               height={1080}
               src={props.data.imgCover}
-              className="w-full h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform-gpu hover:scale-105 transition-transform duration-300"
+              className="w-full h-[40rem] sm:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform-gpu hover:scale-105 transition-transform duration-300"
               objectFit="cover"
             />
           )}
         </div>
-        <p className="font-bold mt-8 text-xl">Description: </p>
-        <p className="mt-2">{props.data.description}</p>
+        <p className="font-bold mt-8 text-2xl md:text-xl">Description: </p>
+        <p className="mt-2 text-md md:text-lg">{props.data.description}</p>
       </div>
     </>
   );
@@ -51,7 +51,7 @@ export default function Job() {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-8xl font-bold"
+            className="text-4xl sm:text-6xl md:text-8xl font-bold text-center md:text-left"
           >
             SELECTED WORK
           </motion.h1>
@@ -59,7 +59,7 @@ export default function Job() {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-8xl font-bold"
+            className="text-4xl sm:text-6xl md:text-8xl font-bold text-center md:text-left md:ml-24"
           >
             (2020 — 2023)
           </motion.h1>
@@ -69,7 +69,7 @@ export default function Job() {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-2xl mt-12 w-5/12"
+            className="text-lg sm:text-xl md:text-2xl mt-24 w-full sm:w-10/12 md:w-5/12 text-center md:text-left md:ml-24"
           >
             Have a look at some of the projects I&apos;ve worked on. Clients
             vary from lifestyle to tech and design companies.
@@ -79,7 +79,7 @@ export default function Job() {
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-80"
+          className="mt-48 space-y-12"
         >
           {ListJobs.map((job, index) => (
             <Card key={index} data={job} />
