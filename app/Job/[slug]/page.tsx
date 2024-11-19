@@ -1,16 +1,15 @@
-// pages/projects/[slug].tsx
 "use client";
 
-import { usePathname, useRouter } from "next/navigation"; // Importer les hooks depuis next/navigation
-import { ListJobs, ObjList } from "../JobList"; // Assure-toi que le chemin d'import est correct
+import { usePathname, useRouter } from "next/navigation";
+import { ListJobs, ObjList } from "../JobList"; 
 import Image from "next/image";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 const JobDetailPage = () => {
-  const pathname = usePathname(); // Utiliser usePathname pour obtenir le chemin actuel de l'URL
+  const pathname = usePathname();
   console.log(pathname);
-  const slug = pathname?.split("/").pop(); // Extraire le dernier segment de l'URL (le slug)
+  const slug = pathname?.split("/").pop(); 
   console.log(slug);
 
   const [job, setJob] = useState<ObjList | null>(null);
@@ -46,7 +45,6 @@ const JobDetailPage = () => {
             className="w-11/12 mx-auto mt-[5%]"
           >
             <div className="space-y-2">
-              {/* Titre de la mission */}
               <motion.h1
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -56,7 +54,6 @@ const JobDetailPage = () => {
                 {job.jobName}
               </motion.h1>
 
-              {/* Description de la mission */}
               <motion.p
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -66,7 +63,6 @@ const JobDetailPage = () => {
                 {job.description}
               </motion.p>
 
-              {/* Images du projet */}
               <div className="mt-6 space-y-4">
                 {job.imgArray.map((image, index) => (
                   <div key={index} className="w-full h-[400px] relative">
@@ -80,7 +76,6 @@ const JobDetailPage = () => {
                 ))}
               </div>
 
-              {/* Lien vers l'entreprise ou projet */}
               {job.path && (
                 <div className="mt-8">
                   <a
