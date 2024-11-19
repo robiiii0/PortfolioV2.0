@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div>
-      <div className="mt-80 md:mt-100">
+      <div className="mt-20 md:mt-100">
         <div className="w-full">
           <motion.div
             initial={{ y: 50, opacity: 0 }}

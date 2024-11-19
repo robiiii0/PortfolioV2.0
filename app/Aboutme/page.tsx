@@ -44,7 +44,7 @@ export default function page() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
                   >
-                    <h2 className="text-3xl md:mt-0 mt-6 sm:text-5xl lg:text-6xl font-semibold  text-center  md:text-left">
+                    <h2 className="text-3xl md:mt-6 mt-6 sm:text-5xl lg:text-6xl  ml-0 md:ml-12 font-semibold  text-center  md:text-left">
                       WHO AM I
                     </h2>
                   </motion.div>
@@ -127,16 +127,16 @@ export default function page() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 mt-24 w-11/12 mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 mt-24 w-11/12 mx-auto">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <h1 className="font-bold text-4xl">I'm studduing at Epitech</h1>
+              <h1 className="font-bold text-4xl">I'm studying at Epitech</h1>
             </motion.div>
-            <div className="w-6/12 mx-auto mt-24">
+            <div className="w-10/12 sm:w-6/12 mx-auto mt-24">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -176,9 +176,9 @@ export default function page() {
           </motion.div>
         </div>
 
-        <div className="w-screen h-[30rem] rounded-2xl mt-24 bg-gray-900 text-white pb-24">
+        <div className="w-screen h-[30rem] sm:h-[40rem] lg:h-[30rem] rounded-2xl mt-24 bg-gray-900 text-white pb-24">
           <div className="w-11/12 mx-auto">
-            <div className="grid grid-cols-2  items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 items-center">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -191,10 +191,10 @@ export default function page() {
                 >
                   <Image
                     src={imgDCU}
-                    alt="Me"
+                    alt="DCU"
                     width={1920}
                     height={1080}
-                    className="rounded-xl "
+                    className="rounded-xl"
                     objectFit="cover"
                   />
                 </Link>
@@ -208,7 +208,7 @@ export default function page() {
                 >
                   <h1 className="font-bold text-4xl">Current project: DCU</h1>
                 </motion.div>
-                <div className="w-6/12 mx-auto mt-8">
+                <div className="w-10/12 sm:w-6/12 mx-auto mt-8">
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -228,6 +228,7 @@ export default function page() {
             </div>
           </div>
         </div>
+
         <Footer />
       </div>
     </>
