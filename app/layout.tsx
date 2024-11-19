@@ -35,7 +35,7 @@ export default function RootLayout({
           <div className="w-full">
             <nav className="w-11/12 mx-auto p-4">
               <div>
-                <NavLink colorScheme="black"/>
+                <NavLink colorScheme="black" />
               </div>
             </nav>
           </div>

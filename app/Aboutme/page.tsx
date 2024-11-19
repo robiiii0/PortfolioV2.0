@@ -229,7 +229,7 @@ export default function page() {
           </div>
         </div>
 
-        <Footer color="white"/>
+        <Footer color="white" />
       </div>
     </>
   );

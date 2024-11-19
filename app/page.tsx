@@ -136,7 +136,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Footer color="white"/>
+      <Footer color="white" />
     </>
   );
 }

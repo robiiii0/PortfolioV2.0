@@ -6,7 +6,7 @@ export default function page() {
   return (
     <div className="w-full ">
       <Job />
-      <Footer color="black"/>
+      <Footer color="black" />
     </div>
   );
 }

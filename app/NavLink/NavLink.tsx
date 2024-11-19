@@ -18,13 +18,16 @@ const NavLink = ({ colorScheme }: NavLinkProps) => {
   // Appliquer les classes en fonction de 'colorScheme'
   const bgClass = colorScheme === "black" ? "bg-black" : "bg-white";
   const textClass = colorScheme === "black" ? "text-white" : "text-black";
-  const hoverClass = colorScheme === "black" ? "hover:text-gray-300" : "hover:text-gray-200";
+  const hoverClass =
+    colorScheme === "black" ? "hover:text-gray-300" : "hover:text-gray-200";
 
   return (
     <nav className={`${bgClass} w-full border-gray-200 rounded-xl`}>
       <div className="flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/" className="flex items-center space-x-3 w-auto">
-          <span className={`${textClass} self-center text-4xl font-semibold whitespace-nowrap`}>
+          <span
+            className={`${textClass} self-center text-4xl font-semibold whitespace-nowrap`}
+          >
             Robin©
           </span>
         </Link>
@@ -63,7 +66,9 @@ const NavLink = ({ colorScheme }: NavLinkProps) => {
           <ul
             className={`font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg ${bgClass} md:flex-row md:space-x-8 md:mt-0 md:border-0`}
           >
-            <li className={`hover:scale-110 transition ease-in-out duration-300 ${hoverClass}`}>
+            <li
+              className={`hover:scale-110 transition ease-in-out duration-300 ${hoverClass}`}
+            >
               <Link
                 href="/Aboutme"
                 className={`block py-2 px-6 ${textClass} hover:text-gray-500 rounded`}
@@ -71,7 +76,9 @@ const NavLink = ({ colorScheme }: NavLinkProps) => {
                 About Me
               </Link>
             </li>
-            <li className={`hover:scale-110 transition ease-in-out duration-300 ${hoverClass}`}>
+            <li
+              className={`hover:scale-110 transition ease-in-out duration-300 ${hoverClass}`}
+            >
               <Link
                 href="/Job"
                 className={`block py-2 px-6 ${textClass} hover:text-gray-500 rounded `}
@@ -79,7 +86,9 @@ const NavLink = ({ colorScheme }: NavLinkProps) => {
                 Jobs
               </Link>
             </li>
-            <li className={`hover:scale-110 transition ease-in-out duration-300  `}>
+            <li
+              className={`hover:scale-110 transition ease-in-out duration-300  `}
+            >
               <Link
                 href="/Contact"
                 className={`block py-2 px-6 ${textClass} hover:text-gray-500 rounded `}
