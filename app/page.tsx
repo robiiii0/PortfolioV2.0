@@ -6,6 +6,7 @@ import { useState } from "react";
 import { dataHomePage, DataHomePage, ObjList, ExempleListJobs } from "./data";
 import Link from "next/link";
 import Footer from "./components/Footer";
+import NavLink from "./NavLink/NavLink";
 
 function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -72,6 +73,9 @@ export default function Home() {
 
   return (
     <>
+      <div className="w-10/12 mx-auto mt-4">
+        <NavLink colorScheme="black" />
+      </div>
       <div className="w-full">
         <motion.div
           initial={{ y: 50, opacity: 0 }}

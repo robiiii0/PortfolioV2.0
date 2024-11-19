@@ -6,11 +6,6 @@ import NavLink from "./NavLink/NavLink";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Robin portfolio",
-  description: "Everything about me",
-};
-
 export default function RootLayout({
   children,
 }: {
@@ -21,8 +16,8 @@ export default function RootLayout({
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
+        <title>Robin portfolio</title>
+        <meta name="description" content="Everything about me" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -32,14 +27,7 @@ export default function RootLayout({
       </Head>
       <html>
         <body>
-          <div className="w-full">
-            <nav className="w-11/12 mx-auto p-4">
-              <div>
-                <NavLink colorScheme="black" />
-              </div>
-            </nav>
-          </div>
-          <div>{children}</div>
+          <div className="w-full flex-grow">{children}</div>
         </body>
       </html>
     </>

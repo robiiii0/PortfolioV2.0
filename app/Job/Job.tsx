@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { ListJobs, ObjList } from "./JobList";
 import Link from "next/link";
+import NavLink from "../NavLink/NavLink";
 
 function Card(props: { data: ObjList }) {
   return (
@@ -51,7 +52,10 @@ function Card(props: { data: ObjList }) {
 
 export default function Job() {
   return (
-    <div className="w-full font-montserrat text-white bg-black m-0 p-0">
+    <div className="w-full absolute top-0 font-montserrat text-white bg-black m-0 p-0">
+      <div className="w-10/12 mx-auto mt-4">
+        <NavLink colorScheme="white" />
+      </div>
       <div className="w-11/12 mx-auto mt-12">
         <div className="space-y-2">
           <motion.h1

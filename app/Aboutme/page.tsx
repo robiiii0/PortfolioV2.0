@@ -6,6 +6,7 @@ import imgDCU from "@/public/DCU.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import NavLink from "../NavLink/NavLink";
 
 export default function page() {
   const isFrench = true;
@@ -23,6 +24,9 @@ export default function page() {
   return (
     <>
       <div className="w-full font-montserrat">
+        <div className="w-10/12 mx-auto mt-4">
+          <NavLink colorScheme="black" />
+        </div>
         <div className="w-10/12 mx-auto mt-12 lg:mt-24">
           <div className="flex flex-col lg:flex-row justify-between items-starp-8 ">
             {/* Partie 1 - Titre et Infos personnelles */}

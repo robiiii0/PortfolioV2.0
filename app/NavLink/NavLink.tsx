@@ -3,7 +3,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
 
-// Définir le type de la prop 'colorScheme' pour accepter 'black' ou 'white' uniquement
 type NavLinkProps = {
   colorScheme: "black" | "white";
 };
@@ -15,7 +14,6 @@ const NavLink = ({ colorScheme }: NavLinkProps) => {
     setIsOpen(!isOpen);
   };
 
-  // Appliquer les classes en fonction de 'colorScheme'
   const bgClass = colorScheme === "black" ? "bg-black" : "bg-white";
   const textClass = colorScheme === "black" ? "text-white" : "text-black";
   const hoverClass =
