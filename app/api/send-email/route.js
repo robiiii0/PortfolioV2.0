@@ -12,10 +12,10 @@ export async function POST(request) {
   });
 
   const mailOptions = {
-    from: process.env.EMAIL_USER, // L'adresse email configurée dans Nodemailer
+    from: process.env.EMAIL_USER, 
     to: process.env.RECIPIENT_EMAIL,
-    replyTo: `${name} <${email}>`, // Adresse à laquelle répondre
-    subject: `Nouveau message de ${name} (${email})`, // Ajout de l'email dans l'objet
+    replyTo: `${name} <${email}>`, 
+    subject: `Nouveau message de ${name} (${email})`,
     text: `Vous avez reçu un nouveau message :
     
   Nom : ${name}
