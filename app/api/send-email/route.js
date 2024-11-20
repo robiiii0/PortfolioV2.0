@@ -9,6 +9,7 @@ export async function POST(request) {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASSWORD,
     },
+    secure: true,
   });
 
   const mailOptions = {
@@ -27,13 +28,13 @@ export async function POST(request) {
 
   try {
     await transporter.sendMail(mailOptions);
-    return new Response(JSON.stringify({ message: "Email envoyé avec succès !" }), {
-      status: 200,
-    });
+    return new Response(JSON.stringify({ message: "Email envoyé avec succès !" }), { status: 200 });
   } catch (error) {
     console.error("Erreur lors de l'envoi de l'email :", error);
-    return new Response(JSON.stringify({ message: "Erreur lors de l'envoi de l'email" }), {
-      status: 500,
-    });
-  }
+    console.error("Détails de l'erreur :", error.stack);
+    return new Response(
+      JSON.stringify({ message: "Erreur lors de l'envoi de l'email", error: error.message }),
+      { status: 500 }
+    );
+  }  
 }
