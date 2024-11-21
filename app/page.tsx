@@ -44,20 +44,14 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
           )}
         </div>
       </div>
-      <div className="mt-20 md:mt-80">
-        <div className="flex flex-col md:flex-row items-start md:space-x-44">
-          <div className="flex-1">
-            <p className="text-lg md:text-2xl">(00{props.data.index})</p>
-          </div>
-          <div className="flex-1 md:flex-4">
-            <p className="text-3xl md:text-5xl w-full md:w-10/12">
-              {props.dataHomePage.description}
-            </p>
-            <p className="mt-12 md:mt-24 text-3xl md:text-5xl w-full md:w-10/12">
-              {props.dataHomePage.description2}
-            </p>
-          </div>
-        </div>
+      <div className="mt-12 md:mt-80 text-center w-5/12 mx-auto">
+        <p className="text-lg md:text-2xl">(00{props.data.index})</p>
+        <p className="text-3xl md:text-5xl w-full mt-12 md:w-10/12 mx-auto">
+          {props.dataHomePage.description}
+        </p>
+        <p className="mt-12 md:mt-24 text-3xl md:text-5xl w-full md:w-10/12 mx-auto">
+          {props.dataHomePage.description2}
+        </p>
       </div>
     </Link>
   );
