@@ -29,9 +29,9 @@ export default function page() {
           <NavLink colorScheme="black" />
         </div>
         <div className="w-10/12 mx-auto mt-12 lg:mt-24">
-          <div className="flex flex-col lg:flex-row justify-between items-starp-8 ">
+          <div className="flex flex-col lg:flex-row justify-between items-starp-8">
             {/* Partie 1 - Titre et Infos personnelles */}
-            <div className="w-full lg:w-1/2 space-y-6">
+            <div className="w-full lg:w-1/2 space-y-6 mt-[25%] md:mt-[8%]">
               <div className="flex flex-col">
                 <div>
                   <motion.div
@@ -116,7 +116,7 @@ export default function page() {
             </div>
 
             {/* Partie 2 - Image */}
-            <div className="w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end">
+            <div className="w-full lg:w-1/2 mt-[25%] md:mt-[8%] flex justify-center lg:justify-end ">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -184,7 +184,7 @@ export default function page() {
           </motion.div>
         </div>
 
-        <div className="w-screen h-[30rem] sm:h-[40rem] lg:h-[30rem] rounded-2xl mt-24 bg-gray-900 text-white pb-24">
+        <div className="w-screen h-auto sm:h-[40rem] lg:h-[30rem]  p-4 rounded-2xl mt-24 bg-gray-900 text-white pb-24">
           <div className="w-11/12 mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 items-center">
               <motion.div
@@ -195,7 +195,7 @@ export default function page() {
               >
                 <Link
                   href="https://www.dcu.ie/"
-                  className="w-full h-full mt-12 rounded-xl shadow-2xl cursor-pointer"
+                  className="w-full h-full mt-8 rounded-xl shadow-2xl cursor-pointer"
                 >
                   <Image
                     src={imgDCU}
@@ -225,7 +225,7 @@ export default function page() {
                     transition={{ duration: 0.5, delay: 0.5 }}
                   >
                     {Translate ? (
-                      <p>
+                      <p className="text-base sm:text-lg md:text-xl">
                         En tant qu'étudiant en informatique, je suis
                         actuellement à Dublin, embarquant pour un voyage
                         académique passionnant pour l'année académique 2024/2025
@@ -235,7 +235,7 @@ export default function page() {
                         University (DCU) en Irlande.
                       </p>
                     ) : (
-                      <p>
+                      <p className="text-base sm:text-lg md:text-xl">
                         As an aspiring computer scientist, I am currently in
                         Dublin, embarking on an exciting academic journey for
                         the 2024/2025 academic year to further hone my skills in
@@ -244,12 +244,19 @@ export default function page() {
                         University (DCU) in Ireland.
                       </p>
                     )}
-                    <button
-                      onClick={() => setTranslate(!Translate)}
-                      className="hover:bg-blue-500 hover:scale-105 transition-transform duration-300 mt-8 bg-blue-400 text-white px-4 py-2 rounded-lg"
-                    >
-                      Traduction ?
-                    </button>
+                    <div className="flex justify-center mt-4">
+                      <button
+                        onClick={() => setTranslate(!Translate)}
+                        className="hover:bg-blue-500 hover:scale-105 transition-transform duration-300 bg-blue-400 text-white px-4 py-2 rounded-lg"
+                      >
+                        Traduction ?
+                      </button>
+                    </div>
+                    {Translate && (
+                      <p className="text-xs text-gray-400 ml-2 mt-4">
+                        Pas de soucis je comprends &#58;&#41;
+                      </p>
+                    )}
                   </motion.div>
                 </div>
               </div>

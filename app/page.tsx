@@ -47,7 +47,7 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
           </div>
         </div>
       </Link>
-      <div className="mt-12 md:mt-80 text-center w-5/12 mx-auto">
+      <div className="mt-12 md:mt-80 text-center w-full md:w-5/12 mx-auto">
         <p className="text-lg md:text-2xl">(00{props.data.index})</p>
         <p className="text-3xl md:text-5xl w-full mt-12 md:w-10/12 mx-auto">
           {props.dataHomePage.description}
@@ -227,7 +227,7 @@ export default function Home() {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-11/12 mx-auto mt-12 md:mt-[8%] font-montserrat"
+              className="w-11/12 mx-auto mt-[25%] md:mt-[8%] font-montserrat"
             >
               <div className="space-y-2">
                 <motion.h1
@@ -280,7 +280,7 @@ export default function Home() {
                 </motion.button>
               </div>
             </motion.div>
-            <div className="w-11/12 mx-auto mt-48 ">
+            <div className="w-11/12 mx-auto mt-24 md:mt-48 ">
               {ExempleListJobs.map((job, index) => (
                 <Card
                   key={index}
@@ -291,8 +291,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-6/12 mx-auto mt-20 md:mt-48 mb-48">
-            <div className="text-center text-6xl font-montserrat font-semibold">
+          <div className="md:w-6/12 w-full mx-auto mt-20 md:mt-48 mb-48">
+            <div className="text-center text-4xl sm:text-5xl md:text-6xl font-montserrat font-semibold">
               Ils ont su me faire confiance
             </div>
             <motion.div
