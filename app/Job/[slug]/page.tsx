@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import NavLink from "@/app/NavLink/NavLink";
 import Footer from "@/app/components/Footer";
+import Link from "next/link";
 
 const JobDetailPage = () => {
   const pathname = usePathname();
@@ -140,6 +141,26 @@ const JobDetailPage = () => {
                         />
                       </svg>
                     </div>
+                    <Link
+                      href={job.link}
+                      className=""
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div className="flex justify-center items-center">
+                        <motion.button
+                          whileHover={{
+                            background:
+                              "linear-gradient(to top, #020617 100%, transparent 100%)",
+                            color: "#FFFF",
+                          }}
+                          whileTap={{ scale: 0.9 }}
+                          className=" rounded-2xl  bg-transparent text-gray-700 font-semibold py-2 px-4 text-2xl border border-white w-3/12 mx-auto transition-all duration-300"
+                        >
+                          Partir à la découverte de {job.company}
+                        </motion.button>
+                      </div>
+                    </Link>
                     <iframe
                       src={job.imgArray[job.imgArray.length - 1]}
                       width="100%"

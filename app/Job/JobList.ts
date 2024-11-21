@@ -14,6 +14,7 @@ export interface ObjList {
   path: string;
   aboutThem: string;
   imglogo: string;
+  link: string;
 }
 
 import { StaticImageData } from "next/image";
@@ -50,6 +51,7 @@ export const ListJobs: ObjList[] = [
       "Eloken est une entreprise spécialisée dans la création de sites web de haute qualité. Ils offrent une gamme de services de développement web pour aider les entreprises à établir une forte présence en ligne.",
     imglogo:
       "https://eloken.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLogo.9cbeff77.png&w=1200&q=75",
+    link: "https://eloken.com/",
   },
   {
     index: 2,
@@ -74,6 +76,7 @@ export const ListJobs: ObjList[] = [
     aboutThem:
       "Iroc est une entreprise qui se concentre sur le développement autour des chercheurs. Ils fournissent des outils et des services pour soutenir et améliorer le travail des chercheurs.",
     imglogo: "https://www.iroc.app/images/Logo_IROC.png",
+    link: "https://www.iroc.app/",
   },
   {
     index: 3,
@@ -100,11 +103,13 @@ export const ListJobs: ObjList[] = [
       "Enedis est un important gestionnaire du réseau de distribution d'électricité en France. Ils gèrent le réseau public de distribution d'électricité, assurant la livraison d'électricité aux foyers et aux entreprises.",
     imglogo:
       "https://upload.wikimedia.org/wikipedia/fr/thumb/7/77/Logo_enedis_header.png/1200px-Logo_enedis_header.png",
+    link: "https://www.enedis.fr",
   },
   {
     index: 4,
     company: "HiddensHills",
     companyEn: "HiddensHills",
+
     jobName: "Collaboration avec HiddensHills",
     jobNameEn: "Collaboration with HiddensHills",
     title3: "title3",
@@ -115,9 +120,9 @@ export const ListJobs: ObjList[] = [
     alt: "alt",
     imgCover: img4,
     imgArray: [
-      "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://hiddenhillsclothing.com/en?srsltid=AfmBOorNR-QI8nurKRu1z4_0g9o_xCoBltTW5Pi0Rk2zz2NIsL2koiys",
+      "/HiddensHills/image1.png",
+      "/HiddensHills/image2.png",
+      "/HiddensHills/cover.png",
     ],
     date: new Date(2022, 3, 24),
     path: "",
@@ -125,6 +130,7 @@ export const ListJobs: ObjList[] = [
       "Hidden Hills Club est une marque de style de vie premium qui offre des adhésions et des expériences exclusives. Ils se concentrent sur la fourniture de services et de produits de haute qualité à leurs membres.",
     imglogo:
       "https://hiddenhillsclub.com/cdn/shop/files/MAIN_HIDDEN_HILLS_GRN_1d93f736-b25e-42f9-a074-8bba4446ba73.png?v=1667236646&width=3533",
+    link: "https://hiddenhillsclub.com/",
   },
   {
     index: 5,
@@ -150,5 +156,6 @@ export const ListJobs: ObjList[] = [
       "GK est une application qui vous permet de rencontrer des personnes qui jouent aux jeux vidéo pour trouver de nouveaux coéquipiers.",
     imglogo:
       "https://play-lh.googleusercontent.com/UTuSbIOiVLxl0kknNi23fVDC_AaUKewkeJw_jTfPz-aNsmoHKRGGPz-vlNpBvHN7YFs",
+    link: "",
   },
 ];
