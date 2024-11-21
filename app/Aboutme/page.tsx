@@ -10,6 +10,8 @@ import NavLink from "../NavLink/NavLink";
 export default function page() {
   const isFrench = true;
 
+  const [Translate, setTranslate] = React.useState(false);
+
   function calculateAge(birthDate: string) {
     const birthDateObj = new Date(birthDate);
     const today = new Date();
@@ -48,7 +50,7 @@ export default function page() {
                     transition={{ duration: 0.5, delay: 0.6 }}
                   >
                     <h2 className="text-3xl md:mt-6 mt-6 sm:text-5xl lg:text-6xl  ml-0 md:ml-12 font-semibold  text-center  md:text-left">
-                      WHO AM I
+                      QUI SUIS-JE ?
                     </h2>
                   </motion.div>
                 </div>
@@ -140,7 +142,7 @@ export default function page() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <h1 className="font-bold text-4xl">I'm studying at Epitech</h1>
+              <h1 className="font-bold text-4xl">Je suis étudiant à Epitech</h1>
             </motion.div>
             <div className="w-10/12 sm:w-6/12 mx-auto mt-24">
               <motion.div
@@ -149,11 +151,11 @@ export default function page() {
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
                 <p>
-                  I have now been a student at Epitech Lyon for 4 years, where I
-                  have had the opportunity to learn and develop skills in
-                  various fields such as algorithms, web development,
-                  networking, artificial intelligence, problem-solving, and
-                  teamwork.
+                  Je suis étudiant à Epitech Lyon depuis 4 ans, où j'ai eu
+                  l'opportunité d'apprendre et de développer des compétences
+                  dans divers domaines tels que les algorithmes, le
+                  développement web, les réseaux, l'intelligence artificielle,
+                  la résolution de problèmes et le travail d'équipe.
                 </p>
               </motion.div>
             </div>
@@ -212,7 +214,9 @@ export default function page() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                 >
-                  <h1 className="font-bold text-4xl">Current project: DCU</h1>
+                  <h1 className="font-bold text-4xl">
+                    Current project: DCU Irland
+                  </h1>
                 </motion.div>
                 <div className="w-10/12 sm:w-6/12 mx-auto mt-8">
                   <motion.div
@@ -220,14 +224,32 @@ export default function page() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
                   >
-                    <p>
-                      As an aspiring computer scientist, I am currently in
-                      Dublin, embarking on an exciting academic journey for the
-                      2024/2025 academic year to further hone my skills in both
-                      computer science and English language proficiency. My
-                      destination? The vibrant campus of Dublin City University
-                      (DCU) in Ireland.
-                    </p>
+                    {Translate ? (
+                      <p>
+                        En tant qu'étudiant en informatique, je suis
+                        actuellement à Dublin, embarquant pour un voyage
+                        académique passionnant pour l'année académique 2024/2025
+                        afin de perfectionner davantage mes compétences en
+                        informatique et ma maîtrise de la langue anglaise. Ma
+                        destination ? Le campus dynamique de Dublin City
+                        University (DCU) en Irlande.
+                      </p>
+                    ) : (
+                      <p>
+                        As an aspiring computer scientist, I am currently in
+                        Dublin, embarking on an exciting academic journey for
+                        the 2024/2025 academic year to further hone my skills in
+                        both computer science and English language proficiency.
+                        My destination? The vibrant campus of Dublin City
+                        University (DCU) in Ireland.
+                      </p>
+                    )}
+                    <button
+                      onClick={() => setTranslate(!Translate)}
+                      className="hover:bg-blue-500 hover:scale-105 transition-transform duration-300 mt-8 bg-blue-400 text-white px-4 py-2 rounded-lg"
+                    >
+                      Traduction ?
+                    </button>
                   </motion.div>
                 </div>
               </div>

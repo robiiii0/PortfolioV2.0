@@ -30,33 +30,33 @@ import img5 from "@/public/enedis.png";
 export const dataHomePage: DataHomePage[] = [
   {
     description:
-      "As a web developer, I help companies and organizations around the world build effective digital solutions and enhance their online presence.",
+      "En tant que développeur web, j'aide les entreprises et les organisations du monde entier à créer des solutions numériques efficaces et à améliorer leur présence en ligne.",
     descriptionEng:
-      "As a web developer, I help companies and organizations around the world build effective digital solutions and enhance their online presence.",
+      "En tant que développeur web, j'aide les entreprises et les organisations du monde entier à créer des solutions numériques efficaces et à améliorer leur présence en ligne.",
     description2:
-      "I collaborate directly with clients or provide support to agencies and studios globally, ensuring tailored digital experiences.",
+      "Je collabore directement avec les clients ou je soutiens les agences et les studios à l'échelle mondiale, en garantissant des expériences numériques sur mesure.",
     description2Eng:
-      "I collaborate directly with clients or provide support to agencies and studios globally, ensuring tailored digital experiences.",
+      "Je collabore directement avec les clients ou je soutiens les agences et les studios à l'échelle mondiale, en garantissant des expériences numériques sur mesure.",
   },
   {
     description:
-      "I am passionate about computer science and software development, constantly seeking to improve and deliver innovative solutions.",
+      "Je suis passionné par l'informatique et le développement de logiciels, cherchant constamment à m'améliorer et à proposer des solutions innovantes.",
     descriptionEng:
-      "I am passionate about computer science and software development, constantly seeking to improve and deliver innovative solutions.",
+      "Je suis passionné par l'informatique et le développement de logiciels, cherchant constamment à m'améliorer et à proposer des solutions innovantes.",
     description2:
-      "I work closely with clients or in collaboration with agencies and studios worldwide to deliver impactful digital projects.",
+      "Je travaille en étroite collaboration avec les clients ou en partenariat avec des agences et des studios du monde entier pour livrer des projets numériques percutants.",
     description2Eng:
-      "I work closely with clients or in collaboration with agencies and studios worldwide to deliver impactful digital projects.",
+      "Je travaille en étroite collaboration avec les clients ou en partenariat avec des agences et des studios du monde entier pour livrer des projets numériques percutants.",
   },
   {
     description:
-      "With a strong background in programming, I enjoy solving complex problems and building efficient, scalable digital solutions.",
+      "Avec une solide expérience en programmation, j'aime résoudre des problèmes complexes et créer des solutions numériques efficaces et évolutives.",
     descriptionEng:
-      "With a strong background in programming, I enjoy solving complex problems and building efficient, scalable digital solutions.",
+      "Avec une solide expérience en programmation, j'aime résoudre des problèmes complexes et créer des solutions numériques efficaces et évolutives.",
     description2:
-      "I partner directly with clients or support agencies and studios worldwide, focusing on building meaningful digital experiences.",
+      "Je m'efforce de comprendre les besoins uniques de chaque client pour offrir des solutions numériques personnalisées et efficaces.",
     description2Eng:
-      "I partner directly with clients or support agencies and studios worldwide, focusing on building meaningful digital experiences.",
+      "Je travaille directement avec les clients ou je soutiens les agences et les studios du monde entier, en me concentrant sur la création d'expériences numériques significatives.",
   },
 ];
 
@@ -123,6 +123,6 @@ export const ExempleListJobs: ObjList[] = [
       "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ],
     date: new Date(2022, 3, 24),
-    path: "",
+    path: "https://www.enedis.fr",
   },
 ];
