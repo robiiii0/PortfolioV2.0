@@ -8,6 +8,7 @@ import Link from "next/link";
 import Footer from "./components/Footer";
 import NavLink from "./NavLink/NavLink";
 
+
 function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -64,13 +65,14 @@ export default function Home() {
 
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
-
+  
   useEffect(() => {
     if (inView) {
       controls.start('visible');
     }
   }, [controls, inView]);
-
+  
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -93,32 +95,19 @@ export default function Home() {
     },
   };
   const email = "robindevpro1@gmail.com";
-
-    
+  
   const [loadingAnimation, setLoadingAnimation] = useState<boolean>(false);
-
-
-  const screenAnimation = useAnimation();
-  const textAnimation = useAnimation();
+  const screenAnimation = useAnimation(); // Animation principale pour l'écran
+  const textAnimation = useAnimation(); // Animation des lettres et du texte
+  const bgExitAnimation = useAnimation(); // Animation pour la fermeture du rideau
 
   useEffect(() => {
-    const hasSeenAnimation = sessionStorage.getItem('hasSeenAnimation');
+    const hasSeenAnimation = sessionStorage.getItem("hasSeenAnimation");
 
     if (!hasSeenAnimation) {
       const startAnimation = async () => {
-        await new Promise((resolve) => setTimeout(resolve, 4000));
-
-        screenAnimation.start({
-          width: "100vw",
-          height: 0,
-          opacity: 0,
-          transition: {
-            duration: 1,
-            ease: "easeInOut",
-          },
-        });
-
-        textAnimation.start({
+        // Animation des lettres
+        await textAnimation.start({
           y: -100,
           opacity: 0,
           transition: {
@@ -126,16 +115,28 @@ export default function Home() {
             ease: "easeInOut",
           },
         });
+
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+
+        await bgExitAnimation.start({
+          height: "0%", 
+          transition: {
+            duration: 1.5,
+            ease: "easeInOut",
+          },
+        });
+
         setLoadingAnimation(true);
-        sessionStorage.setItem('hasSeenAnimation', 'true');
+        sessionStorage.setItem("hasSeenAnimation", "true");
       };
 
       startAnimation();
     } else {
       setLoadingAnimation(true);
     }
-  }, [screenAnimation, textAnimation]);
+  }, [textAnimation, bgExitAnimation]);
 
+  
   return (
     <>
       {!loadingAnimation && (
@@ -147,11 +148,11 @@ export default function Home() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            opacity: 1,
             flexDirection: "column",
+            overflow: "hidden", 
           }}
-          initial={{ opacity: 1 }}
-          animate={screenAnimation}
+          initial={{ height: "100vh" }}
+          animate={bgExitAnimation} 
         >
           <motion.h1
             style={{ color: "white", fontSize: "4rem" }}
@@ -174,87 +175,28 @@ export default function Home() {
               },
             }}
           >
-            <motion.span
-              style={{ display: "inline-block" }}
-              initial={{ opacity: 0, y: 50 }}
-              className={"font-rubik"}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  delay: 0.2,
-                  duration: 0.5,
-                },
-              }}
-            >
-              H
-            </motion.span>
-            <motion.span
-              style={{ display: "inline-block" }}
-              initial={{ opacity: 0, y: 50 }}
-              className={"font-rubik"}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  delay: 0.4,
-                  duration: 0.5,
-                },
-              }}
-            >
-              e
-            </motion.span>
-            <motion.span
-              style={{ display: "inline-block" }}
-              initial={{ opacity: 0, y: 50 }}
-              className={"font-rubik"}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  delay: 0.6,
-                  duration: 0.5,
-                },
-              }}
-            >
-              l
-            </motion.span>
-            <motion.span
-              style={{ display: "inline-block" }}
-              initial={{ opacity: 0, y: 50 }}
-              className={"font-rubik"}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  delay: 0.8,
-                  duration: 0.5,
-                },
-              }}
-            >
-              l
-            </motion.span>
-            <motion.span
-              style={{ display: "inline-block" }}
-              initial={{ opacity: 0, y: 50 }}
-              className={"font-rubik"}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  delay: 1,
-                  duration: 0.5,
-                },
-              }}
-            >
-              o
-            </motion.span>
+            {"Hello".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                style={{ display: "inline-block" }}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delay: 0.2 * index,
+                    duration: 0.5,
+                  },
+                }}
+              >
+                {char}
+              </motion.span>
+            ))}
           </motion.h1>
 
           <motion.h2
             style={{ color: "white", fontSize: "2rem", marginTop: "1rem" }}
             initial={{ y: 100, opacity: 0 }}
-            className={"font-rubik"}
             animate={{
               y: 0,
               opacity: 1,
@@ -339,7 +281,7 @@ export default function Home() {
                 </motion.button>
               </div>
             </motion.div>
-            <div className="w-11/12 mx-auto mt-48 md:mt-80">
+            <div className="w-11/12 mx-auto mt-48 ">
               {ExempleListJobs.map((job, index) => (
                 <Card key={index} data={job} dataHomePage={dataHomePage[index]} />
               ))}
