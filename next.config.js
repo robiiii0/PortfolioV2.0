@@ -10,6 +10,7 @@ module.exports = {
       "www.iroc.app",
       "eloken.com",
       "hiddenhillsclub.com",
+      "play-lh.googleusercontent.com",
     ],
   },
 };

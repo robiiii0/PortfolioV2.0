@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import NavLink from "@/app/NavLink/NavLink";
+import Footer from "@/app/components/Footer";
 
 const JobDetailPage = () => {
   const pathname = usePathname();
@@ -52,46 +53,97 @@ const JobDetailPage = () => {
               {job.jobName}
             </motion.h1>
 
-            <motion.p
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-lg md:text-xl pt-16 leading-relaxed"
-            >
-              {job.description}
-            </motion.p>
             <div className="pt-16 flex space-x-8">
-              {job.imgArray.slice(0, 2).map((image, index) => (
-                <div
-                  key={index}
-                  className="w-1/2 h-[500px] relative border rounded-xl shadow-lg p-6"
-                >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
+                <div className="w-full h-[500px] relative border rounded-xl shadow-lg p-6">
                   <Image
-                    src={image}
+                    src={job.imgArray[0]}
                     alt={job.alt}
                     layout="fill"
                     objectFit="cover"
                     className="rounded-lg"
                   />
                 </div>
-              ))}
+                <motion.div
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                  className="w-full h-[500px] flex items-center justify-center rounded-xl shadow-lg p-6"
+                >
+                  <p className="text-4xl md:text-5xl text-center leading-relaxed">
+                    {job.description}
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+
+
+            <div className="pt-16 flex space-x-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
+
+                <motion.div
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                  className="w-full h-[500px] flex items-center justify-center rounded-xl shadow-lg p-6"
+                >
+                  <p className="text-4xl md:text-5xl text-center leading-relaxed">
+                    {job.aboutThem}
+                  </p>
+                </motion.div>
+                <div className="w-full h-[500px] relative border rounded-xl shadow-lg p-6">
+                  <Image
+                    src={job.imgArray[1]}
+                    alt={job.alt}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
+                  />
+                </div>
+              </div>
             </div>
 
             {job.imgArray.length > 2 && (
-              <div className="mt-12">
+              <div className="">
                 <iframe
                   src={job.imgArray[job.imgArray.length - 1]}
                   width="100%"
                   height="600"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  className="rounded-lg shadow-xl"
+                  className="rounded-lg shadow-xl mt-28"
                 ></iframe>
               </div>
             )}
+
+            <div className="mt-28">
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="text-4xl md:text-5xl text-center leading-relaxed"
+              >
+            <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="w-full h-[500px] flex items-center justify-center rounded-xl shadow-lg p-6 "
+            >
+          <Image
+            width={250}
+            height={100}
+            alt="Logo"
+            src={job.imglogo}
+            
+            className="object-contain bg-white p-4 rounded-xl"
+          />
+        </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
+      <Footer color="black"/>
     </div>
   );
 };

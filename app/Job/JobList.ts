@@ -13,6 +13,7 @@ export interface ObjList {
   date: Date;
   path: string;
   aboutThem: string;
+  imglogo: string;
 }
 
 import { StaticImageData } from "next/image";
@@ -41,12 +42,12 @@ export const ListJobs: ObjList[] = [
     imgArray: [
       "/Eloken/devbeta.png",
       "/Eloken/devalpha.png",
-      "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://eloken.com/portfolio",
     ],
     date: new Date(2022, 3, 24),
     path: "https://eloken.com",
-    aboutThem:""
-
+    aboutThem: "Eloken is a company that specializes in creating high-quality websites. They offer a range of web development services to help businesses establish a strong online presence.",
+    imglogo: "https://eloken.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLogo.9cbeff77.png&w=1200&q=75",
   },
   {
     index: 2,
@@ -68,7 +69,8 @@ export const ListJobs: ObjList[] = [
     ],
     date: new Date(2022, 3, 24),
     path: "https://www.iroc.app/",
-      aboutThem:""
+    aboutThem: "Iroc is a company that focuses on development around researchers. They provide tools and services to support and enhance the work of researchers.",
+    imglogo: "https://www.iroc.app/images/Logo_IROC.png",
   },
   {
     index: 3,
@@ -90,8 +92,9 @@ export const ListJobs: ObjList[] = [
     ],
     date: new Date(2022, 3, 24),
     path: "",
-      aboutThem:""
-  },
+          aboutThem: "Enedis is a major electricity distribution network operator in France. They manage the public electricity distribution network, ensuring the delivery of electricity to homes and businesses.",
+    imglogo: "https://upload.wikimedia.org/wikipedia/fr/thumb/7/77/Logo_enedis_header.png/1200px-Logo_enedis_header.png",
+    },
   {
     index: 4,
     company: "HiddensHills",
@@ -112,7 +115,8 @@ export const ListJobs: ObjList[] = [
     ],
     date: new Date(2022, 3, 24),
     path: "",
-    aboutThem:""
+    aboutThem: "Hidden Hills Club is a premium lifestyle brand that offers exclusive memberships and experiences. They focus on providing high-quality services and products to their members.",
+  imglogo:"https://hiddenhillsclub.com/cdn/shop/files/MAIN_HIDDEN_HILLS_GRN_1d93f736-b25e-42f9-a074-8bba4446ba73.png?v=1667236646&width=3533"
   },
   {
     index: 5,
@@ -134,6 +138,7 @@ export const ListJobs: ObjList[] = [
     ],
     date: new Date(2022, 3, 24),
     path: "",
-    aboutThem:""
+    aboutThem: "GK is an application that allows you to meet people who play video games to find new teammates.",
+  imglogo:"https://play-lh.googleusercontent.com/UTuSbIOiVLxl0kknNi23fVDC_AaUKewkeJw_jTfPz-aNsmoHKRGGPz-vlNpBvHN7YFs"
   },
 ];
