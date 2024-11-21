@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import NavLink from "../NavLink/NavLink";
+import { motion, useAnimation } from "framer-motion";
 
 export default function Page() {
   const [formData, setFormData] = useState({
@@ -53,9 +54,14 @@ export default function Page() {
       <div className="min-h-screen bg-gradient-to-b from-white to-black">
         <div className="relative h-[50vh] bg-cover bg-top" style={{ backgroundImage: 'url("/bgcontact.jpg")' }}>
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <h1 className="text-white text-4xl lg:text-6xl font-bold">
+          <motion.h1
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="text-white text-4xl lg:text-6xl font-bold"
+                >
               Contactez-moi &#58;&#41;
-            </h1>
+            </motion.h1>
           </div>
         </div>
         <div className="w-10/12 mx-auto">
@@ -63,14 +69,27 @@ export default function Page() {
         </div>
 
         <div className="w-10/12 lg:w-8/12 mx-auto py-12">
-          <h2 className="text-3xl font-semibold mb-6 text-gray-100 text-center">
+        <motion.h2
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="text-3xl font-semibold mb-6 text-gray-100 text-center"
+                >
+
             Entrer en contact
-          </h2>
-          <form
+          </motion.h2>
+          <motion.form
             onSubmit={handleSubmit}
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="bg-gradient-to-b from-gray-200 to-gray-500 shadow-xl rounded-lg px-8 py-6 space-y-4 "
           >
-            <div>
+            <motion.div
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
               <label
                 className="block text-gray-900 text-xl font-bold mb-2"
                 htmlFor="name"
@@ -86,8 +105,12 @@ export default function Page() {
                 placeholder="Votre nom"
                 required
               />
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
               <label
                 className="block text-gray-900 text-xl font-bold mb-2"
                 htmlFor="email"
@@ -103,8 +126,12 @@ export default function Page() {
                 placeholder="Votre email"
                 required
               />
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
               <label
                 className="block text-gray-900 text-xl font-bold mb-2"
                 htmlFor="message"
@@ -120,7 +147,7 @@ export default function Page() {
                 placeholder="Votre message"
                 required
               ></textarea>
-            </div>
+            </motion.div>
             <div className="flex justify-center">
               <button
                 type="submit"
@@ -134,7 +161,7 @@ export default function Page() {
                 {isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
               </button>
             </div>
-          </form>
+          </motion.form>
           {message && (
             <p
               className={`text-center mt-4 text-lg ${
