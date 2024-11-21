@@ -2,12 +2,11 @@
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { useInView } from 'react-intersection-observer';
+import { useInView } from "react-intersection-observer";
 import { dataHomePage, DataHomePage, ObjList, ExempleListJobs } from "./data";
 import Link from "next/link";
 import Footer from "./components/Footer";
 import NavLink from "./NavLink/NavLink";
-
 
 function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -62,17 +61,15 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
 }
 
 export default function Home() {
-
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
-  
+
   useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start("visible");
     }
   }, [controls, inView]);
-  
-  
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -83,7 +80,7 @@ export default function Home() {
       },
     },
   };
-  
+
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -95,7 +92,7 @@ export default function Home() {
     },
   };
   const email = "robindevpro1@gmail.com";
-  
+
   const [loadingAnimation, setLoadingAnimation] = useState<boolean>(false);
   const screenAnimation = useAnimation(); // Animation principale pour l'écran
   const textAnimation = useAnimation(); // Animation des lettres et du texte
@@ -119,7 +116,7 @@ export default function Home() {
         await new Promise((resolve) => setTimeout(resolve, 3000));
 
         await bgExitAnimation.start({
-          height: "0%", 
+          height: "0%",
           transition: {
             duration: 1.5,
             ease: "easeInOut",
@@ -136,7 +133,6 @@ export default function Home() {
     }
   }, [textAnimation, bgExitAnimation]);
 
-  
   return (
     <>
       {!loadingAnimation && (
@@ -149,10 +145,10 @@ export default function Home() {
             alignItems: "center",
             justifyContent: "center",
             flexDirection: "column",
-            overflow: "hidden", 
+            overflow: "hidden",
           }}
           initial={{ height: "100vh" }}
-          animate={bgExitAnimation} 
+          animate={bgExitAnimation}
         >
           <motion.h1
             style={{ color: "white", fontSize: "4rem" }}
@@ -231,7 +227,7 @@ export default function Home() {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-11/12 mx-auto mt-12 md:mt-[5%] font-montserrat"
+              className="w-11/12 mx-auto mt-12 md:mt-[8%] font-montserrat"
             >
               <div className="space-y-2">
                 <motion.h1
@@ -258,7 +254,10 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: 1 }}
                   className="text-md md:text-xl md:w-5/12"
                 >
-                  Bienvenue dans mon portfolio ! Ici, vous pouvez explorer les sites web que j&apos;ai développés, les entreprises avec lesquelles j&apos;ai collaboré, et en apprendre davantage sur moi et mon parcours professionnel.
+                  Bienvenue dans mon portfolio ! Ici, vous pouvez explorer les
+                  sites web que j&apos;ai développés, les entreprises avec
+                  lesquelles j&apos;ai collaboré, et en apprendre davantage sur
+                  moi et mon parcours professionnel.
                 </motion.p>
               </div>
               <div className="mt-12">
@@ -283,7 +282,11 @@ export default function Home() {
             </motion.div>
             <div className="w-11/12 mx-auto mt-48 ">
               {ExempleListJobs.map((job, index) => (
-                <Card key={index} data={job} dataHomePage={dataHomePage[index]} />
+                <Card
+                  key={index}
+                  data={job}
+                  dataHomePage={dataHomePage[index]}
+                />
               ))}
             </div>
           </div>

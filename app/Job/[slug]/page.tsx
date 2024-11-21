@@ -104,22 +104,60 @@ const JobDetailPage = () => {
             </div>
 
             {job.imgArray.length > 2 && (
-              <div className="mt-28">
+              <div className="">
                 {!iframeError ? (
-                  <iframe
-                    src={job.imgArray[job.imgArray.length - 1]}
-                    width="100%"
-                    height="600"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="rounded-lg shadow-xl"
-                    onError={handleIframeError}
-                  ></iframe>
+                  <>
+                    <div className="flex justify-center items-center justify-items-center space-x-4 mt-36">
+                      <svg
+                        className="w-20 h-20 text-white animate-bounce"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                      <p className="text-center text-4xl font-bold">
+                        Plongez dans leur univers
+                      </p>
+                      <svg
+                        className="w-20 h-20 text-white animate-bounce"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
+                    <iframe
+                      src={job.imgArray[job.imgArray.length - 1]}
+                      width="100%"
+                      height="800"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="rounded-lg shadow-xl mt-12"
+                      onError={handleIframeError}
+                    ></iframe>
+                  </>
                 ) : (
                   <div
                     className="cursor-pointer"
                     onClick={() =>
-                      window.open(job.imgArray[job.imgArray.length - 1], "_blank")
+                      window.open(
+                        job.imgArray[job.imgArray.length - 1],
+                        "_blank"
+                      )
                     }
                   >
                     <Image

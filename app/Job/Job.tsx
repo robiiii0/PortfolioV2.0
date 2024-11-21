@@ -79,7 +79,9 @@ export default function Job() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-lg sm:text-xl md:text-2xl mt-24 w-full sm:w-10/12 md:w-5/12 text-center md:text-left md:ml-24"
           >
-            Plongez dans certains des projets sur lesquels j&apos;ai travaillé. Les clients varient des entreprises de style de vie aux entreprises technologiques et de design.
+            Plongez dans certains des projets sur lesquels j&apos;ai travaillé.
+            Les clients varient des entreprises de style de vie aux entreprises
+            technologiques et de design.
           </motion.h1>
         </div>
         <motion.div

@@ -11,6 +11,8 @@ module.exports = {
       "eloken.com",
       "hiddenhillsclub.com",
       "play-lh.googleusercontent.com",
+      "www.cfnewsimmo.net",
+      "www.monconseillerenergie.fr",
     ],
   },
 };
