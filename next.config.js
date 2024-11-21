@@ -13,6 +13,7 @@ module.exports = {
       "play-lh.googleusercontent.com",
       "www.cfnewsimmo.net",
       "www.monconseillerenergie.fr",
+      "static.wikia.nocookie.net",
     ],
   },
 };
