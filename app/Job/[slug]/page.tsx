@@ -51,14 +51,14 @@ const JobDetailPage = () => {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-5xl md:text-9xl font-bold text-center leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-center leading-tight"
             >
               {job.jobName}
             </motion.h1>
 
-            <div className="pt-16 flex space-x-8">
+            <div className="pt-16 flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
-                <div className="w-full h-[500px] relative border rounded-xl shadow-lg p-6">
+                <div className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] relative border rounded-xl shadow-lg p-6">
                   <Image
                     src={job.imgArray[0]}
                     alt={job.alt}
@@ -71,28 +71,28 @@ const JobDetailPage = () => {
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="w-full h-[500px] flex items-center justify-center rounded-xl shadow-lg p-6"
+                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] flex items-center justify-center rounded-xl shadow-lg p-6"
                 >
-                  <p className="text-4xl md:text-5xl text-center leading-relaxed">
+                  <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center leading-relaxed">
                     {job.description}
                   </p>
                 </motion.div>
               </div>
             </div>
 
-            <div className="pt-16 flex space-x-8">
+            <div className="pt-16 flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
                 <motion.div
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="w-full h-[500px] flex items-center justify-center rounded-xl shadow-lg p-6"
+                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] flex items-center justify-center rounded-xl shadow-lg p-6"
                 >
-                  <p className="text-4xl md:text-5xl text-center leading-relaxed">
+                  <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center leading-relaxed">
                     {job.aboutThem}
                   </p>
                 </motion.div>
-                <div className="w-full h-[500px] relative border rounded-xl shadow-lg p-6">
+                <div className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] relative border rounded-xl shadow-lg p-6">
                   <Image
                     src={job.imgArray[1]}
                     alt={job.alt}
@@ -110,7 +110,7 @@ const JobDetailPage = () => {
                   <>
                     <div className="flex justify-center items-center justify-items-center space-x-4 mt-36">
                       <svg
-                        className="w-20 h-20 text-white animate-bounce"
+                        className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 text-white animate-bounce"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -123,11 +123,11 @@ const JobDetailPage = () => {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                      <p className="text-center text-4xl font-bold">
+                      <p className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                         Plongez dans leur univers
                       </p>
                       <svg
-                        className="w-20 h-20 text-white animate-bounce"
+                        className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 text-white animate-bounce"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -155,7 +155,7 @@ const JobDetailPage = () => {
                             color: "#FFFF",
                           }}
                           whileTap={{ scale: 0.9 }}
-                          className=" rounded-2xl  bg-transparent text-gray-700 font-semibold py-2 px-4 text-2xl border border-white w-3/12 mx-auto transition-all duration-300"
+                          className="rounded-2xl bg-transparent text-gray-700 font-semibold py-2 px-4 text-xl sm:text-2xl md:text-3xl border border-white w-full sm:w-3/4 md:w-1/2 lg:w-1/3 mx-auto transition-all duration-300"
                         >
                           Partir à la découverte de {job.company}
                         </motion.button>
@@ -207,7 +207,7 @@ const JobDetailPage = () => {
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="w-full h-[500px] flex items-center justify-center rounded-xl shadow-lg p-6"
+                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] flex items-center justify-center rounded-xl shadow-lg p-6"
                 >
                   <Image
                     width={250}

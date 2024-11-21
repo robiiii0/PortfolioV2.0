@@ -26,9 +26,8 @@ function Card(props: { data: ObjList }) {
           <div className="flex justify-center mt-4 relative overflow-hidden">
             {props.data.path !== "" ? (
               <iframe
-                className="rounded-2xl shadow-2xl transform-gpu hover:scale-105 transition-transform duration-300"
+                className="rounded-2xl shadow-2xl transform-gpu w-full h-[20rem] md:h-[50rem]  hover:scale-105 transition-transform duration-300"
                 src={props.data.path}
-                style={{ width: "100%", height: "40rem" }}
                 title={`${props.data.company} Preview`}
               />
             ) : (
@@ -37,7 +36,7 @@ function Card(props: { data: ObjList }) {
                 width={1920}
                 height={1080}
                 src={props.data.imgCover}
-                className="w-full h-[40rem] sm:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform-gpu hover:scale-105 transition-transform duration-300"
+                className="w-full h-[20rem] md:h-[50rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform-gpu hover:scale-105 transition-transform duration-300"
                 objectFit="cover"
               />
             )}
