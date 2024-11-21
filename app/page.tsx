@@ -121,7 +121,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="text-3xl md:text-8xl ml-6 md:ml-12"
             >
-              Web and software developer
+             Développeur web et logiciel
             </motion.h1>
           </div>
           <div className="mt-12 md:mt-24">
@@ -131,9 +131,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 1 }}
               className="text-md md:text-xl md:w-5/12"
             >
-              Welcome to my portfolio! Here, you can explore the websites
-              I&apos;ve developed, the companies I&apos;ve collaborated with,
-              and learn more about me and my professional journey.
+              Bienvenue dans mon portfolio ! Ici, vous pouvez explorer les sites web que j&apos;ai développés, les entreprises avec lesquelles j&apos;ai collaboré, et en apprendre davantage sur moi et mon parcours professionnel.
             </motion.p>
           </div>
           <div className="mt-12">

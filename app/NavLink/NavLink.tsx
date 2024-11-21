@@ -37,7 +37,7 @@ const NavLink = ({ colorScheme }: NavLinkProps) => {
             aria-controls="navbar-default"
             aria-expanded={isOpen}
           >
-            <span className="sr-only">Open main menu</span>
+            <span className="sr-only">Ouvrir le menu principal</span>
             <svg
               className="w-5 h-5"
               aria-hidden="true"
@@ -71,7 +71,7 @@ const NavLink = ({ colorScheme }: NavLinkProps) => {
                 href="/Aboutme"
                 className={`block py-2 px-6 ${textClass} hover:text-gray-500 rounded`}
               >
-                About Me
+                À propos de moi
               </Link>
             </li>
             <li
