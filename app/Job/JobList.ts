@@ -12,6 +12,7 @@ export interface ObjList {
   imgArray: string[];
   date: Date;
   path: string;
+  aboutThem: string;
 }
 
 import { StaticImageData } from "next/image";
@@ -44,6 +45,8 @@ export const ListJobs: ObjList[] = [
     ],
     date: new Date(2022, 3, 24),
     path: "https://eloken.com",
+    aboutThem:""
+
   },
   {
     index: 2,
@@ -65,6 +68,7 @@ export const ListJobs: ObjList[] = [
     ],
     date: new Date(2022, 3, 24),
     path: "https://www.iroc.app/",
+      aboutThem:""
   },
   {
     index: 3,
@@ -86,6 +90,7 @@ export const ListJobs: ObjList[] = [
     ],
     date: new Date(2022, 3, 24),
     path: "",
+      aboutThem:""
   },
   {
     index: 4,
@@ -107,6 +112,7 @@ export const ListJobs: ObjList[] = [
     ],
     date: new Date(2022, 3, 24),
     path: "",
+    aboutThem:""
   },
   {
     index: 5,
@@ -128,5 +134,6 @@ export const ListJobs: ObjList[] = [
     ],
     date: new Date(2022, 3, 24),
     path: "",
+    aboutThem:""
   },
 ];

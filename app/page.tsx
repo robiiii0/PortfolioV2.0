@@ -170,7 +170,7 @@ export default function Home() {
       </div>
       <motion.div
         ref={ref}
-        className="flex justify-between mt-12 items-center space-x-4"
+        className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-20 justify-items-center items-center"
         initial="hidden"
         animate={controls}
         variants={containerVariants}
@@ -199,6 +199,15 @@ export default function Home() {
             height={100}
             alt="Logo Eloken"
             src="https://eloken.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLogo.9cbeff77.png&w=1200&q=75"
+            className="object-contain"
+          />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <Image
+            width={250}
+            height={100}
+            alt="Logo Eloken"
+            src="https://hiddenhillsclub.com/cdn/shop/files/MAIN_HIDDEN_HILLS_GRN_1d93f736-b25e-42f9-a074-8bba4446ba73.png?v=1667236646&width=3533"
             className="object-contain"
           />
         </motion.div>

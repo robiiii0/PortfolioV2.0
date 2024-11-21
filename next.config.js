@@ -9,6 +9,7 @@ module.exports = {
       "upload.wikimedia.org",
       "www.iroc.app",
       "eloken.com",
+      "hiddenhillsclub.com",
     ],
   },
 };
