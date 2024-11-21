@@ -11,6 +11,7 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
+    <>
     <Link href={`/Job/${props.data.company}`}>
       <div
         className="p-4 mt-12 md:mt-48 relative rounded-2xl overflow-hidden"
@@ -44,6 +45,7 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
           )}
         </div>
       </div>
+      </Link>
       <div className="mt-12 md:mt-80 text-center w-5/12 mx-auto">
         <p className="text-lg md:text-2xl">(00{props.data.index})</p>
         <p className="text-3xl md:text-5xl w-full mt-12 md:w-10/12 mx-auto">
@@ -53,7 +55,8 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
           {props.dataHomePage.description2}
         </p>
       </div>
-    </Link>
+      </>
+
   );
 }
 
