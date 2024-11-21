@@ -171,7 +171,7 @@ export default function Home() {
               },
             }}
           >
-            {"Hello".split("").map((char, index) => (
+            {"Robin©".split("").map((char, index) => (
               <motion.span
                 key={index}
                 style={{ display: "inline-block" }}
