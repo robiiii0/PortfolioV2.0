@@ -1,7 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useInView } from 'react-intersection-observer';
 import { dataHomePage, DataHomePage, ObjList, ExempleListJobs } from "./data";
 import Link from "next/link";
 import Footer from "./components/Footer";
@@ -12,39 +13,39 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
 
   return (
     <>
-    <Link href={`/Job/${props.data.company}`}>
-      <div
-        className="p-4 mt-12 md:mt-48 relative rounded-2xl overflow-hidden"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div className="w-full font-thin flex justify-between">
-          <p className="text-lg md:text-2xl">
-            (00{props.data.index} at {props.data.company})
-          </p>
-          <p className="text-lg md:text-2xl">
-            {props.data.date.getDate()}/{props.data.date.getMonth() + 1}/
-            {props.data.date.getFullYear()}
-          </p>
+      <Link href={`/Job/${props.data.company}`}>
+        <div
+          className="p-4 mt-12 md:mt-48 relative rounded-2xl overflow-hidden"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div className="w-full font-thin flex justify-between">
+            <p className="text-lg md:text-2xl">
+              (00{props.data.index} at {props.data.company})
+            </p>
+            <p className="text-lg md:text-2xl">
+              {props.data.date.getDate()}/{props.data.date.getMonth() + 1}/
+              {props.data.date.getFullYear()}
+            </p>
+          </div>
+          <div className="flex justify-center mt-4">
+            {props.data.path !== "" ? (
+              <iframe
+                className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
+                src={props.data.path}
+                title={`${props.data.company} Preview`}
+              />
+            ) : (
+              <Image
+                alt={props.data.alt || "Descriptive text about the image"}
+                width={1920}
+                height={1080}
+                src={props.data.imgCover}
+                className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300 object-cover"
+              />
+            )}
+          </div>
         </div>
-        <div className="flex justify-center mt-4">
-          {props.data.path !== "" ? (
-            <iframe
-              className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
-              src={props.data.path}
-              title={`${props.data.company} Preview`}
-            />
-          ) : (
-            <Image
-              alt={props.data.alt || "Descriptive text about the image"}
-              width={1920}
-              height={1080}
-              src={props.data.imgCover}
-              className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300 object-cover"
-            />
-          )}
-        </div>
-      </div>
       </Link>
       <div className="mt-12 md:mt-80 text-center w-5/12 mx-auto">
         <p className="text-lg md:text-2xl">(00{props.data.index})</p>
@@ -55,12 +56,42 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
           {props.dataHomePage.description2}
         </p>
       </div>
-      </>
-
+    </>
   );
 }
 
 export default function Home() {
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.8,
+      },
+    },
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.5,
+      },
+    },
+  };
   const email = "robindevpro1@gmail.com";
 
   return (
@@ -132,6 +163,47 @@ export default function Home() {
         </div>
       </div>
 
+      
+      <div className="w-6/12 mx-auto mt-20 md:mt-48 mb-48">
+      <div className="text-center text-6xl font-montserrat font-semibold">
+        Ils ont su me faire confiance
+      </div>
+      <motion.div
+        ref={ref}
+        className="flex justify-between mt-12 items-center space-x-4"
+        initial="hidden"
+        animate={controls}
+        variants={containerVariants}
+      >
+        <motion.div variants={itemVariants}>
+          <Image
+            width={250}
+            height={100}
+            alt="Logo Enedis"
+            src="https://upload.wikimedia.org/wikipedia/fr/thumb/7/77/Logo_enedis_header.png/1200px-Logo_enedis_header.png"
+            className="object-contain"
+          />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <Image
+            width={250}
+            height={100}
+            alt="Logo Iroc"
+            src="https://www.iroc.app/images/Logo_IROC.png"
+            className="object-contain"
+          />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <Image
+            width={250}
+            height={100}
+            alt="Logo Eloken"
+            src="https://eloken.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLogo.9cbeff77.png&w=1200&q=75"
+            className="object-contain"
+          />
+        </motion.div>
+      </motion.div>
+    </div>
       <Footer color="white" />
     </>
   );
