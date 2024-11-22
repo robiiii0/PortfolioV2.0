@@ -47,18 +47,69 @@ const JobDetailPage = () => {
       <div className="pt-28 md:pt-40 px-4">
         <div className="w-full">
           <div className="space-y-6">
-            <motion.h1
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-center leading-tight"
-            >
-              {job.jobName}
-            </motion.h1>
+            <div className="w-11/12 mx-auto">
+              <div className="flex flex-col md:flex-row justify-between">
+                <motion.h1
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.4 }}
+                  className="text-8xl sm:text-8xl md:text-6xl lg:text-7xl xl:text-9xl font-bold leading-tight"
+                >
+                  {job.company}
+                </motion.h1>
+                <motion.h1
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.4 }}
+                  className="text-6xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-bold leading-tight"
+                >
+                  &#40;{job.date.getFullYear()}&#41;
+                </motion.h1>
+              </div>
+            </div>
+            <div className="w-11/12 mx-auto">
+              <div className="flex flex-col md:flex-row justify-between justify-items-center items-center pt-16 md:pt-48">
+                <motion.h2
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="mt-8 text-2xl sm:text-lg md:text-xl lg:text-2xl xl:text-4xl font-bold text-left md:w-4/12 leading-tight"
+                >
+                  {job.jobName}
+                </motion.h2>
+                <motion.h2
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="md:mt-8 mt-12 text-xl flex sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-center leading-tight"
+                >
+                  discover
+                  <motion.svg
+                    className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 text-white animate-bounce"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </motion.svg>
+                </motion.h2>
+              </div>
+            </div>
 
-            <div className="pt-16 flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
+            <div className="pt-16 md:pt-48 flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
-                <div className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] relative border rounded-xl shadow-lg p-6">
+                <motion.div
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] relative border rounded-xl shadow-lg p-6"
+                >
                   <Image
                     src={job.imgArray[0]}
                     alt={job.alt}
@@ -66,12 +117,12 @@ const JobDetailPage = () => {
                     objectFit="cover"
                     className="rounded-lg"
                   />
-                </div>
+                </motion.div>
                 <motion.div
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] flex items-center justify-center rounded-xl shadow-lg p-6"
+                  className="w-full h-[20rem] md:h-[30rem]  pt-16 lg:h-[40rem] flex items-center justify-center rounded-xl shadow-lg p-6"
                 >
                   <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center leading-relaxed">
                     {job.description}
@@ -147,7 +198,7 @@ const JobDetailPage = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <div className="flex justify-center items-center">
+                      <div className="flex justify-center items-center mt-4">
                         <motion.button
                           whileHover={{
                             background:
@@ -164,10 +215,9 @@ const JobDetailPage = () => {
                     <iframe
                       src={job.imgArray[job.imgArray.length - 1]}
                       width="100%"
-                      height="800"
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
-                      className="rounded-lg shadow-xl mt-12"
+                      className="rounded-lg shadow-xl mt-12 h-[400px] md:h-[800px]"
                       onError={handleIframeError}
                     ></iframe>
                   </>

@@ -8,18 +8,27 @@ import Link from "next/link";
 import Footer from "./components/Footer";
 import NavLink from "./NavLink/NavLink";
 
-function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
+export function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
   const [isHovered, setIsHovered] = useState(false);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   return (
     <>
       <Link href={`/Job/${props.data.company}`}>
         <div
-          className="p-4 mt-12 md:mt-48 relative rounded-2xl overflow-hidden"
+          className="p-4 mt-12 md:mt-24 relative rounded-2xl overflow-hidden"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <div className="w-full font-thin flex justify-between">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="w-full font-thin flex justify-between"
+          >
             <p className="text-lg md:text-2xl">
               (00{props.data.index} at {props.data.company})
             </p>
@@ -27,8 +36,13 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
               {props.data.date.getDate()}/{props.data.date.getMonth() + 1}/
               {props.data.date.getFullYear()}
             </p>
-          </div>
-          <div className="flex justify-center mt-4">
+          </motion.div>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex justify-center mt-4"
+          >
             {props.data.path !== "" ? (
               <iframe
                 className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
@@ -44,17 +58,43 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
                 className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300 object-cover"
               />
             )}
-          </div>
+          </motion.div>
         </div>
       </Link>
-      <div className="mt-12 md:mt-80 text-center w-full md:w-5/12 mx-auto">
-        <p className="text-lg md:text-2xl">(00{props.data.index})</p>
-        <p className="text-3xl md:text-5xl w-full mt-12 md:w-10/12 mx-auto">
+      <div
+        ref={ref}
+        className="mt-12 md:mt-24 text-center w-full md:w-8/12 mx-auto"
+      >
+        <motion.p
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-lg md:text-2xl"
+        >
+          (00{props.data.index})
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-xl md:text-5xl w-full mt-12 md:w-10/12 mx-auto"
+        >
           {props.dataHomePage.description}
-        </p>
-        <p className="mt-12 md:mt-24 text-3xl md:text-5xl w-full md:w-10/12 mx-auto">
+        </motion.p>
+        <motion.hr
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="border-black md:mt-24 w-10/12 mx-auto mt-12"
+        />
+        <motion.p
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="mt-12 md:mt-24 text-xl md:text-5xl w-full md:w-10/12 mx-auto"
+        >
           {props.dataHomePage.description2}
-        </p>
+        </motion.p>
       </div>
     </>
   );
@@ -233,7 +273,7 @@ export default function Home() {
                 <motion.h1
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
+                  transition={{ duration: 1, delay: 0.8 }}
                   className="text-4xl md:text-8xl font-bold"
                 >
                   Robin Chabert

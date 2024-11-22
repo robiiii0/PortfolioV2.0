@@ -132,30 +132,4 @@ export const ListJobs: ObjList[] = [
       "https://hiddenhillsclub.com/cdn/shop/files/MAIN_HIDDEN_HILLS_GRN_1d93f736-b25e-42f9-a074-8bba4446ba73.png?v=1667236646&width=3533",
     link: "https://hiddenhillsclub.com/",
   },
-  {
-    index: 5,
-    company: "GK",
-    companyEn: "GK",
-    jobName: "Développement d'une application mobile chez GK",
-    jobNameEn: "Development of a Mobile Application at GK",
-    title3: "title3",
-    description:
-      "Pendant une période de 4 mois, j'ai effectué un stage chez GK, où j'étais chargé de développer une application mobile. Malheureusement, en raison de son stade de développement actuel, je ne peux pas montrer d'images de l'application.",
-    descriptionEng:
-      "During a 4-month period, I completed an internship at GK, where I was tasked with developing a mobile application. Unfortunately, due to its current development stage, I am unable to showcase any images of the application.",
-    alt: "alt",
-    imgCover: img2,
-    imgArray: [
-      "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    ],
-    date: new Date(2022, 3, 24),
-    path: "",
-    aboutThem:
-      "GK est une application qui vous permet de rencontrer des personnes qui jouent aux jeux vidéo pour trouver de nouveaux coéquipiers.",
-    imglogo:
-      "https://play-lh.googleusercontent.com/UTuSbIOiVLxl0kknNi23fVDC_AaUKewkeJw_jTfPz-aNsmoHKRGGPz-vlNpBvHN7YFs",
-    link: "",
-  },
 ];
