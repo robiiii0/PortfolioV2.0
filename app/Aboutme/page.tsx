@@ -148,9 +148,7 @@ export default function page() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
               className="w-10/12 mx-auto mt-8 border-2 border-gray-900"
-            >
-
-            </motion.hr>
+            ></motion.hr>
             <div className="w-10/12 sm:w-6/12 mx-auto sm:text-lg md:text-xl mt-12">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -191,85 +189,87 @@ export default function page() {
           </motion.div>
         </div>
 
-  <div className="w-11/12 mx-auto h-auto p-12 rounded-2xl mt-24 bg-gray-900 text-white">
-  <div className="w-11/12 mx-auto">
-    <div className="grid grid-cols-1 sm:grid-cols-2 ">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="flex justify-center"
-      >
-        <Link
-          href="https://www.dcu.ie/"
-          className="w-full h-full rounded-xl shadow-2xl cursor-pointer"
-        >
-          <Image
-            src={imgDCU}
-            alt="DCU"
-            width={1920}
-            height={1080}
-            className="rounded-xl"
-            objectFit="cover"
-          />
-        </Link>
-      </motion.div>
-
-      <div className="text-center flex flex-col items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-        >
-          <h1 className="font-bold text-4xl">
-            {Translate ? "Projet actuel: DCU Irlande" : "Current Project: DCU Ireland"}
-          </h1>
-        </motion.div>
-        <div className="w-full sm:w-8/12 lg:w-6/12 mx-auto mt-8">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            {Translate ? (
-              <p className="text-base sm:text-lg md:text-xl">
-                En tant qu'étudiant en informatique, je suis
-                actuellement à Dublin, embarquant pour un voyage
-                académique passionnant pour l'année académique 2024/2025
-                afin de perfectionner davantage mes compétences en
-                informatique et ma maîtrise de la langue anglaise. Ma
-                destination ? Le campus dynamique de Dublin City
-                University (DCU) en Irlande.
-              </p>
-            ) : (
-              <p className="text-base sm:text-lg md:text-xl">
-                As an aspiring computer scientist, I am currently in
-                Dublin, embarking on an exciting academic journey for
-                the 2024/2025 academic year to further hone my skills in
-                both computer science and English language proficiency.
-                My destination? The vibrant campus of Dublin City
-                University (DCU) in Ireland.
-              </p>
-            )}
-            <div className="flex justify-center mt-4">
-              <button
-                onClick={() => setTranslate(!Translate)}
-                className="hover:bg-blue-500 hover:scale-105 transition-transform duration-300 bg-blue-400 text-white px-4 py-2 rounded-lg"
+        <div className="w-11/12 mx-auto h-auto p-12 rounded-2xl mt-24 bg-gray-900 text-white">
+          <div className="w-11/12 mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 ">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="flex justify-center"
               >
-                Traduction ?
-              </button>
+                <Link
+                  href="https://www.dcu.ie/"
+                  className="w-full h-full rounded-xl shadow-2xl cursor-pointer"
+                >
+                  <Image
+                    src={imgDCU}
+                    alt="DCU"
+                    width={1920}
+                    height={1080}
+                    className="rounded-xl"
+                    objectFit="cover"
+                  />
+                </Link>
+              </motion.div>
+
+              <div className="text-center flex flex-col items-center justify-center">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  <h1 className="font-bold text-4xl">
+                    {Translate
+                      ? "Projet actuel: DCU Irlande"
+                      : "Current Project: DCU Ireland"}
+                  </h1>
+                </motion.div>
+                <div className="w-full sm:w-8/12 lg:w-6/12 mx-auto mt-8">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                  >
+                    {Translate ? (
+                      <p className="text-base sm:text-lg md:text-xl">
+                        En tant qu'étudiant en informatique, je suis
+                        actuellement à Dublin, embarquant pour un voyage
+                        académique passionnant pour l'année académique 2024/2025
+                        afin de perfectionner davantage mes compétences en
+                        informatique et ma maîtrise de la langue anglaise. Ma
+                        destination ? Le campus dynamique de Dublin City
+                        University (DCU) en Irlande.
+                      </p>
+                    ) : (
+                      <p className="text-base sm:text-lg md:text-xl">
+                        As an aspiring computer scientist, I am currently in
+                        Dublin, embarking on an exciting academic journey for
+                        the 2024/2025 academic year to further hone my skills in
+                        both computer science and English language proficiency.
+                        My destination? The vibrant campus of Dublin City
+                        University (DCU) in Ireland.
+                      </p>
+                    )}
+                    <div className="flex justify-center mt-4">
+                      <button
+                        onClick={() => setTranslate(!Translate)}
+                        className="hover:bg-blue-500 hover:scale-105 transition-transform duration-300 bg-blue-400 text-white px-4 py-2 rounded-lg"
+                      >
+                        Traduction ?
+                      </button>
+                    </div>
+                    {Translate && (
+                      <p className="text-xs text-gray-400 ml-2 mt-4">
+                        Pas de soucis je comprends &#58;&#41;
+                      </p>
+                    )}
+                  </motion.div>
+                </div>
+              </div>
             </div>
-            {Translate && (
-              <p className="text-xs text-gray-400 ml-2 mt-4">
-                Pas de soucis je comprends &#58;&#41;
-              </p>
-            )}
-          </motion.div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
 
         <Footer color="white" />
       </div>
