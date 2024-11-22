@@ -256,81 +256,76 @@ export default function Home() {
           </motion.h2>
         </motion.div>
       )}
-
-      {loadingAnimation && (
-        <>
-          <div className="w-10/12 mx-auto mt-4">
-            <NavLink colorScheme="black" />
-          </div>
-          <div className="w-full">
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-11/12 mx-auto mt-[25%] md:mt-[8%] font-montserrat"
-            >
-              <div className="space-y-2">
-                <motion.h1
-                  initial={{ y: 50, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.8 }}
-                  className="text-4xl md:text-8xl font-bold"
-                >
-                  Robin Chabert
-                </motion.h1>
-                <motion.h1
-                  initial={{ y: 50, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                  className="text-3xl md:text-8xl ml-6 md:ml-12"
-                >
-                  Développeur web et logiciel
-                </motion.h1>
-              </div>
-              <div className="mt-12 md:mt-24">
-                <motion.p
-                  initial={{ y: 50, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 1 }}
-                  className="text-md md:text-xl md:w-5/12"
-                >
-                  Bienvenue dans mon portfolio ! Ici, vous pouvez explorer les
-                  sites web que j&apos;ai développés, les entreprises avec
-                  lesquelles j&apos;ai collaboré, et en apprendre davantage sur
-                  moi et mon parcours professionnel.
-                </motion.p>
-              </div>
-              <div className="mt-12">
-                <motion.button
-                  whileHover={{
-                    background:
-                      "linear-gradient(to top, #020617 100%, transparent 100%)",
-                    color: "#FFFF",
-                  }}
-                  whileTap={{ scale: 0.9 }}
-                  className="animate-bounce rounded-2xl bg-transparent text-gray-700 font-semibold py-2 px-4 border border-black  transition-all duration-300"
-                  onClick={() =>
-                    window.open(
-                      `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`,
-                      "_blank"
-                    )
-                  }
-                >
-                  {email}
-                </motion.button>
-              </div>
-            </motion.div>
-            <div className="w-11/12 mx-auto mt-24 md:mt-48 ">
-              {ExempleListJobs.map((job, index) => (
-                <Card
-                  key={index}
-                  data={job}
-                  dataHomePage={dataHomePage[index]}
-                />
-              ))}
+  <div className="min-h-screen bg-stone-100">
+    
+    {loadingAnimation && (
+      <>
+        <div className="w-10/12 mx-auto pt-4">
+          <NavLink colorScheme="black" />
+        </div>
+        <div className="w-full min-h-screen">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="w-11/12 mx-auto mt-[25%] md:mt-[8%] font-montserrat"
+          >
+            <div className="space-y-2">
+              <motion.h1
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.8 }}
+                className="text-4xl md:text-8xl font-bold"
+              >
+                Robin Chabert
+              </motion.h1>
+              <motion.h1
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="text-3xl md:text-8xl ml-6 md:ml-12"
+              >
+                Développeur web et logiciel
+              </motion.h1>
             </div>
+            <div className="mt-12 md:mt-24">
+              <motion.p
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 1 }}
+                className="text-md md:text-xl md:w-5/12"
+              >
+                Bienvenue dans mon portfolio ! Ici, vous pouvez explorer les
+                sites web que j&apos;ai développés, les entreprises avec
+                lesquelles j&apos;ai collaboré, et en apprendre davantage sur
+                moi et mon parcours professionnel.
+              </motion.p>
+            </div>
+            <div className="mt-12">
+              <motion.button
+                whileHover={{
+                  background:
+                    "linear-gradient(to top, #020617 100%, transparent 100%)",
+                  color: "#FFFF",
+                }}
+                whileTap={{ scale: 0.9 }}
+                className="animate-bounce rounded-2xl bg-transparent text-gray-700 font-semibold py-2 px-4 border border-black transition-all duration-300"
+                onClick={() =>
+                  window.open(
+                    `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`,
+                    "_blank"
+                  )
+                }
+              >
+                {email}
+              </motion.button>
+            </div>
+          </motion.div>
+          <div className="w-11/12 mx-auto mt-24 md:mt-48">
+            {ExempleListJobs.map((job, index) => (
+              <Card key={index} data={job} dataHomePage={dataHomePage[index]} />
+            ))}
           </div>
-
           <div className="md:w-6/12 w-full mx-auto mt-20 md:mt-48 mb-48">
             <div className="text-center text-4xl sm:text-5xl md:text-6xl font-montserrat font-semibold">
               Ils ont su me faire confiance
@@ -380,9 +375,11 @@ export default function Home() {
               </motion.div>
             </motion.div>
           </div>
-          <Footer color="white" />
-        </>
-      )}
+        </div>
+        <Footer color="white" />
+      </>
+    )}
+  </div>
     </>
   );
 }
