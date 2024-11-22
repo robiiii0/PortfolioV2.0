@@ -8,7 +8,7 @@ import Link from "next/link";
 import Footer from "./components/Footer";
 import NavLink from "./NavLink/NavLink";
 
-export function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
+function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
   const [isHovered, setIsHovered] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true,
