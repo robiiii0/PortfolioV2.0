@@ -233,10 +233,10 @@ export default function page() {
 <div className="min-h-screen bg-stone-100">
   <div className="relative min-h-screen bg-stone-100">
     <div
-      className="relative h-[50vh] bg-cover bg-top rounded-b-3xl"
+      className="relative h-[50vh] bg-cover bg-top rounded-b-3xl overflow-hidden"
       style={{ backgroundImage: 'url("/bgcontact.jpg")' }}
     >
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <div className="absolute inset-0 bg-black  bg-opacity-50 flex items-center justify-center">
         <motion.h1
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
