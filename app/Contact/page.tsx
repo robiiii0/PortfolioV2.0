@@ -73,7 +73,7 @@ const ContactForm = () => {
   return (
     <div className="flex flex-col md:flex-row w-full md:w-9/12 mx-auto rounded-2xl shadow-lg">
     <div className="w-full md:w-1/3">
-      <div className="bg-[#011c2b] w-full rounded-lg p-10 h-full flex flex-col">
+      <div className="bg-[#1f2020] w-full rounded-lg p-10 h-full flex flex-col">
         <h2 className="text-2xl text-white">Contact Information</h2>
         <p className="text-lg text-gray-300 mt-6">
           Have some big idea or brand to develop and need help?

@@ -16,14 +16,14 @@ function Card(props: { data: ObjList }) {
   return (
     <>
       <Link href={`/Job/${props.data.company}`}>
-        <div className="p-4 rounded-xl shadow-md mt-20 md:mt-36 bg-black">
+        <div className="p-4 rounded-xl shadow-md mt-20 md:mt-36 bg-[#1f2020]">
           <div className="w-full font-bold flex flex-col sm:flex-row items-center justify-items-center justify-between sm:space-x-4">
             <p className="text-4xl text-center sm:text-left">
               {props.data.company}
             </p>
-            <p className="text-xl md:text-4xl text-center sm:text-left">
+            {/* <p className="text-xl md:text-4xl text-center sm:text-left">
               {props.data.jobName}
-            </p>
+            </p> */}
             <p className="text-md md:text-4xl text-center sm:text-left">
               {props.data.date.getDate()}/{props.data.date.getMonth() + 1}/
               {props.data.date.getFullYear()}
@@ -88,7 +88,7 @@ function Card(props: { data: ObjList }) {
 
 export default function Job() {
   return (
-    <div className="w-full font-montserrat text-white bg-black m-0 p-0">
+    <div className="w-full font-montserrat text-white bg-[#1f2020] m-0 p-0">
       <div className="w-11/12 mx-auto mt-24">
         <div className="space-y-2">
           <motion.h1

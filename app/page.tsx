@@ -329,18 +329,12 @@ export default function Home() {
                   />
                 ))}
               </div>
-              <div className="md:w-6/12 w-full mx-auto mt-20 md:mt-48 mb-48">
-                <div className="text-center text-4xl sm:text-5xl md:text-6xl font-montserrat font-semibold">
-                  Ils ont su me faire confiance
-                </div>
-                <motion.div
-                  ref={ref}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-20 justify-items-center items-center"
-                  initial="hidden"
-                  animate={controls}
-                  variants={containerVariants}
-                >
-                  <motion.div variants={itemVariants}>
+              <Link href={'/job'}>
+              <div className="md:w-9/12 w-11/12 mx-auto mt-20 md:mt-48 mb-48 overflow-hidden rounded-2xl shadow-2xl bg-stone-200/60 p-4">
+                  <motion.div
+                    className="flex flex-col md:flex-row justify-center items-center space-y-12 md:space-y-0 md:space-x-12 "
+                  >
+                    
                     <Image
                       width={250}
                       height={100}
@@ -348,8 +342,6 @@ export default function Home() {
                       src="https://upload.wikimedia.org/wikipedia/fr/thumb/7/77/Logo_enedis_header.png/1200px-Logo_enedis_header.png"
                       className="object-contain"
                     />
-                  </motion.div>
-                  <motion.div variants={itemVariants}>
                     <Image
                       width={250}
                       height={100}
@@ -357,17 +349,6 @@ export default function Home() {
                       src="https://www.iroc.app/images/Logo_IROC.png"
                       className="object-contain"
                     />
-                  </motion.div>
-                  <motion.div variants={itemVariants}>
-                    <Image
-                      width={250}
-                      height={100}
-                      alt="Logo Eloken"
-                      src="https://eloken.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLogo.9cbeff77.png&w=1200&q=75"
-                      className="object-contain"
-                    />
-                  </motion.div>
-                  <motion.div variants={itemVariants}>
                     <Image
                       width={250}
                       height={100}
@@ -375,9 +356,17 @@ export default function Home() {
                       src="https://hiddenhillsclub.com/cdn/shop/files/MAIN_HIDDEN_HILLS_GRN_1d93f736-b25e-42f9-a074-8bba4446ba73.png?v=1667236646&width=3533"
                       className="object-contain"
                     />
+                    <Image
+                      width={250}
+                      height={100}
+                      alt="Logo Eloken"
+                      src="https://eloken.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLogo.9cbeff77.png&w=1200&q=75"
+                      className="object-contain"
+                    />
+
                   </motion.div>
-                </motion.div>
-              </div>
+                </div>
+                    </Link>
             </div>
             <Footer color="white" />
           </>

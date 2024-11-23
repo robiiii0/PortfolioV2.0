@@ -14,7 +14,7 @@ const NavLink = ({ colorScheme }: NavLinkProps) => {
     setIsOpen(!isOpen);
   };
 
-  const bgClass = colorScheme === "black" ? "bg-black" : "bg-stone-100";
+  const bgClass = colorScheme === "black" ? "bg-[#1f2020]" : "bg-stone-100";
   const textClass = colorScheme === "black" ? "text-white" : "text-black";
   const hoverClass =
     colorScheme === "black" ? "hover:text-gray-300" : "hover:text-gray-200";
