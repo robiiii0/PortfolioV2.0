@@ -329,12 +329,9 @@ export default function Home() {
                   />
                 ))}
               </div>
-              <Link href={'/job'}>
-              <div className="md:w-9/12 w-11/12 mx-auto mt-20 md:mt-48 mb-48 overflow-hidden rounded-2xl shadow-2xl bg-stone-200/60 p-4">
-                  <motion.div
-                    className="flex flex-col md:flex-row justify-center items-center space-y-12 md:space-y-0 md:space-x-12 "
-                  >
-                    
+              <Link href={"/job"}>
+                <div className="md:w-9/12 w-11/12 mx-auto mt-20 md:mt-48 mb-48 overflow-hidden rounded-2xl shadow-2xl bg-stone-200/60 p-4">
+                  <motion.div className="flex flex-col md:flex-row justify-center items-center space-y-12 md:space-y-0 md:space-x-12 ">
                     <Image
                       width={250}
                       height={100}
@@ -363,10 +360,9 @@ export default function Home() {
                       src="https://eloken.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLogo.9cbeff77.png&w=1200&q=75"
                       className="object-contain"
                     />
-
                   </motion.div>
                 </div>
-                    </Link>
+              </Link>
             </div>
             <Footer color="white" />
           </>
