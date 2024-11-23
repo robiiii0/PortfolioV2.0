@@ -40,7 +40,7 @@ const JobDetailPage = () => {
   }
 
   return (
-    <div className="w-full bg-black text-white font-montserrat">
+    <div className="w-full bg-[#1f2020] text-white font-montserrat">
       <div className="w-10/12 mx-auto pt-4">
         <NavLink colorScheme="black" />
       </div>
@@ -124,13 +124,20 @@ const JobDetailPage = () => {
                   transition={{ duration: 0.5, delay: 0.6 }}
                   className="w-full h-[20rem] md:h-[30rem]  pt-16 lg:h-[40rem] flex items-center justify-center rounded-xl shadow-lg p-6"
                 >
-                  <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center leading-relaxed">
+                  <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center leading-relaxed font-montserrat-thin">
                     {job.description}
                   </p>
                 </motion.div>
               </div>
             </div>
-
+            <div className="pt-16">
+              <motion.hr
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="border-gray-500 w-11/12 mx-auto"
+              />
+            </div>
             <div className="pt-16 flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
                 <motion.div
@@ -139,7 +146,7 @@ const JobDetailPage = () => {
                   transition={{ duration: 0.5, delay: 0.6 }}
                   className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] flex items-center justify-center rounded-xl shadow-lg p-6"
                 >
-                  <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center leading-relaxed">
+                  <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center leading-relaxed font-montserrat-thin">
                     {job.aboutThem}
                   </p>
                 </motion.div>
@@ -155,11 +162,20 @@ const JobDetailPage = () => {
               </div>
             </div>
 
+            <div className="pt-16">
+              <motion.hr
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="border-gray-500 w-11/12 mx-auto"
+              />
+            </div>
+
             {job.imgArray.length > 2 && (
               <div className="">
                 {!iframeError ? (
                   <>
-                    <div className="flex justify-center items-center justify-items-center space-x-4 mt-36">
+                    <div className="flex justify-center items-center justify-items-center space-x-4 mt-28">
                       <svg
                         className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 text-white animate-bounce"
                         fill="none"
@@ -214,10 +230,10 @@ const JobDetailPage = () => {
                     </Link>
                     <iframe
                       src={job.imgArray[job.imgArray.length - 1]}
-                      width="100%"
+                      width="80%"
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
-                      className="rounded-lg shadow-xl mt-12 h-[400px] md:h-[800px]"
+                      className="rounded-lg mx-auto shadow-xl mt-12 h-[400px] md:h-[800px]"
                       onError={handleIframeError}
                     ></iframe>
                   </>
@@ -257,7 +273,7 @@ const JobDetailPage = () => {
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] flex items-center justify-center rounded-xl shadow-lg p-6"
+                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] flex items-center justify-center rounded-xl  p-6"
                 >
                   <Image
                     width={250}

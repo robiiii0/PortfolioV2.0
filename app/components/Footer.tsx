@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 // Défini un type pour la prop 'color' qui peut être soit 'black' soit 'white'
 interface FooterProps {
@@ -9,13 +10,12 @@ interface FooterProps {
 }
 
 export default function Footer({ color }: FooterProps) {
-  // On applique les classes dynamiquement en fonction de la prop 'color'
-  const bgColor = color === "black" ? "bg-black" : "bg-white";
+  const bgColor = color === "black" ? "bg-[#1f2020]" : "bg-stone-100";
   const textColor = color === "black" ? "text-white" : "text-black";
 
   return (
     <div className={`${bgColor} ${textColor} w-full`}>
-      <div className="mt-20 md:mt-100">
+      <div className="mt-20 md:mt-100 pb-20">
         <div className="w-full">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -43,18 +43,29 @@ export default function Footer({ color }: FooterProps) {
             </div>
           </motion.div>
         </div>
-        <div className="w-11/12 mx-auto font-semibold text-md md:text-xl">
+        <div className="w-11/12 mx-auto font-semibold text-lg md:text-2xl">
           <div className="flex flex-col md:flex-row justify-between space-x-0 md:space-x-8 mb-12 mt-8">
             <div className="flex justify-between space-x-4 md:space-x-8">
               <Link href={"https://www.instagram.com/robin_chabb/"}>
-                Instagram
+                <div className="flex items-center space-x-2">
+                  <FaInstagram />
+                  <span>Instagram</span>
+                </div>
               </Link>
               <Link
                 href={"https://www.linkedin.com/in/robin-chabert-863105232/"}
               >
-                LinkedIn
+                <div className="flex items-center space-x-2">
+                  <FaLinkedin />
+                  <span>LinkedIn</span>
+                </div>
               </Link>
-              <Link href={"https://github.com/robiiii0"}>Github</Link>
+              <Link href={"https://github.com/robiiii0"}>
+                <div className="flex items-center space-x-2">
+                  <FaGithub />
+                  <span>Github</span>
+                </div>
+              </Link>
             </div>
             <div>© Robin Chabert</div>
           </div>
