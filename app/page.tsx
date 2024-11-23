@@ -1,14 +1,17 @@
 "use client";
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { useInView } from "react-intersection-observer";
 import { dataHomePage, DataHomePage, ObjList, ExempleListJobs } from "./data";
 import Link from "next/link";
 import Footer from "./components/Footer";
 import NavLink from "./NavLink/NavLink";
 
-function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
+const Card = memo(function Card(props: {
+  data: ObjList;
+  dataHomePage: DataHomePage;
+}) {
   const [isHovered, setIsHovered] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -28,6 +31,7 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
             className="w-full font-thin flex justify-between"
+            style={{ willChange: "transform, opacity" }}
           >
             <p className="text-lg md:text-2xl">
               (00{props.data.index} at {props.data.company})
@@ -37,28 +41,27 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
               {props.data.date.getFullYear()}
             </p>
           </motion.div>
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex justify-center mt-4"
-          >
+          <div className="flex justify-center mt-4">
             {props.data.path !== "" ? (
               <iframe
                 className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
                 src={props.data.path}
+                loading="lazy"
                 title={`${props.data.company} Preview`}
+                style={{ willChange: "transform" }}
               />
             ) : (
               <Image
                 alt={props.data.alt || "Descriptive text about the image"}
                 width={1920}
                 height={1080}
+                loading="lazy"
                 src={props.data.imgCover}
                 className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300 object-cover"
+                style={{ willChange: "transform" }}
               />
             )}
-          </motion.div>
+          </div>
         </div>
       </Link>
       <div
@@ -70,6 +73,7 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
           className="text-lg md:text-2xl"
+          style={{ willChange: "transform, opacity" }}
         >
           (00{props.data.index})
         </motion.p>
@@ -78,6 +82,7 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-xl md:text-5xl w-full mt-12 md:w-10/12 mx-auto font-montserrat-thin"
+          style={{ willChange: "transform, opacity" }}
         >
           {props.dataHomePage.description}
         </motion.p>
@@ -86,19 +91,21 @@ function Card(props: { data: ObjList; dataHomePage: DataHomePage }) {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="border-black md:mt-24 w-10/12 mx-auto mt-12"
+          style={{ willChange: "transform, opacity" }}
         />
         <motion.p
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.8 }}
           className="mt-12 md:mt-24 text-xl md:text-5xl w-full md:w-10/12 mx-auto font-montserrat-thin"
+          style={{ willChange: "transform, opacity" }}
         >
           {props.dataHomePage.description2}
         </motion.p>
       </div>
     </>
   );
-}
+});
 
 export default function Home() {
   const controls = useAnimation();
@@ -268,6 +275,7 @@ export default function Home() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="w-11/12 mx-auto mt-[25%] md:mt-[8%] font-montserrat"
+                style={{ willChange: "transform, opacity" }}
               >
                 <div className="space-y-2">
                   <motion.h1
@@ -275,14 +283,16 @@ export default function Home() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1, delay: 0.8 }}
                     className="text-4xl md:text-8xl font-bold"
+                    style={{ willChange: "transform, opacity" }}
                   >
                     Robin Chabert
                   </motion.h1>
                   <motion.h1
                     initial={{ y: 50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
+                    transition={{ duration: 1, delay: 0.2 }}
                     className="text-3xl md:text-8xl ml-6 md:ml-12"
+                    style={{ willChange: "transform, opacity" }}
                   >
                     Développeur web et logiciel
                   </motion.h1>
@@ -293,6 +303,7 @@ export default function Home() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 1 }}
                     className="text-md md:text-xl md:w-5/12"
+                    style={{ willChange: "transform, opacity" }}
                   >
                     Bienvenue dans mon portfolio ! Ici, vous pouvez explorer les
                     sites web que j&apos;ai développés, les entreprises avec
@@ -315,6 +326,7 @@ export default function Home() {
                         "_blank"
                       )
                     }
+                    style={{ willChange: "transform, background, color" }}
                   >
                     {email}
                   </motion.button>

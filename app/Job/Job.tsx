@@ -1,90 +1,99 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, memo } from "react";
 import { ListJobs, ObjList } from "./JobList";
 import Link from "next/link";
 import NavLink from "../NavLink/NavLink";
 import { useInView } from "react-intersection-observer";
 
-function Card(props: { data: ObjList }) {
+const Card = memo(function Card(props: { data: ObjList }) {
+  const [isHovered, setIsHovered] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
+  const [isVisible, setIsVisible] = useState(false);
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current);
+    }
+
+    return () => {
+      if (imageRef.current) {
+        observer.unobserve(imageRef.current);
+      }
+    };
+  }, []);
+
   return (
     <>
       <Link href={`/Job/${props.data.company}`}>
-        <div className="p-4 rounded-xl shadow-md mt-20 md:mt-36 bg-[#1f2020]">
-          <div className="w-full font-bold flex flex-col sm:flex-row items-center justify-items-center justify-between sm:space-x-4">
-            <p className="text-4xl text-center sm:text-left">
-              {props.data.company}
+        <div
+          className="p-4 mt-12 md:mt-24 relative rounded-2xl overflow-hidden"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="w-full font-thin flex justify-between"
+            style={{ willChange: "transform, opacity" }}
+          >
+            <p className="text-lg md:text-2xl">
+              (00{props.data.index} at {props.data.company})
             </p>
-            {/* <p className="text-xl md:text-4xl text-center sm:text-left">
-              {props.data.jobName}
-            </p> */}
-            <p className="text-md md:text-4xl text-center sm:text-left">
+            <p className="text-lg md:text-2xl">
               {props.data.date.getDate()}/{props.data.date.getMonth() + 1}/
               {props.data.date.getFullYear()}
             </p>
-          </div>
-          <div className="flex justify-center mt-4 relative overflow-hidden">
+          </motion.div>
+          <div className="flex justify-center mt-4" ref={imageRef}>
             {props.data.path !== "" ? (
-              <div className="relative w-full h-[20rem] md:h-[50rem]">
-                <iframe
-                  className="rounded-2xl shadow-2xl transform-gpu w-full h-full hover:scale-105 transition-transform duration-300"
-                  src={props.data.path}
-                  title={`${props.data.company} Preview`}
-                />
-                <motion.div
-                  className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: inView ? 1 : 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <motion.div
-                    initial={{ y: 50, opacity: 0 }}
-                    animate={{ y: inView ? 0 : 50, opacity: inView ? 1 : 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className="bg-black bg-opacity-75 text-2xl text-white rounded-full px-6 py-6"
-                  >
-                    View More
-                  </motion.div>
-                </motion.div>
-              </div>
+              <iframe
+                className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
+                src={props.data.path}
+                loading="lazy"
+                title={`${props.data.company} Preview`}
+                style={{ willChange: "transform" }}
+              />
             ) : (
-              <div className="relative w-full h-[20rem] md:h-[50rem]">
+              isVisible && (
                 <Image
                   alt={props.data.alt || "Descriptive text about the image"}
                   width={1920}
                   height={1080}
                   src={props.data.imgCover}
-                  className="w-full h-full rounded-xl shadow-2xl cursor-pointer transform-gpu hover:scale-105 transition-transform duration-300 object-cover"
+                  className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300 object-cover"
+                  placeholder="blur"
+                  blurDataURL="/path/to/low-res-image.jpg" // Remplacez par le chemin de votre image basse résolution
+                  loading="lazy"
+                  style={{ willChange: "transform" }}
                 />
-                <motion.div
-                  className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: inView ? 1 : 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <motion.div
-                    initial={{ y: 50, opacity: 0 }}
-                    animate={{ y: inView ? 0 : 50, opacity: inView ? 1 : 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className="bg-black bg-opacity-75 text-2xl text-white rounded-full px-6 py-6"
-                  >
-                    View More
-                  </motion.div>
-                </motion.div>
-              </div>
+              )
             )}
           </div>
         </div>
       </Link>
     </>
   );
-}
+});
 
 export default function Job() {
   return (
