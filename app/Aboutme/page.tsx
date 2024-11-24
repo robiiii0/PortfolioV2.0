@@ -24,7 +24,7 @@ export default function page() {
   }
   return (
     <>
-      <div className="w-full font-montserrat bg-stone-100">
+      <div className="w-full font-montserrat bg-[#fff7ed]">
         <div className="w-10/12 mx-auto pt-4">
           <NavLink colorScheme="black" />
         </div>
@@ -207,7 +207,7 @@ export default function page() {
           </motion.div>
         </div>
 
-        <div className="w-11/12 mx-auto h-auto p-12 rounded-2xl mt-24 bg-[#1f2020] text-white">
+        <div className="w-11/12 mx-auto h-auto p-12 rounded-2xl mt-24 bg-[#1f2020] text-[#fff7ed]">
           <div className="w-11/12 mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 ">
               <motion.div
@@ -272,7 +272,7 @@ export default function page() {
                     <div className="flex justify-center mt-4">
                       <button
                         onClick={() => setTranslate(!Translate)}
-                        className="hover:bg-blue-500 hover:scale-105 transition-transform duration-300 bg-blue-400 text-white px-4 py-2 rounded-lg"
+                        className="hover:bg-blue-500 hover:scale-105 transition-transform duration-300 bg-blue-400 text-[#fff7ed] px-4 py-2 rounded-lg"
                       >
                         Traduction ?
                       </button>

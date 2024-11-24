@@ -263,7 +263,7 @@ export default function Home() {
           </motion.h2>
         </motion.div>
       )}
-      <div className="min-h-screen bg-stone-100">
+      <div className="min-h-screen bg-[#fff7ed]">
         {loadingAnimation && (
           <>
             <div className="w-10/12 mx-auto pt-4">

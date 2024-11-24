@@ -89,7 +89,7 @@ const ContactForm = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-xl md:text-2xl lg:text-3xl text-white"
+            className="text-xl md:text-2xl lg:text-3xl text-[#fff7ed]"
           >
             Informations de contact
           </motion.h2>
@@ -110,10 +110,10 @@ const ContactForm = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex items-center"
             >
-              <FaEnvelope className="text-white mr-2" />
+              <FaEnvelope className="text-[#fff7ed] mr-2" />
               <Link
                 href="mailto:robindevpro1@gmail.com"
-                className="text-white text-sm md:text-base lg:text-lg ml-4"
+                className="text-[#fff7ed] text-sm md:text-base lg:text-lg ml-4"
               >
                 robindevpro1@gmail.com
               </Link>
@@ -124,10 +124,10 @@ const ContactForm = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex items-center"
             >
-              <FaInstagram className="text-white mr-2" />
+              <FaInstagram className="text-[#fff7ed] mr-2" />
               <Link
                 href="https://www.instagram.com/robin_chabb/"
-                className="text-white text-sm md:text-base lg:text-lg ml-4"
+                className="text-[#fff7ed] text-sm md:text-base lg:text-lg ml-4"
               >
                 Instagram
               </Link>
@@ -138,10 +138,10 @@ const ContactForm = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex items-center"
             >
-              <FaLinkedinIn className="text-white mr-2" />
+              <FaLinkedinIn className="text-[#fff7ed] mr-2" />
               <Link
                 href="https://www.linkedin.com/in/robin-chabert-863105232/"
-                className="text-white text-sm md:text-base lg:text-lg ml-4"
+                className="text-[#fff7ed] text-sm md:text-base lg:text-lg ml-4"
               >
                 Linkedin
               </Link>
@@ -277,7 +277,7 @@ const ContactForm = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`bg-[#1f2020] text-white px-6 py-2 md:px-8 md:py-4 rounded-md hover:bg-[#363838] focus:outline-none focus:ring-2 focus:ring-gray-500 ${
+              className={`bg-[#1f2020] text-[#fff7ed] px-6 py-2 md:px-8 md:py-4 rounded-md hover:bg-[#363838] focus:outline-none focus:ring-2 focus:ring-gray-500 ${
                 isSubmitting ? "opacity-50 cursor-not-allowed" : ""
               } text-sm md:text-lg flex items-center space-x-2`}
             >
@@ -303,8 +303,8 @@ const ContactForm = () => {
 export default function page() {
   return (
     <>
-      <div className="min-h-screen bg-stone-100">
-        <div className="relative min-h-screen bg-stone-100">
+      <div className="min-h-screen bg-[#fff7ed]">
+        <div className="relative min-h-screen bg-[#fff7ed]">
           <div
             className="relative h-[50vh] bg-cover bg-top rounded-b-3xl overflow-hidden"
             style={{ backgroundImage: 'url("/bgcontact.jpg")' }}
@@ -314,7 +314,7 @@ export default function page() {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="text-white text-3xl md:text-4xl lg:text-6xl font-bold text-center px-4"
+                className="text-[#fff7ed] text-3xl md:text-4xl lg:text-6xl font-bold text-center px-4"
               >
                 Contactez-moi &#58;&#41;
               </motion.h1>
@@ -329,7 +329,7 @@ export default function page() {
           </div>
         </div>
         <div
-          className="md:mt-[-15%] mt-[15%] w-full bg-stone-100"
+          className="md:mt-[-15%] mt-[15%] w-full bg-[#fff7ed]"
           style={{ zIndex: 1, transform: "translateY(100%)" }}
         >
           <Footer color="white" />

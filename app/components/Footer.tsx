@@ -10,8 +10,8 @@ interface FooterProps {
 }
 
 export default function Footer({ color }: FooterProps) {
-  const bgColor = color === "black" ? "bg-[#1f2020]" : "bg-stone-100";
-  const textColor = color === "black" ? "text-white" : "text-black";
+  const bgColor = color === "black" ? "bg-[#1f2020]" : "bg-[#fff7ed]";
+  const textColor = color === "black" ? "text-[#fff7ed]" : "text-black";
 
   return (
     <div className={`${bgColor} ${textColor} w-full`}>

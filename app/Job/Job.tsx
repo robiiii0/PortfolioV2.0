@@ -96,7 +96,7 @@ const Card = memo(function Card(props: { data: ObjList }) {
 
 export default function Job() {
   return (
-    <div className="w-full font-montserrat text-white bg-[#1f2020] m-0 p-0">
+    <div className="w-full font-montserrat text-[#fff7ed] bg-[#1f2020] m-0 p-0">
       <div className="w-11/12 mx-auto mt-24">
         <div className="space-y-2">
           <motion.h1
