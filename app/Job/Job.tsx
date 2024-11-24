@@ -4,7 +4,6 @@ import Image from "next/image";
 import React, { useEffect, useState, useRef, memo } from "react";
 import { ListJobs, ObjList } from "./JobList";
 import Link from "next/link";
-import NavLink from "../NavLink/NavLink";
 import { useInView } from "react-intersection-observer";
 
 const Card = memo(function Card(props: { data: ObjList }) {
@@ -82,7 +81,7 @@ const Card = memo(function Card(props: { data: ObjList }) {
                   src={props.data.imgCover}
                   className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300 object-cover"
                   placeholder="blur"
-                  blurDataURL="/path/to/low-res-image.jpg" // Remplacez par le chemin de votre image basse résolution
+                  blurDataURL="/path/to/low-res-image.jpg"
                   loading="lazy"
                   style={{ willChange: "transform" }}
                 />

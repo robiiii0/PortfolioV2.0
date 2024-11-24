@@ -23,9 +23,6 @@ export interface ObjList {
   path: string;
 }
 
-import img3 from "@/public/IROC.png";
-import img4 from "@/public/THE JEANS RESTOCK.png";
-import img5 from "@/public/enedis.png";
 
 export const dataHomePage: DataHomePage[] = [
   {
@@ -73,7 +70,7 @@ export const ExempleListJobs: ObjList[] = [
     descriptionEng:
       "During a freelance mission I had to design new features for the E-commerce site of HiddensHills, a company based in Los Angeles, so I took care of the entire front-end part.",
     alt: "alt",
-    imgCover: img4,
+    imgCover: "/HiddensHills/cover.png",
     imgArray: [
       "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -94,7 +91,7 @@ export const ExempleListJobs: ObjList[] = [
     descriptionEng:
       "During 1 month, I carried out a freelance mission at IROC, where I was responsible for developing new front-end and back-end features as well as maintaining the back-end and the application database",
     alt: "alt",
-    imgCover: img3,
+    imgCover: "/public/IROC.png",
     imgArray: [
       "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -116,7 +113,7 @@ export const ExempleListJobs: ObjList[] = [
     descriptionEng:
       "As part of a 4-month internship at Enedis, I was responsible for managing the Enedis works database on Lyon Métropole, using database management and programming tools.",
     alt: "alt",
-    imgCover: img5,
+    imgCover: "/public/enedis.png",
     imgArray: [
       "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",

@@ -134,6 +134,24 @@ export default function page() {
           </div>
         </div>
 
+      <div className="w-11/12 mx-auto mt-24">
+      <motion.h1
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="text-2xl md:text-4xl font-bold text-center md:text-center  text-[#1f2020] text-transparent bg-clip-text font-montserrat-thin p-4 rounded-lg"
+        >
+          Découvrir d'où je viens
+        </motion.h1>
+            <Image
+        src="https://alpesphotographies.com/wp-content/uploads/2020/12/BRIANCON-ALPES-PHOTOGRAPHIES-WEB-4.jpg"
+        alt="aboutme"
+        width={1920}
+        height={600}
+        className="rounded-xl mt-12 mx-auto w-full max-w-[80%] bg-center h-auto max-h-[40vh] object-cover"
+      />
+      </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 mt-24 w-11/12 mx-auto">
           <div className="text-center">
             <motion.div
@@ -141,7 +159,7 @@ export default function page() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <h1 className="font-bold text-4xl">Je suis étudiant à Epitech</h1>
+              <h1 className="font-bold text-4xl font-montserrat-thin">Je suis étudiant à Epitech</h1>
             </motion.div>
             <motion.hr
               initial={{ opacity: 0, y: 50 }}
@@ -155,7 +173,7 @@ export default function page() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
-                <p>
+                <p className="font-montserrat-thin">
                   Je suis étudiant à Epitech Lyon depuis 4 ans, où j'ai eu
                   l'opportunité d'apprendre et de développer des compétences
                   dans divers domaines tels que les algorithmes, le
@@ -189,7 +207,7 @@ export default function page() {
           </motion.div>
         </div>
 
-        <div className="w-11/12 mx-auto h-auto p-12 rounded-2xl mt-24 bg-gray-900 text-white">
+        <div className="w-11/12 mx-auto h-auto p-12 rounded-2xl mt-24 bg-[#1f2020] text-white">
           <div className="w-11/12 mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 ">
               <motion.div
@@ -219,7 +237,7 @@ export default function page() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                 >
-                  <h1 className="font-bold text-4xl">
+                  <h1 className="font-bold text-4xl font-montserrat-thin">
                     {Translate
                       ? "Projet actuel: DCU Irlande"
                       : "Current Project: DCU Ireland"}
@@ -232,7 +250,7 @@ export default function page() {
                     transition={{ duration: 0.5, delay: 0.5 }}
                   >
                     {Translate ? (
-                      <p className="text-base sm:text-lg md:text-xl">
+                      <p className="text-base sm:text-lg md:text-xl font-montserrat-thin">
                         En tant qu'étudiant en informatique, je suis
                         actuellement à Dublin, embarquant pour un voyage
                         académique passionnant pour l'année académique 2024/2025
@@ -242,7 +260,7 @@ export default function page() {
                         University (DCU) en Irlande.
                       </p>
                     ) : (
-                      <p className="text-base sm:text-lg md:text-xl">
+                      <p className="text-base sm:text-lg md:text-xl font-montserrat-thin">
                         As an aspiring computer scientist, I am currently in
                         Dublin, embarking on an exciting academic journey for
                         the 2024/2025 academic year to further hone my skills in
