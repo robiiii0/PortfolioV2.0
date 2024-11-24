@@ -18,11 +18,6 @@ export interface ObjList {
 }
 
 import { StaticImageData } from "next/image";
-import img1 from "@/public/image.png";
-import img2 from "@/public/gk.png";
-import img3 from "@/public/IROC.png";
-import img4 from "@/public/THE JEANS RESTOCK.png";
-import img5 from "@/public/enedis.png";
 
 export const ListJobs: ObjList[] = [
   {
@@ -39,7 +34,7 @@ export const ListJobs: ObjList[] = [
     descriptionEng:
       "In the context of Eloken, the web development project involved the realization of responsive components for both their website and the products featured on their online platform. By applying their expertise in front-end development.",
     alt: "alt",
-    imgCover: img1,
+    imgCover: "/public/image.png",
     imgArray: [
       "/Eloken/devbeta.png",
       "/Eloken/devalpha.png",
@@ -65,7 +60,7 @@ export const ListJobs: ObjList[] = [
     descriptionEng:
       "During 1 month, I carried out a freelance mission at IROC, where I was responsible for developing new front-end and back-end features as well as maintaining the back-end and the application database.",
     alt: "alt",
-    imgCover: img3,
+    imgCover: "/public/IROC.png",
     imgArray: [
       "/Iroc/image1.png",
       "/Iroc/image2.png",
@@ -91,7 +86,7 @@ export const ListJobs: ObjList[] = [
     descriptionEng:
       "As part of a 4-month internship at Enedis, I was responsible for managing the Enedis works database on Lyon Métropole, using database management and programming tools.",
     alt: "alt",
-    imgCover: img5,
+    imgCover: "/public/enedis.png",
     imgArray: [
       "https://www.cfnewsimmo.net/var/cfnews/storage/images/2/5/4/8/16698452-1-fre-FR/3b.jpg",
       "https://www.monconseillerenergie.fr/wp-content/uploads/sites/11/2019/10/74-erdf-enedis-nouveau-gestionnaire-de-la-distribution-d-electricite.jpg",
@@ -118,7 +113,7 @@ export const ListJobs: ObjList[] = [
     descriptionEng:
       "During a freelance mission, I had to design new features for the E-commerce site of HiddensHills, a company based in Los Angeles, where I handled the entire front-end development.",
     alt: "alt",
-    imgCover: img4,
+    imgCover: "/HiddensHills/cover.png",
     imgArray: [
       "/HiddensHills/image1.png",
       "/HiddensHills/image2.png",

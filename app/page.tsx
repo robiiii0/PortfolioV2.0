@@ -302,7 +302,7 @@ export default function Home() {
                     initial={{ y: 50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 1 }}
-                    className="text-md md:text-xl md:w-5/12"
+                    className="text-md md:text-xl md:w-5/12 font-montserrat-thin"
                     style={{ willChange: "transform, opacity" }}
                   >
                     Bienvenue dans mon portfolio ! Ici, vous pouvez explorer les
