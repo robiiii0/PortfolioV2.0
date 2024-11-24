@@ -40,7 +40,7 @@ const JobDetailPage = () => {
   }
 
   return (
-    <div className="w-full bg-[#1f2020] text-white font-montserrat">
+    <div className="w-full bg-[#1f2020] text-[#fff7ed] font-montserrat">
       <div className="w-10/12 mx-auto pt-4">
         <NavLink colorScheme="black" />
       </div>
@@ -85,7 +85,7 @@ const JobDetailPage = () => {
                 >
                   discover
                   <motion.svg
-                    className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 text-white animate-bounce"
+                    className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 text-[#fff7ed] animate-bounce"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -177,7 +177,7 @@ const JobDetailPage = () => {
                   <>
                     <div className="flex justify-center items-center justify-items-center space-x-4 mt-28">
                       <svg
-                        className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 text-white animate-bounce"
+                        className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 text-[#fff7ed] animate-bounce"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -194,7 +194,7 @@ const JobDetailPage = () => {
                         Plongez dans leur univers
                       </p>
                       <svg
-                        className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 text-white animate-bounce"
+                        className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 text-[#fff7ed] animate-bounce"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
