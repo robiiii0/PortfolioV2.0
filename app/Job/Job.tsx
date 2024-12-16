@@ -44,7 +44,7 @@ const Card = memo(function Card(props: { data: ObjList }) {
     <>
       <Link href={`/Job/${props.data.company}`}>
         <div
-          className="p-4 mt-12 md:mt-24 relative rounded-2xl overflow-hidden"
+          className="p-4 mt-12 md:mt-24 relative rounded-2xl overflow-visible"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
