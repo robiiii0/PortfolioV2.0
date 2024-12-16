@@ -149,6 +149,7 @@ export default function Home() {
     const hasSeenAnimation = sessionStorage.getItem("hasSeenAnimation");
 
     if (!hasSeenAnimation) {
+      document.body.classList.add("no-scroll");
       const startAnimation = async () => {
         // Animation des lettres
         await textAnimation.start({
@@ -172,6 +173,7 @@ export default function Home() {
 
         setLoadingAnimation(true);
         sessionStorage.setItem("hasSeenAnimation", "true");
+        document.body.classList.remove("no-scroll");
       };
 
       startAnimation();
