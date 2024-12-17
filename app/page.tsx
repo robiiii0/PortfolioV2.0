@@ -42,24 +42,32 @@ const Card = memo(function Card(props: {
             </p>
           </motion.div>
           <div className="flex justify-center mt-4">
-            {props.data.path !== "" ? (
-              <iframe
-                className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
-                src={props.data.path}
-                loading="lazy"
-                title={`${props.data.company} Preview`}
-                style={{ willChange: "transform" }}
-              />
-            ) : (
-              <Image
-                alt={props.data.alt || "Descriptive text about the image"}
-                width={1920}
-                height={1080}
-                loading="lazy"
-                src={props.data.imgCover}
-                className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300 object-cover"
-                style={{ willChange: "transform" }}
-              />
+              {props.data.path !== "" ? (
+
+          <iframe
+            className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
+            src={props.data.path}
+            title={`${props.data.company} Preview`}
+            style={{ willChange: "transform" }}
+          />
+              ) : (
+                <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 1.5 }}
+                className="w-full"
+              >
+                <Image
+                  alt={props.data.alt || "Descriptive text about the image"}
+                  width={1920}
+                  height={1080}
+                  priority
+                  loading="eager"
+                  src={props.data.imgCover}
+                  className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300 object-cover"
+                  style={{ willChange: "transform" }}
+                />
+              </motion.div>
             )}
           </div>
         </div>

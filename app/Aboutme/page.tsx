@@ -30,7 +30,6 @@ export default function page() {
         </div>
         <div className="w-10/12 mx-auto mt-12 lg:mt-24">
           <div className="flex flex-col lg:flex-row justify-between items-starp-8">
-            {/* Partie 1 - Titre et Infos personnelles */}
             <div className="w-full lg:w-1/2 space-y-6 mt-[25%] md:mt-[8%]">
               <div className="flex flex-col">
                 <div>
@@ -135,21 +134,13 @@ export default function page() {
         </div>
 
       <div className="w-11/12 mx-auto mt-24">
-      <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-2xl md:text-4xl font-bold text-center md:text-center  text-[#1f2020] text-transparent bg-clip-text font-montserrat-thin p-4 rounded-lg"
-        >
-          Découvrir d'où je viens
-        </motion.h1>
-            <Image
+            {/* <Image
         src="https://alpesphotographies.com/wp-content/uploads/2020/12/BRIANCON-ALPES-PHOTOGRAPHIES-WEB-4.jpg"
         alt="aboutme"
         width={1920}
         height={600}
         className="rounded-xl mt-12 mx-auto w-full max-w-[80%] bg-center h-auto max-h-[40vh] object-cover"
-      />
+      /> */}
       </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 mt-24 w-11/12 mx-auto">
