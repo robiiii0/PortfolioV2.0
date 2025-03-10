@@ -12,6 +12,7 @@ import Link from "next/link";
 const JobDetailPage = () => {
   const pathname = usePathname();
   const slug = pathname?.split("/").pop();
+  console.log(slug);
 
   const [job, setJob] = useState<ObjList | null>(null);
   const [iframeError, setIframeError] = useState(false);
@@ -108,7 +109,7 @@ const JobDetailPage = () => {
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] relative border rounded-xl shadow-lg p-6"
+                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] relative border border-transparent rounded-xl shadow-lg p-6"
                 >
                   <Image
                     src={job.imgArray[0]}

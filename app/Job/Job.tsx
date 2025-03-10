@@ -66,7 +66,7 @@ const Card = memo(function Card(props: { data: ObjList }) {
           <div className="flex justify-center mt-4" ref={imageRef}>
             {props.data.path !== "" ? (
               <iframe
-                className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
+                className="rounded-2xl shadow-2xl transform transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
                 src={props.data.path}
                 loading="lazy"
                 title={`${props.data.company} Preview`}
@@ -79,7 +79,7 @@ const Card = memo(function Card(props: { data: ObjList }) {
                   width={1920}
                   height={1080}
                   src={props.data.imgCover}
-                  className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300 object-cover"
+                  className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform transition-transform duration-300 object-cover"
                   placeholder="blur"
                   blurDataURL="/path/to/low-res-image.jpg"
                   loading="lazy"

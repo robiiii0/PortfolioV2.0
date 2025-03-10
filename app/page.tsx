@@ -45,7 +45,7 @@ const Card = memo(function Card(props: {
               {props.data.path !== "" ? (
 
           <iframe
-            className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
+            className="rounded-2xl shadow-2xl transform transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
             src={props.data.path}
             title={`${props.data.company} Preview`}
             style={{ willChange: "transform" }}
@@ -64,7 +64,7 @@ const Card = memo(function Card(props: {
                   priority
                   loading="eager"
                   src={props.data.imgCover}
-                  className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300 object-cover"
+                  className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform  transition-transform duration-300 object-cover"
                   style={{ willChange: "transform" }}
                 />
               </motion.div>

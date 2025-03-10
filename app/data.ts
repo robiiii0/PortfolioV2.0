@@ -60,24 +60,26 @@ export const dataHomePage: DataHomePage[] = [
 export const ExempleListJobs: ObjList[] = [
   {
     index: 1,
-    company: "HiddensHills",
-    companyEn: "HiddensHills",
-    jobName: "Collaboration avec HiddensHills",
-    jobNameEn: "Collaboration with HiddensHills",
+    company: "Bosco",
+    companyEn: "Bosco",
+    jobName:
+      "Migration et optimisation d'un site WordPress/Titan vers OVH Cloud",
+    jobNameEn:
+      "Migration and optimization of a WordPress/Titan site to OVH Cloud",
     title3: "title3",
     description:
-      "Lors d'une mission en freelance j'ai dû concevoir de nouvelles fonctionnalités pour le site E-commerce de HiddensHills, une société basée à Los Angeles, je me suis donc occupé de toute la partie front-end.",
+      "Transfert des données et configuration des DNS pour assurer une transition fluide. Optimisation des performances et compatibilité avec l'hébergement OVH. Sécurisation et test du site après migration pour garantir son bon fonctionnement",
     descriptionEng:
-      "During a freelance mission I had to design new features for the E-commerce site of HiddensHills, a company based in Los Angeles, so I took care of the entire front-end part.",
+      "Transfer of data and configuration of DNS to ensure a smooth transition. Optimization of performance and compatibility with OVH hosting. Securing and testing the site after migration to ensure its proper functioning",
     alt: "alt",
-    imgCover: "/HiddensHills/cover.png",
+    imgCover: "/public/image.png",
     imgArray: [
-      "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/Eloken/devbeta.png",
+      "/Eloken/devalpha.png",
+      "https://www.agencebosco.com/notre-travail",
     ],
     date: new Date(2022, 3, 24),
-    path: "",
+    path: "https://www.agencebosco.com/",
   },
   {
     index: 2,

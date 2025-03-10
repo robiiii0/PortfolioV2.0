@@ -127,4 +127,32 @@ export const ListJobs: ObjList[] = [
       "https://hiddenhillsclub.com/cdn/shop/files/MAIN_HIDDEN_HILLS_GRN_1d93f736-b25e-42f9-a074-8bba4446ba73.png?v=1667236646&width=3533",
     link: "https://hiddenhillsclub.com/",
   },
+  {
+    index: 5,
+    company: "Bosco",
+    companyEn: "Bosco",
+    jobName:
+      "Migration et optimisation d'un site WordPress/Titan vers OVH Cloud",
+    jobNameEn:
+      "Migration and optimization of a WordPress/Titan site to OVH Cloud",
+    title3: "title3",
+    description:
+      "Transfert des données et configuration des DNS pour assurer une transition fluide. Optimisation des performances et compatibilité avec l'hébergement OVH. Sécurisation et test du site après migration pour garantir son bon fonctionnement",
+    descriptionEng:
+      "Transfer of data and configuration of DNS to ensure a smooth transition. Optimization of performance and compatibility with OVH hosting. Securing and testing the site after migration to ensure its proper functioning",
+    alt: "alt",
+    imgCover: "/public/image.png",
+    imgArray: [
+      "/Bosco/47shots_so.png",
+      "/Eloken/devalpha.png",
+      "https://www.agencebosco.com/notre-travail",
+    ],
+    date: new Date(2022, 3, 24),
+    path: "https://www.agencebosco.com/",
+    aboutThem:
+      "Agence basé en France créant des sites web et campagnes en ligne pour des entreprises géniales.",
+    imglogo:
+      "https://cdn.prod.website-files.com/675a0703bf28f4aa106d1f99/675b411bfdb791db725a0c22_Capture_d_e%CC%81cran_2024-12-12_a%CC%80_20.59.22-removebg-preview-p-500.png",
+    link: "https://www.agencebosco.com/",
+  },
 ];
