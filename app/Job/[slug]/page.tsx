@@ -74,7 +74,7 @@ const JobDetailPage = () => {
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
-                  className="mt-8 text-2xl sm:text-lg md:text-xl lg:text-2xl xl:text-4xl font-bold text-left md:w-4/12 leading-tight"
+                  className="mt-8 text-2xl sm:text-lg md:text-xl lg:text-2xl xl:text-6xl font-bold text-left md:w-4/12 leading-tight"
                 >
                   {job.jobName}
                 </motion.h2>
@@ -151,7 +151,7 @@ const JobDetailPage = () => {
                     {job.aboutThem}
                   </p>
                 </motion.div>
-                <div className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] relative border rounded-xl shadow-lg p-6">
+                <div className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] relative border border-transparent rounded-xl shadow-lg p-6">
                   <Image
                     src={job.imgArray[1]}
                     alt={job.alt}

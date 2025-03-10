@@ -36,8 +36,8 @@ export const ListJobs: ObjList[] = [
     alt: "alt",
     imgCover: "/public/image.png",
     imgArray: [
-      "/Eloken/devbeta.png",
-      "/Eloken/devalpha.png",
+      "/Eloken/920shots_so.png",
+      "/Eloken/38shots_so.png",
       "https://eloken.com/portfolio",
     ],
     date: new Date(2022, 3, 24),
@@ -144,7 +144,7 @@ export const ListJobs: ObjList[] = [
     imgCover: "/public/image.png",
     imgArray: [
       "/Bosco/47shots_so.png",
-      "/Eloken/devalpha.png",
+      "/Bosco/289shots_so.png",
       "https://www.agencebosco.com/notre-travail",
     ],
     date: new Date(2022, 3, 24),
