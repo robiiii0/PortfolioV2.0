@@ -42,7 +42,7 @@ const Card = memo(function Card(props: { data: ObjList }) {
 
   return (
     <>
-      <Link href={`/Job/${props.data.company}`}>
+      <Link href={`/Job/${props.data.company}`} className="block">
         <div
           className="p-4 mt-12 md:mt-24 relative rounded-2xl overflow-visible"
           onMouseEnter={() => setIsHovered(true)}
@@ -63,15 +63,21 @@ const Card = memo(function Card(props: { data: ObjList }) {
               {props.data.date.getFullYear()}
             </p>
           </motion.div>
-          <div className="flex justify-center mt-4" ref={imageRef}>
+
+          <div className="flex justify-center mt-4 relative">
             {props.data.path !== "" ? (
-              <iframe
-                className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
-                src={props.data.path}
-                loading="lazy"
-                title={`${props.data.company} Preview`}
-                style={{ willChange: "transform" }}
-              />
+              <>
+                {/* Iframe */}
+                <iframe
+                  className="rounded-2xl shadow-2xl transform transition-transform duration-300 w-full h-auto md:h-[60rem] border-none pointer-events-none"
+                  src={props.data.path}
+                  loading="lazy"
+                  title={`${props.data.company} Preview`}
+                  style={{ willChange: "transform" }}
+                />
+                {/* Overlay cliquable */}
+                <div className="absolute inset-0 bg-transparent cursor-pointer"></div>
+              </>
             ) : (
               isVisible && (
                 <Image
@@ -79,7 +85,7 @@ const Card = memo(function Card(props: { data: ObjList }) {
                   width={1920}
                   height={1080}
                   src={props.data.imgCover}
-                  className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300 object-cover"
+                  className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform transition-transform duration-300 object-cover"
                   placeholder="blur"
                   blurDataURL="/path/to/low-res-image.jpg"
                   loading="lazy"

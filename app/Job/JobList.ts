@@ -36,8 +36,8 @@ export const ListJobs: ObjList[] = [
     alt: "alt",
     imgCover: "/public/image.png",
     imgArray: [
-      "/Eloken/devbeta.png",
-      "/Eloken/devalpha.png",
+      "/Eloken/920shots_so.png",
+      "/Eloken/38shots_so.png",
       "https://eloken.com/portfolio",
     ],
     date: new Date(2022, 3, 24),
@@ -62,9 +62,9 @@ export const ListJobs: ObjList[] = [
     alt: "alt",
     imgCover: "/public/IROC.png",
     imgArray: [
-      "/Iroc/image1.png",
-      "/Iroc/image2.png",
-      "https://www.iroc.app/#features",
+      "/Iroc/170shots_so.png",
+      "/Iroc/526shots_so.png",
+      "https://www.iroc.app/",
     ],
     date: new Date(2022, 3, 24),
     path: "https://www.iroc.app/",
@@ -120,11 +120,38 @@ export const ListJobs: ObjList[] = [
       "/HiddensHills/cover.png",
     ],
     date: new Date(2022, 3, 24),
-    path: "",
+    path: "https://hiddenhillsclub.com/collections/mens",
     aboutThem:
       "Hidden Hills Club est une marque de style de vie premium qui offre des adhésions et des expériences exclusives. Ils se concentrent sur la fourniture de services et de produits de haute qualité à leurs membres.",
     imglogo:
       "https://hiddenhillsclub.com/cdn/shop/files/MAIN_HIDDEN_HILLS_GRN_1d93f736-b25e-42f9-a074-8bba4446ba73.png?v=1667236646&width=3533",
     link: "https://hiddenhillsclub.com/",
+  },
+  {
+    index: 5,
+    company: "Bosco",
+    companyEn: "Bosco",
+    jobName:
+      "Migration et optimisation d'un site WordPress/Titan vers OVH Cloud",
+    jobNameEn:
+      "Migration and optimization of a WordPress/Titan site to OVH Cloud",
+    title3: "title3",
+    description:
+      "Transfert des données et configuration des DNS pour assurer une transition fluide. Optimisation des performances et compatibilité avec l'hébergement OVH. Sécurisation et test du site après migration pour garantir son bon fonctionnement",
+    descriptionEng:
+      "Transfer of data and configuration of DNS to ensure a smooth transition. Optimization of performance and compatibility with OVH hosting. Securing and testing the site after migration to ensure its proper functioning",
+    alt: "alt",
+    imgCover: "/public/image.png",
+    imgArray: [
+      "/Bosco/200_2x_shots_so.png",
+      "/Bosco/289shots_so.png",
+      "https://www.agencebosco.com/notre-travail",
+    ],
+    date: new Date(2022, 3, 24),
+    path: "https://www.agencebosco.com/",
+    aboutThem:
+      "Agence basé en France créant des sites web et campagnes en ligne pour des entreprises géniales.",
+    imglogo: "",
+    link: "https://www.agencebosco.com/",
   },
 ];

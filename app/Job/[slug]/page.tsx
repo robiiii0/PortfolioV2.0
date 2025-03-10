@@ -12,6 +12,7 @@ import Link from "next/link";
 const JobDetailPage = () => {
   const pathname = usePathname();
   const slug = pathname?.split("/").pop();
+  console.log(slug);
 
   const [job, setJob] = useState<ObjList | null>(null);
   const [iframeError, setIframeError] = useState(false);
@@ -38,6 +39,16 @@ const JobDetailPage = () => {
       </div>
     );
   }
+
+  function scrollToSection(sectionStr: string) {
+    // Get the element with the ID 'targetSection'
+    const section = document.getElementById(sectionStr);
+    
+    // Scroll the element into view
+    if (section)
+      section.scrollIntoView({ behavior: 'smooth' });
+  }
+  
 
   return (
     <div className="w-full bg-[#1f2020] text-[#fff7ed] font-montserrat">
@@ -73,11 +84,12 @@ const JobDetailPage = () => {
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
-                  className="mt-8 text-2xl sm:text-lg md:text-xl lg:text-2xl xl:text-4xl font-bold text-left md:w-4/12 leading-tight"
+                  className="mt-8 text-2xl sm:text-lg md:text-xl lg:text-2xl xl:text-6xl font-bold text-left md:w-4/12 leading-tight"
                 >
                   {job.jobName}
                 </motion.h2>
-                <motion.h2
+                <motion.button
+                onClick={() => scrollToSection("description")}
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
@@ -98,17 +110,17 @@ const JobDetailPage = () => {
                       d="M19 9l-7 7-7-7"
                     />
                   </motion.svg>
-                </motion.h2>
+                </motion.button>
               </div>
             </div>
 
-            <div className="pt-16 md:pt-48 flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
+            <div className="pt-16 md:pt-48 flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8" id="description">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
                 <motion.div
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] relative border rounded-xl shadow-lg p-6"
+                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] relative border border-transparent rounded-xl shadow-lg p-6"
                 >
                   <Image
                     src={job.imgArray[0]}
@@ -122,7 +134,7 @@ const JobDetailPage = () => {
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="w-full h-[20rem] md:h-[30rem]  pt-16 lg:h-[40rem] flex items-center justify-center rounded-xl shadow-lg p-6"
+                  className="w-full h-[20rem] md:h-[30rem]  pt-16 lg:h-[40rem] flex items-center justify-center rounded-xl  p-6"
                 >
                   <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center leading-relaxed font-montserrat-thin">
                     {job.description}
@@ -144,13 +156,13 @@ const JobDetailPage = () => {
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] flex items-center justify-center rounded-xl shadow-lg p-6"
+                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] flex items-center justify-center rounded-xl  p-6"
                 >
                   <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center leading-relaxed font-montserrat-thin">
                     {job.aboutThem}
                   </p>
                 </motion.div>
-                <div className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] relative border rounded-xl shadow-lg p-6">
+                <div className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] relative border border-transparent rounded-xl shadow-lg p-6">
                   <Image
                     src={job.imgArray[1]}
                     alt={job.alt}
@@ -190,9 +202,11 @@ const JobDetailPage = () => {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                      <p className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+                      <button 
+                      onClick={() => scrollToSection("iframe")}
+                       className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                         Plongez dans leur univers
-                      </p>
+                      </button>
                       <svg
                         className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 text-[#fff7ed] animate-bounce"
                         fill="none"
@@ -214,7 +228,10 @@ const JobDetailPage = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <div className="flex justify-center items-center mt-4">
+                    <div className="flex justify-center items-center mt-4" 
+                    id="iframe"
+                    
+                    >
                         <motion.button
                           whileHover={{
                             background:
@@ -261,30 +278,31 @@ const JobDetailPage = () => {
                 )}
               </div>
             )}
-
-            <div className="mt-28">
-              <motion.div
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                className="text-4xl md:text-5xl text-center leading-relaxed"
-              >
+            {job.imglogo && (
+              <div className="mt-28">
                 <motion.div
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] flex items-center justify-center rounded-xl  p-6"
+                  className="text-4xl md:text-5xl text-center leading-relaxed"
                 >
-                  <Image
-                    width={250}
-                    height={100}
-                    alt="Logo"
-                    src={job.imglogo}
-                    className="object-contain bg-white p-4 rounded-xl"
-                  />
+                  <motion.div
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] flex items-center justify-center rounded-xl  p-6"
+                  >
+                    <Image
+                      width={250}
+                      height={100}
+                      alt="Logo"
+                      src={job.imglogo}
+                      className="object-contain bg-white p-4 rounded-xl"
+                    />
+                  </motion.div>
                 </motion.div>
-              </motion.div>
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

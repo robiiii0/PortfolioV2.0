@@ -14,7 +14,8 @@ module.exports = {
       "www.cfnewsimmo.net",
       "www.monconseillerenergie.fr",
       "static.wikia.nocookie.net",
-      "alpesphotographies.com"
+      "alpesphotographies.com",
+      "cdn.prod.website-files.com",
     ],
   },
 };

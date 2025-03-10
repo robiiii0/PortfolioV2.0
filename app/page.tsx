@@ -3,10 +3,22 @@ import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect, memo } from "react";
 import { useInView } from "react-intersection-observer";
-import { dataHomePage, DataHomePage, ObjList, ExempleListJobs } from "./data";
+import {
+  dataHomePage,
+  DataHomePage,
+  ObjList,
+  ExempleListJobs,
+  carrousel,
+} from "./data";
 import Link from "next/link";
 import Footer from "./components/Footer";
 import NavLink from "./NavLink/NavLink";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const Card = memo(function Card(props: {
   data: ObjList;
@@ -20,7 +32,7 @@ const Card = memo(function Card(props: {
 
   return (
     <>
-      <Link href={`/Job/${props.data.company}`}>
+      <Link href={`/Job/${props.data.company}`} className="block">
         <div
           className="p-4 mt-12 md:mt-24 relative rounded-2xl overflow-hidden"
           onMouseEnter={() => setIsHovered(true)}
@@ -41,17 +53,22 @@ const Card = memo(function Card(props: {
               {props.data.date.getFullYear()}
             </p>
           </motion.div>
-          <div className="flex justify-center mt-4">
-              {props.data.path !== "" ? (
 
-          <iframe
-            className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
-            src={props.data.path}
-            title={`${props.data.company} Preview`}
-            style={{ willChange: "transform" }}
-          />
-              ) : (
-                <motion.div
+          <div className="flex justify-center mt-4 relative">
+            {props.data.path !== "" ? (
+              <>
+                {/* Iframe avec pointer-events: none */}
+                <iframe
+                  className="rounded-2xl shadow-2xl transform transition-transform duration-300 w-full h-auto md:h-[60rem] border-none pointer-events-none"
+                  src={props.data.path}
+                  title={`${props.data.company} Preview`}
+                  style={{ willChange: "transform" }}
+                />
+                {/* Overlay cliquable */}
+                <div className="absolute inset-0 bg-transparent cursor-pointer"></div>
+              </>
+            ) : (
+              <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1.5 }}
@@ -64,7 +81,7 @@ const Card = memo(function Card(props: {
                   priority
                   loading="eager"
                   src={props.data.imgCover}
-                  className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform hover:scale-105 transition-transform duration-300 object-cover"
+                  className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform transition-transform duration-300 object-cover"
                   style={{ willChange: "transform" }}
                 />
               </motion.div>
@@ -72,6 +89,7 @@ const Card = memo(function Card(props: {
           </div>
         </div>
       </Link>
+
       <div
         ref={ref}
         className="mt-12 md:mt-24 text-center w-full md:w-8/12 mx-auto"
@@ -351,40 +369,28 @@ export default function Home() {
                   />
                 ))}
               </div>
-              <Link href={"/job"}>
-                <div className="md:w-9/12 w-11/12 mx-auto mt-20 md:mt-48 mb-48 overflow-hidden rounded-2xl shadow-2xl bg-stone-200/60 p-4">
-                  <motion.div className="flex flex-col md:flex-row justify-center items-center space-y-12 md:space-y-0 md:space-x-12 ">
-                    <Image
-                      width={250}
-                      height={100}
-                      alt="Logo Enedis"
-                      src="https://upload.wikimedia.org/wikipedia/fr/thumb/7/77/Logo_enedis_header.png/1200px-Logo_enedis_header.png"
-                      className="object-contain"
-                    />
-                    <Image
-                      width={250}
-                      height={100}
-                      alt="Logo Iroc"
-                      src="https://www.iroc.app/images/Logo_IROC.png"
-                      className="object-contain"
-                    />
-                    <Image
-                      width={250}
-                      height={100}
-                      alt="Logo Eloken"
-                      src="https://hiddenhillsclub.com/cdn/shop/files/MAIN_HIDDEN_HILLS_GRN_1d93f736-b25e-42f9-a074-8bba4446ba73.png?v=1667236646&width=3533"
-                      className="object-contain"
-                    />
-                    <Image
-                      width={250}
-                      height={100}
-                      alt="Logo Eloken"
-                      src="https://eloken.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLogo.9cbeff77.png&w=1200&q=75"
-                      className="object-contain"
-                    />
-                  </motion.div>
-                </div>
-              </Link>
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                spaceBetween={20}
+                slidesPerView={1}
+                navigation
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 3000 }}
+                loop
+                className="w-full max-w-4xl mx-auto rounded-2xl shadow-lg mt-12"
+              >
+                {carrousel.map((img, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="relative w-full h-[400px] flex justify-center items-center bg-black/60">
+                      <img
+                        src={img.img}
+                        alt={`Slide ${index}`}
+                        className="max-w-full max-h-full object-contain rounded-2xl p-4"
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
             <Footer color="white" />
           </>
