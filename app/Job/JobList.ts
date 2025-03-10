@@ -143,7 +143,7 @@ export const ListJobs: ObjList[] = [
     alt: "alt",
     imgCover: "/public/image.png",
     imgArray: [
-      "/Bosco/47shots_so.png",
+      "/Bosco/200_2x_shots_so.png",
       "/Bosco/289shots_so.png",
       "https://www.agencebosco.com/notre-travail",
     ],

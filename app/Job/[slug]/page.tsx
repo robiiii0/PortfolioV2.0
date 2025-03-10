@@ -123,7 +123,7 @@ const JobDetailPage = () => {
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="w-full h-[20rem] md:h-[30rem]  pt-16 lg:h-[40rem] flex items-center justify-center rounded-xl shadow-lg p-6"
+                  className="w-full h-[20rem] md:h-[30rem]  pt-16 lg:h-[40rem] flex items-center justify-center rounded-xl  p-6"
                 >
                   <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center leading-relaxed font-montserrat-thin">
                     {job.description}
@@ -145,7 +145,7 @@ const JobDetailPage = () => {
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] flex items-center justify-center rounded-xl shadow-lg p-6"
+                  className="w-full h-[20rem] md:h-[30rem] lg:h-[40rem] flex items-center justify-center rounded-xl  p-6"
                 >
                   <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center leading-relaxed font-montserrat-thin">
                     {job.aboutThem}
