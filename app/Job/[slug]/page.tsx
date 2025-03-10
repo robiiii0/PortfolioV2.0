@@ -262,8 +262,9 @@ const JobDetailPage = () => {
                 )}
               </div>
             )}
-
-            <div className="mt-28">
+            {
+              job.imglogo && (
+                <div className="mt-28">
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -286,6 +287,9 @@ const JobDetailPage = () => {
                 </motion.div>
               </motion.div>
             </div>
+              )
+            }
+            
           </div>
         </div>
       </div>

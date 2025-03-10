@@ -62,9 +62,9 @@ export const ListJobs: ObjList[] = [
     alt: "alt",
     imgCover: "/public/IROC.png",
     imgArray: [
-      "/Iroc/image1.png",
-      "/Iroc/image2.png",
-      "https://www.iroc.app/#features",
+      "/Iroc/170shots_so.png",
+      "/Iroc/526shots_so.png",
+      "https://www.iroc.app/",
     ],
     date: new Date(2022, 3, 24),
     path: "https://www.iroc.app/",
@@ -152,7 +152,7 @@ export const ListJobs: ObjList[] = [
     aboutThem:
       "Agence basé en France créant des sites web et campagnes en ligne pour des entreprises géniales.",
     imglogo:
-      "https://cdn.prod.website-files.com/675a0703bf28f4aa106d1f99/675b411bfdb791db725a0c22_Capture_d_e%CC%81cran_2024-12-12_a%CC%80_20.59.22-removebg-preview-p-500.png",
+      "",
     link: "https://www.agencebosco.com/",
   },
 ];
