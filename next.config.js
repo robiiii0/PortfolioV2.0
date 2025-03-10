@@ -15,7 +15,7 @@ module.exports = {
       "www.monconseillerenergie.fr",
       "static.wikia.nocookie.net",
       "alpesphotographies.com",
-      "cdn.prod.website-files.com"
+      "cdn.prod.website-files.com",
     ],
   },
 };

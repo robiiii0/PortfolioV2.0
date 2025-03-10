@@ -133,15 +133,15 @@ export default function page() {
           </div>
         </div>
 
-      <div className="w-11/12 mx-auto mt-24">
-            {/* <Image
+        <div className="w-11/12 mx-auto mt-24">
+          {/* <Image
         src="https://alpesphotographies.com/wp-content/uploads/2020/12/BRIANCON-ALPES-PHOTOGRAPHIES-WEB-4.jpg"
         alt="aboutme"
         width={1920}
         height={600}
         className="rounded-xl mt-12 mx-auto w-full max-w-[80%] bg-center h-auto max-h-[40vh] object-cover"
       /> */}
-      </div>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 mt-24 w-11/12 mx-auto">
           <div className="text-center">
@@ -150,7 +150,9 @@ export default function page() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <h1 className="font-bold text-4xl font-montserrat-thin">Je suis étudiant à Epitech</h1>
+              <h1 className="font-bold text-4xl font-montserrat-thin">
+                Je suis étudiant à Epitech
+              </h1>
             </motion.div>
             <motion.hr
               initial={{ opacity: 0, y: 50 }}

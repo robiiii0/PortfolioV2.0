@@ -23,7 +23,6 @@ export interface ObjList {
   path: string;
 }
 
-
 export const dataHomePage: DataHomePage[] = [
   {
     description:

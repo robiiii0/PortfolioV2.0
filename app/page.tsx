@@ -20,7 +20,7 @@ const Card = memo(function Card(props: {
 
   return (
     <>
-      <Link href={`/Job/${props.data.company}`}>
+      <Link href={`/Job/${props.data.company}`} className="block">
         <div
           className="p-4 mt-12 md:mt-24 relative rounded-2xl overflow-hidden"
           onMouseEnter={() => setIsHovered(true)}
@@ -41,17 +41,22 @@ const Card = memo(function Card(props: {
               {props.data.date.getFullYear()}
             </p>
           </motion.div>
-          <div className="flex justify-center mt-4">
-              {props.data.path !== "" ? (
 
-          <iframe
-            className="rounded-2xl shadow-2xl transform transition-transform duration-300 w-full h-auto md:h-[60rem] border-none"
-            src={props.data.path}
-            title={`${props.data.company} Preview`}
-            style={{ willChange: "transform" }}
-          />
-              ) : (
-                <motion.div
+          <div className="flex justify-center mt-4 relative">
+            {props.data.path !== "" ? (
+              <>
+                {/* Iframe avec pointer-events: none */}
+                <iframe
+                  className="rounded-2xl shadow-2xl transform transition-transform duration-300 w-full h-auto md:h-[60rem] border-none pointer-events-none"
+                  src={props.data.path}
+                  title={`${props.data.company} Preview`}
+                  style={{ willChange: "transform" }}
+                />
+                {/* Overlay cliquable */}
+                <div className="absolute inset-0 bg-transparent cursor-pointer"></div>
+              </>
+            ) : (
+              <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1.5 }}
@@ -64,7 +69,7 @@ const Card = memo(function Card(props: {
                   priority
                   loading="eager"
                   src={props.data.imgCover}
-                  className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform  transition-transform duration-300 object-cover"
+                  className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform transition-transform duration-300 object-cover"
                   style={{ willChange: "transform" }}
                 />
               </motion.div>
@@ -72,6 +77,7 @@ const Card = memo(function Card(props: {
           </div>
         </div>
       </Link>
+
       <div
         ref={ref}
         className="mt-12 md:mt-24 text-center w-full md:w-8/12 mx-auto"
