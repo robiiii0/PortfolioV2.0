@@ -120,7 +120,7 @@ export const ListJobs: ObjList[] = [
       "/HiddensHills/cover.png",
     ],
     date: new Date(2022, 3, 24),
-    path: "",
+    path: "https://hiddenhillsclub.com/collections/mens",
     aboutThem:
       "Hidden Hills Club est une marque de style de vie premium qui offre des adhésions et des expériences exclusives. Ils se concentrent sur la fourniture de services et de produits de haute qualité à leurs membres.",
     imglogo:
@@ -151,8 +151,7 @@ export const ListJobs: ObjList[] = [
     path: "https://www.agencebosco.com/",
     aboutThem:
       "Agence basé en France créant des sites web et campagnes en ligne pour des entreprises géniales.",
-    imglogo:
-      "",
+    imglogo: "",
     link: "https://www.agencebosco.com/",
   },
 ];

@@ -202,29 +202,30 @@ export default function page() {
 
         <div className="w-11/12 mx-auto h-auto p-12 rounded-2xl mt-24 bg-[#1f2020] text-[#fff7ed]">
           <div className="w-11/12 mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Image */}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="flex justify-center"
+                className="flex justify-center items-center h-full"
               >
                 <Link
                   href="https://www.dcu.ie/"
-                  className="w-full h-full rounded-xl shadow-2xl cursor-pointer"
+                  className="w-full h-full rounded-xl cursor-pointer"
                 >
                   <Image
                     src={imgDCU}
                     alt="DCU"
                     width={1920}
                     height={1080}
-                    className="rounded-xl"
-                    objectFit="cover"
+                    className="rounded-xl object-cover"
                   />
                 </Link>
               </motion.div>
 
-              <div className="text-center flex flex-col items-center justify-center">
+              {/* Texte */}
+              <div className="flex flex-col justify-center items-center text-center h-full">
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -236,6 +237,7 @@ export default function page() {
                       : "Current Project: DCU Ireland"}
                   </h1>
                 </motion.div>
+
                 <div className="w-full sm:w-8/12 lg:w-6/12 mx-auto mt-8">
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
@@ -246,20 +248,12 @@ export default function page() {
                       <p className="text-base sm:text-lg md:text-xl font-montserrat-thin">
                         En tant qu'étudiant en informatique, je suis
                         actuellement à Dublin, embarquant pour un voyage
-                        académique passionnant pour l'année académique 2024/2025
-                        afin de perfectionner davantage mes compétences en
-                        informatique et ma maîtrise de la langue anglaise. Ma
-                        destination ? Le campus dynamique de Dublin City
-                        University (DCU) en Irlande.
+                        académique passionnant...
                       </p>
                     ) : (
                       <p className="text-base sm:text-lg md:text-xl font-montserrat-thin">
                         As an aspiring computer scientist, I am currently in
-                        Dublin, embarking on an exciting academic journey for
-                        the 2024/2025 academic year to further hone my skills in
-                        both computer science and English language proficiency.
-                        My destination? The vibrant campus of Dublin City
-                        University (DCU) in Ireland.
+                        Dublin, embarking on an exciting academic journey...
                       </p>
                     )}
                     <div className="flex justify-center mt-4">

@@ -1,5 +1,9 @@
 import { StaticImageData } from "next/image";
 
+export interface CarrouselData {
+  img: string;
+}
+
 export interface DataHomePage {
   description: string;
   descriptionEng: string;
@@ -122,5 +126,23 @@ export const ExempleListJobs: ObjList[] = [
     ],
     date: new Date(2022, 3, 24),
     path: "https://www.enedis.fr",
+  },
+];
+
+export const carrousel: CarrouselData[] = [
+  {
+    img: "https://upload.wikimedia.org/wikipedia/fr/thumb/7/77/Logo_enedis_header.png/1200px-Logo_enedis_header.png",
+  },
+  {
+    img: "https://www.iroc.app/images/Logo_IROC.png",
+  },
+  {
+    img: "https://hiddenhillsclub.com/cdn/shop/files/MAIN_HIDDEN_HILLS_GRN_1d93f736-b25e-42f9-a074-8bba4446ba73.png?v=1667236646&width=3533",
+  },
+  {
+    img: "https://eloken.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLogo.9cbeff77.png&w=1200&q=75",
+  },
+  {
+    img: "https://cdn.prod.website-files.com/675a0703bf28f4aa106d1f99/675b411bfdb791db725a0c22_Capture_d_e%CC%81cran_2024-12-12_a%CC%80_20.59.22-removebg-preview-p-500.png",
   },
 ];
