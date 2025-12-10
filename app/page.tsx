@@ -34,7 +34,7 @@ const Card = memo(function Card(props: {
     <>
       <Link href={`/Job/${props.data.company}`} className="block">
         <div
-          className="p-4 mt-12 md:mt-24 relative rounded-2xl overflow-hidden"
+          className="p-4 mt-12 md:mt-12 relative rounded-2xl overflow-hidden"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -56,17 +56,41 @@ const Card = memo(function Card(props: {
 
           <div className="flex justify-center mt-4 relative">
             {props.data.path !== "" ? (
-              <>
-                {/* Iframe avec pointer-events: none */}
-                <iframe
-                  className="rounded-2xl shadow-2xl transform transition-transform duration-300 w-full h-auto md:h-[60rem] border-none pointer-events-none"
-                  src={props.data.path}
-                  title={`${props.data.company} Preview`}
-                  style={{ willChange: "transform" }}
-                />
-                {/* Overlay cliquable */}
-                <div className="absolute inset-0 bg-transparent cursor-pointer"></div>
-              </>
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 1.5 }}
+                className="relative w-full overflow-hidden"
+                style={{ willChange: "transform" }}
+              >
+                <div className="group relative">
+                  <Image
+                    alt={`${props.data.company} Preview`}
+                    width={1920}
+                    height={1080}
+                    src={props.data.imgCover}
+                    className="w-full h-auto rounded-2xl max-h-[40rem] md:max-h-[50rem] object-contain transform transition-all duration-300 group-hover:blur-sm cursor-pointer"
+                    style={{ willChange: "transform, filter" }}
+                  />
+                  {/* Bouton pour visiter le site */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="bg-white/90 hover:bg-white text-black font-semibold px-6 py-3 rounded-lg shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 pointer-events-auto"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (props.data.path) {
+                          window.open(props.data.path, "_blank", "noopener,noreferrer");
+                        }
+                      }}
+                    >
+                      Visiter le site →
+                    </motion.button>
+                  </div>
+                </div>
+              </motion.div>
             ) : (
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
@@ -81,8 +105,8 @@ const Card = memo(function Card(props: {
                   priority
                   loading="eager"
                   src={props.data.imgCover}
-                  className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform transition-transform duration-300 object-cover"
-                  style={{ willChange: "transform" }}
+                  className="w-full h-auto max-h-[40rem] md:max-h-[50rem] cursor-pointer transform transition-all duration-300 object-contain hover:blur-sm"
+                  style={{ willChange: "transform, filter" }}
                 />
               </motion.div>
             )}
@@ -371,21 +395,23 @@ export default function Home() {
               </div>
               <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
-                spaceBetween={20}
+                spaceBetween={40}
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
-                autoplay={{ delay: 3000 }}
+                autoplay={{ delay: 4000, disableOnInteraction: false }}
                 loop
-                className="w-full max-w-4xl mx-auto rounded-2xl shadow-lg mt-12"
+                className="w-full max-w-6xl mx-auto mt-16"
               >
                 {carrousel.map((img, index) => (
                   <SwiperSlide key={index}>
-                    <div className="relative w-full h-[400px] flex justify-center items-center bg-black/60">
-                      <img
+                    <div className="relative w-full h-[250px] md:h-[350px] lg:h-[400px] flex justify-center items-center bg-[#fff7ed] rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+                      <Image
                         src={img.img}
                         alt={`Slide ${index}`}
-                        className="max-w-full max-h-full object-contain rounded-2xl p-4"
+                        width={1200}
+                        height={600}
+                        className="max-w-[85%] max-h-[75%] object-contain transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
                   </SwiperSlide>

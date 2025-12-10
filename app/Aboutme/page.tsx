@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import imgDCU from "@/public/DCU.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Footer from "../components/Footer";
@@ -194,7 +193,7 @@ export default function page() {
                 width={1920}
                 height={1080}
                 className="rounded-xl mt-8"
-                objectFit="cover"
+                style={{ objectFit: "cover" }}
               />
             </Link>
           </motion.div>
@@ -211,15 +210,17 @@ export default function page() {
                 className="flex justify-center items-center h-full"
               >
                 <Link
-                  href="https://www.dcu.ie/"
+                  href="https://www.thalesgroup.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full h-full rounded-xl cursor-pointer"
                 >
                   <Image
-                    src={imgDCU}
-                    alt="DCU"
+                    src="/thales.png"
+                    alt="Thales"
                     width={1920}
                     height={1080}
-                    className="rounded-xl object-cover"
+                    className="rounded-xl object-contain bg-white p-8"
                   />
                 </Link>
               </motion.div>
@@ -233,8 +234,8 @@ export default function page() {
                 >
                   <h1 className="font-bold text-4xl font-montserrat-thin">
                     {Translate
-                      ? "Projet actuel: DCU Irlande"
-                      : "Current Project: DCU Ireland"}
+                      ? "Projet actuel: Stage chez Thales"
+                      : "Current Project: Internship at Thales"}
                   </h1>
                 </motion.div>
 
@@ -246,14 +247,18 @@ export default function page() {
                   >
                     {Translate ? (
                       <p className="text-base sm:text-lg md:text-xl font-montserrat-thin">
-                        En tant qu'étudiant en informatique, je suis
-                        actuellement à Dublin, embarquant pour un voyage
-                        académique passionnant...
+                        Je réalise actuellement un stage chez Thales en tant que
+                        testeur logiciel pour la sécurité des centrales
+                        nucléaires. Cette expérience me permet de travailler sur
+                        des systèmes critiques et de développer mes compétences
+                        en assurance qualité et en sécurité informatique.
                       </p>
                     ) : (
                       <p className="text-base sm:text-lg md:text-xl font-montserrat-thin">
-                        As an aspiring computer scientist, I am currently in
-                        Dublin, embarking on an exciting academic journey...
+                        I am currently doing an internship at Thales as a
+                        software tester for nuclear power plant security. This
+                        experience allows me to work on critical systems and
+                        develop my skills in quality assurance and cybersecurity.
                       </p>
                     )}
                     <div className="flex justify-center mt-4">
