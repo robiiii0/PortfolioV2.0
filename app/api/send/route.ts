@@ -1,7 +1,15 @@
 import { EmailTemplate } from "../../components/email-template";
 import { Resend } from "resend";
+import React from "react";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const getResend = () => {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    throw new Error("Missing RESEND_API_KEY environment variable");
+  }
+  return new Resend(apiKey);
+};
+
 const emailTo = process.env.RECIPIENT_EMAIL;
 
 export async function POST(request: Request) {
@@ -15,11 +23,18 @@ export async function POST(request: Request) {
       phone,
     });
 
+    const resend = getResend();
     const { data, error } = await resend.emails.send({
       from: `Acme <onboarding@resend.dev>`,
       to: [`${emailTo}`],
       subject: `Demande de contact de ${name} et ${email} concernant "${subject}"`, // Inclure subject dans le sujet de l'email
-      react: EmailTemplate({ firstName: name, email, message, subject, phone }), // Passer subject et phone à EmailTemplate
+      react: EmailTemplate({ 
+        firstName: name, 
+        email, 
+        message, 
+        subject, 
+        phone 
+      }) as React.ReactElement, // Passer subject et phone à EmailTemplate
     });
 
     if (error) {

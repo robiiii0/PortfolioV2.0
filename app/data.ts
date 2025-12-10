@@ -63,26 +63,24 @@ export const dataHomePage: DataHomePage[] = [
 export const ExempleListJobs: ObjList[] = [
   {
     index: 1,
-    company: "Bosco",
-    companyEn: "Bosco",
-    jobName:
-      "Migration et optimisation d'un site WordPress/Titan vers OVH Cloud",
-    jobNameEn:
-      "Migration and optimization of a WordPress/Titan site to OVH Cloud",
+    company: "Sentinelle",
+    companyEn: "Sentinelle",
+    jobName: "Projet IA - Sentinelle",
+    jobNameEn: "AI Project - Sentinelle",
     title3: "title3",
     description:
-      "Transfert des données et configuration des DNS pour assurer une transition fluide. Optimisation des performances et compatibilité avec l'hébergement OVH. Sécurisation et test du site après migration pour garantir son bon fonctionnement",
+      "Développement d'un projet d'intelligence artificielle innovant utilisant les dernières technologies de machine learning et de traitement du langage naturel.",
     descriptionEng:
-      "Transfer of data and configuration of DNS to ensure a smooth transition. Optimization of performance and compatibility with OVH hosting. Securing and testing the site after migration to ensure its proper functioning",
-    alt: "alt",
-    imgCover: "/public/image.png",
+      "Development of an innovative artificial intelligence project using the latest machine learning and natural language processing technologies.",
+    alt: "Sentinelle AI Project",
+    imgCover: "/SENTINELLE.png",
     imgArray: [
-      "/Eloken/devbeta.png",
-      "/Eloken/devalpha.png",
-      "https://www.agencebosco.com/notre-travail",
+      "/image.png",
+      "/image.png",
+      "/image.png",
     ],
-    date: new Date(2022, 3, 24),
-    path: "https://www.agencebosco.com/",
+    date: new Date(2025, 11, 10),
+    path: "https://sentinelle.app/",
   },
   {
     index: 2,
@@ -96,14 +94,14 @@ export const ExempleListJobs: ObjList[] = [
     descriptionEng:
       "During 1 month, I carried out a freelance mission at IROC, where I was responsible for developing new front-end and back-end features as well as maintaining the back-end and the application database",
     alt: "alt",
-    imgCover: "/public/IROC.png",
+    imgCover: "/IROC.png",
     imgArray: [
       "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ],
     date: new Date(2022, 3, 24),
-    path: "https://www.iroc.app/",
+    path: "https://iroc.app/",
   },
   {
     index: 3,
@@ -118,7 +116,7 @@ export const ExempleListJobs: ObjList[] = [
     descriptionEng:
       "As part of a 4-month internship at Enedis, I was responsible for managing the Enedis works database on Lyon Métropole, using database management and programming tools.",
     alt: "alt",
-    imgCover: "/public/enedis.png",
+    imgCover: "/enedis.png",
     imgArray: [
       "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://plus.unsplash.com/premium_photo-1675793715030-0584c8ec4a13?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -134,13 +132,10 @@ export const carrousel: CarrouselData[] = [
     img: "https://upload.wikimedia.org/wikipedia/fr/thumb/7/77/Logo_enedis_header.png/1200px-Logo_enedis_header.png",
   },
   {
-    img: "https://www.iroc.app/images/Logo_IROC.png",
+    img: "https://iroc.app/assets/iroc-logo-ASAa3fjL.png",
   },
   {
     img: "https://hiddenhillsclub.com/cdn/shop/files/MAIN_HIDDEN_HILLS_GRN_1d93f736-b25e-42f9-a074-8bba4446ba73.png?v=1667236646&width=3533",
-  },
-  {
-    img: "https://eloken.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLogo.9cbeff77.png&w=1200&q=75",
   },
   {
     img: "https://cdn.prod.website-files.com/675a0703bf28f4aa106d1f99/675b411bfdb791db725a0c22_Capture_d_e%CC%81cran_2024-12-12_a%CC%80_20.59.22-removebg-preview-p-500.png",

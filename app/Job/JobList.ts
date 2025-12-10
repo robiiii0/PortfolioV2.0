@@ -22,31 +22,28 @@ import { StaticImageData } from "next/image";
 export const ListJobs: ObjList[] = [
   {
     index: 1,
-    company: "Eloken",
-    companyEn: "Eloken",
-    jobName:
-      "Réalisation de composants réactifs pour le site web et les produits d'Eloken",
-    jobNameEn:
-      "Realization of Responsive Components for Eloken's Website and Products",
+    company: "Sentinelle",
+    companyEn: "Sentinelle",
+    jobName: "Projet IA - Sentinelle",
+    jobNameEn: "AI Project - Sentinelle",
     title3: "title3",
     description:
-      "Dans le cadre d'Eloken, le projet de développement web impliquait la réalisation de composants réactifs pour leur site web et les produits présentés sur leur plateforme en ligne. En appliquant leur expertise en développement front-end.",
+      "Une technologie d'IA prédictive dédiée à la sécurité en montagne. Sentinelle anticipe les risques d'avalanche en analysant les données nivologiques et météorologiques complexes pour protéger vies et infrastructures.",
     descriptionEng:
-      "In the context of Eloken, the web development project involved the realization of responsive components for both their website and the products featured on their online platform. By applying their expertise in front-end development.",
-    alt: "alt",
-    imgCover: "/public/image.png",
+      "Predictive AI technology dedicated to mountain safety. Sentinelle anticipates avalanche risks by analyzing complex nivological and meteorological data to protect lives and infrastructure.",
+    alt: "Sentinelle AI Project",
+    imgCover: "/SENTINELLE.png",
     imgArray: [
-      "/Eloken/920shots_so.png",
-      "/Eloken/38shots_so.png",
-      "https://eloken.com/portfolio",
+      "/SENTINELLE.png",
+      "/SENTINELLE.png",
+      "/SENTINELLE.png",
     ],
-    date: new Date(2022, 3, 24),
-    path: "https://eloken.com",
+    date: new Date(2025, 11, 10),
+    path: "",
     aboutThem:
-      "Eloken est une entreprise spécialisée dans la création de sites web de haute qualité. Ils offrent une gamme de services de développement web pour aider les entreprises à établir une forte présence en ligne.",
-    imglogo:
-      "https://eloken.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLogo.9cbeff77.png&w=1200&q=75",
-    link: "https://eloken.com/",
+      "Sentinelle est né d'une mission vitale : redéfinir la prévention des risques en haute montagne grâce à l'intelligence artificielle. En croisant des historiques de données météorologiques, la topographie et l'analyse du manteau neigeux via le Machine Learning, nous développons des modèles capables de prédire les probabilités de déclenchement d'avalanches. Notre objectif est de fournir aux stations et aux secouristes un outil d'aide à la décision fiable pour anticiper le danger avant qu'il ne survienne.",
+    imglogo: "",
+    link: "https://sentinelle.app/",
   },
   {
     index: 2,
@@ -60,18 +57,18 @@ export const ListJobs: ObjList[] = [
     descriptionEng:
       "During 1 month, I carried out a freelance mission at IROC, where I was responsible for developing new front-end and back-end features as well as maintaining the back-end and the application database.",
     alt: "alt",
-    imgCover: "/public/IROC.png",
+    imgCover: "/IROC.png",
     imgArray: [
       "/Iroc/170shots_so.png",
       "/Iroc/526shots_so.png",
-      "https://www.iroc.app/",
+      "/IROC.png",
     ],
     date: new Date(2022, 3, 24),
-    path: "https://www.iroc.app/",
+    path: "",
     aboutThem:
       "Iroc est une entreprise qui se concentre sur le développement autour des chercheurs. Ils fournissent des outils et des services pour soutenir et améliorer le travail des chercheurs.",
-    imglogo: "https://www.iroc.app/images/Logo_IROC.png",
-    link: "https://www.iroc.app/",
+    imglogo: "https://iroc.app/assets/iroc-logo-ASAa3fjL.png",
+    link: "https://iroc.app/",
   },
   {
     index: 3,
@@ -86,14 +83,14 @@ export const ListJobs: ObjList[] = [
     descriptionEng:
       "As part of a 4-month internship at Enedis, I was responsible for managing the Enedis works database on Lyon Métropole, using database management and programming tools.",
     alt: "alt",
-    imgCover: "/public/enedis.png",
+    imgCover: "/enedis.png",
     imgArray: [
       "https://www.cfnewsimmo.net/var/cfnews/storage/images/2/5/4/8/16698452-1-fre-FR/3b.jpg",
       "https://www.monconseillerenergie.fr/wp-content/uploads/sites/11/2019/10/74-erdf-enedis-nouveau-gestionnaire-de-la-distribution-d-electricite.jpg",
-      "https://www.enedis.fr",
+      "/enedis.png",
     ],
     date: new Date(2022, 3, 24),
-    path: "https://www.enedis.fr",
+    path: "",
     aboutThem:
       "Enedis est un important gestionnaire du réseau de distribution d'électricité en France. Ils gèrent le réseau public de distribution d'électricité, assurant la livraison d'électricité aux foyers et aux entreprises.",
     imglogo:
@@ -120,38 +117,11 @@ export const ListJobs: ObjList[] = [
       "/HiddensHills/cover.png",
     ],
     date: new Date(2022, 3, 24),
-    path: "https://hiddenhillsclub.com/collections/mens",
+    path: "",
     aboutThem:
       "Hidden Hills Club est une marque de style de vie premium qui offre des adhésions et des expériences exclusives. Ils se concentrent sur la fourniture de services et de produits de haute qualité à leurs membres.",
     imglogo:
       "https://hiddenhillsclub.com/cdn/shop/files/MAIN_HIDDEN_HILLS_GRN_1d93f736-b25e-42f9-a074-8bba4446ba73.png?v=1667236646&width=3533",
     link: "https://hiddenhillsclub.com/",
-  },
-  {
-    index: 5,
-    company: "Bosco",
-    companyEn: "Bosco",
-    jobName:
-      "Migration et optimisation d'un site WordPress/Titan vers OVH Cloud",
-    jobNameEn:
-      "Migration and optimization of a WordPress/Titan site to OVH Cloud",
-    title3: "title3",
-    description:
-      "Transfert des données et configuration des DNS pour assurer une transition fluide. Optimisation des performances et compatibilité avec l'hébergement OVH. Sécurisation et test du site après migration pour garantir son bon fonctionnement",
-    descriptionEng:
-      "Transfer of data and configuration of DNS to ensure a smooth transition. Optimization of performance and compatibility with OVH hosting. Securing and testing the site after migration to ensure its proper functioning",
-    alt: "alt",
-    imgCover: "/public/image.png",
-    imgArray: [
-      "/Bosco/200_2x_shots_so.png",
-      "/Bosco/289shots_so.png",
-      "https://www.agencebosco.com/notre-travail",
-    ],
-    date: new Date(2022, 3, 24),
-    path: "https://www.agencebosco.com/",
-    aboutThem:
-      "Agence basé en France créant des sites web et campagnes en ligne pour des entreprises géniales.",
-    imglogo: "",
-    link: "https://www.agencebosco.com/",
   },
 ];

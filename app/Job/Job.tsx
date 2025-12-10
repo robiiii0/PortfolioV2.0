@@ -64,35 +64,35 @@ const Card = memo(function Card(props: { data: ObjList }) {
             </p>
           </motion.div>
 
-          <div className="flex justify-center mt-4 relative">
-            {props.data.path !== "" ? (
-              <>
-                {/* Iframe */}
-                <iframe
-                  className="rounded-2xl shadow-2xl transform transition-transform duration-300 w-full h-auto md:h-[60rem] border-none pointer-events-none"
-                  src={props.data.path}
-                  loading="lazy"
-                  title={`${props.data.company} Preview`}
-                  style={{ willChange: "transform" }}
-                />
-                {/* Overlay cliquable */}
-                <div className="absolute inset-0 bg-transparent cursor-pointer"></div>
-              </>
-            ) : (
-              isVisible && (
-                <Image
-                  alt={props.data.alt || "Descriptive text about the image"}
-                  width={1920}
-                  height={1080}
-                  src={props.data.imgCover}
-                  className="w-full h-auto md:h-[60rem] rounded-xl mt-4 shadow-2xl cursor-pointer transform transition-transform duration-300 object-cover"
-                  placeholder="blur"
-                  blurDataURL="/path/to/low-res-image.jpg"
-                  loading="lazy"
-                  style={{ willChange: "transform" }}
-                />
-              )
-            )}
+          <div className="flex justify-center mt-4 relative" ref={imageRef}>
+            <div className="group relative w-full">
+              <Image
+                alt={props.data.alt || `${props.data.company} Preview`}
+                width={1920}
+                height={1080}
+                src={props.data.imgCover}
+                className="w-full h-auto max-h-[40rem] md:max-h-[50rem] rounded-2xl object-contain transform transition-all duration-300 group-hover:blur-sm"
+                loading="lazy"
+                style={{ willChange: "transform, filter" }}
+              />
+              {/* Bouton pour visiter le site (si path existe) */}
+              {props.data.path !== "" && (
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-white/90 hover:bg-white text-black font-semibold px-6 py-3 rounded-lg shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 pointer-events-auto z-10"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      window.open(props.data.path, "_blank", "noopener,noreferrer");
+                    }}
+                  >
+                    Visiter le site →
+                  </motion.button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </Link>
