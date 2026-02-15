@@ -1,59 +1,30 @@
 "use client";
-import Link from "next/link";
+
 import { motion } from "framer-motion";
-import NavLink from "./NavLink/NavLink";
-import Image from "next/image";
+import Button from "./components/ui/Button";
 
-export default function Custom404() {
+export default function NotFound() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-400 flex flex-col items-center justify-center">
-      <div className="w-10/12 mx-auto">
-        <NavLink colorScheme="black" />
-      </div>
-
-      <Image
-        src="https://static.wikia.nocookie.net/leagueoflegends/images/1/1b/Does_Not_Compute_Emote.png/revision/latest/scale-to-width-down/250?cb=20230316211521"
-        alt="404"
-        width={250}
-        height={250}
-        className="mt-8"
-      />
-      <motion.h1
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="text-6xl font-bold text-gray-800"
-      >
-        404
-      </motion.h1>
-      <motion.h2
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-2xl text-gray-600 mt-4"
-      >
-        Page non trouvée
-      </motion.h2>
-      <motion.p
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="text-lg text-gray-500 mt-4"
-      >
-        Désolé, la page que vous recherchez n'existe pas.
-      </motion.p>
+    <div className="min-h-screen bg-bg-primary flex flex-col items-center justify-center px-6">
       <motion.div
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        className="mt-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center"
       >
-        <Link
-          href="/"
-          className="bg-blue-500 text-[#fff7ed] px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300"
-        >
-          Retour à l'accueil
-        </Link>
+        <h1 className="font-display text-[8rem] md:text-[12rem] font-bold text-border leading-none">
+          404
+        </h1>
+        <h2 className="font-display text-2xl md:text-4xl font-semibold text-text-primary mt-4">
+          Cette page n&apos;existe pas
+        </h2>
+        <p className="text-text-secondary text-base mt-4 max-w-md mx-auto">
+          La page que vous recherchez a peut-être été déplacée ou n&apos;existe
+          plus.
+        </p>
+        <div className="mt-10">
+          <Button href="/">Retour à l&apos;accueil</Button>
+        </div>
       </motion.div>
     </div>
   );

@@ -8,6 +8,30 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        display: ['"Clash Display"', "sans-serif"],
+        body: ['"Satoshi"', "sans-serif"],
+      },
+      colors: {
+        bg: {
+          primary: "var(--color-bg-primary)",
+          secondary: "var(--color-bg-secondary)",
+          surface: "var(--color-bg-surface)",
+        },
+        text: {
+          primary: "var(--color-text-primary)",
+          secondary: "var(--color-text-secondary)",
+        },
+        accent: {
+          DEFAULT: "var(--color-accent)",
+          hover: "var(--color-accent-hover)",
+        },
+        border: "var(--color-border)",
+      },
+      maxWidth: {
+        site: "1440px",
+        content: "1200px",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -15,6 +39,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwind-hamburgers")],
+  plugins: [],
 };
 export default config;

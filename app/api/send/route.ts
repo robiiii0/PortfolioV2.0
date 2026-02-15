@@ -1,51 +1,44 @@
-import { EmailTemplate } from "../../components/email-template";
-import { Resend } from "resend";
-import React from "react";
+import nodemailer from "nodemailer";
 
-const getResend = () => {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    throw new Error("Missing RESEND_API_KEY environment variable");
-  }
-  return new Resend(apiKey);
-};
-
-const emailTo = process.env.RECIPIENT_EMAIL;
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: Number(process.env.SMTP_PORT) || 587,
+  secure: Number(process.env.SMTP_PORT) === 465,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
 
 export async function POST(request: Request) {
   try {
-    const { name, email, message, subject, phone } = await request.json(); // Ajouter subject et phone ici
-    console.log("Received request data:", {
-      name,
-      email,
-      message,
-      subject,
-      phone,
+    const { name, email, phone, service, message } = await request.json();
+
+    await transporter.sendMail({
+      from: `"Portfolio — ${name}" <${process.env.SMTP_USER}>`,
+      to: process.env.RECIPIENT_EMAIL,
+      replyTo: email,
+      subject: `Nouvelle demande de ${name} — ${service || "Contact général"}`,
+      html: `
+        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <h1 style="color: #e85d3a; font-size: 24px;">Nouvelle demande de contact</h1>
+          <hr style="border: 1px solid #eee; margin: 20px 0;" />
+          <p><strong>Nom :</strong> ${name}</p>
+          <p><strong>Email :</strong> ${email}</p>
+          ${phone ? `<p><strong>Téléphone :</strong> ${phone}</p>` : ""}
+          ${service ? `<p><strong>Service intéressé :</strong> ${service}</p>` : ""}
+          <hr style="border: 1px solid #eee; margin: 20px 0;" />
+          <p><strong>Message :</strong></p>
+          <p style="white-space: pre-wrap; line-height: 1.6;">${message}</p>
+        </div>
+      `,
     });
 
-    const resend = getResend();
-    const { data, error } = await resend.emails.send({
-      from: `Acme <onboarding@resend.dev>`,
-      to: [`${emailTo}`],
-      subject: `Demande de contact de ${name} et ${email} concernant "${subject}"`, // Inclure subject dans le sujet de l'email
-      react: EmailTemplate({ 
-        firstName: name, 
-        email, 
-        message, 
-        subject, 
-        phone 
-      }) as React.ReactElement, // Passer subject et phone à EmailTemplate
-    });
-
-    if (error) {
-      console.error("Error sending email:", error);
-      return new Response(JSON.stringify({ error }), { status: 500 });
-    }
-
-    console.log("Email sent successfully:", data);
-    return new Response(JSON.stringify(data));
+    return new Response(JSON.stringify({ success: true }));
   } catch (error) {
-    console.error("Error in POST handler:", error);
-    return new Response(JSON.stringify({ error }), { status: 500 });
+    console.error("Email error:", error);
+    return new Response(JSON.stringify({ error: "Erreur d'envoi" }), {
+      status: 500,
+    });
   }
 }
