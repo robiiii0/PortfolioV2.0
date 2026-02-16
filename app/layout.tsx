@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://robinchabert.fr"),
+  metadataBase: new URL("https://www.robinchabert.com"),
   title: {
     default: "Robin Chabert | Développeur Web Freelance",
     template: "%s | Robin Chabert",
