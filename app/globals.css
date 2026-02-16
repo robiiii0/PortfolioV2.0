@@ -13,7 +13,8 @@
   --color-border: #2a2a2a;
 }
 
-html {
+/* Smooth scroll uniquement pour les ancres (#), pas les navigations entre pages */
+html:has(:target) {
   scroll-behavior: smooth;
 }
 
