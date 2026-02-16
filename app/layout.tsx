@@ -2,12 +2,13 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://robinchabert.fr"),
   title: {
     default: "Robin Chabert | Développeur Web Freelance",
     template: "%s | Robin Chabert",
   },
   description:
-    "Développeur web freelance spécialisé dans la création de sites vitrine, e-commerce et applications SaaS. Basé en France, je conçois des expériences numériques sur mesure.",
+    "Robin Chabert, développeur web freelance. Création de sites vitrine, e-commerce Shopify et applications web sur mesure. Expertise React, Next.js et TypeScript.",
   keywords: [
     "développeur web freelance",
     "création site vitrine",

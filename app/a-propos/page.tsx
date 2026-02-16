@@ -143,9 +143,11 @@ export default function AProposPage() {
             >
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
                 <Image
-                  src="/me.jpg"
+                  src="/testmoi.jpg"
                   alt="Robin Chabert — Développeur Web Freelance"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={90}
                   className="object-cover"
                   priority
                 />
