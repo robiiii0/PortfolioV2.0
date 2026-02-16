@@ -1,14 +1,18 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import Navbar from "./components/ui/Navbar";
 import Footer from "./components/ui/Footer";
 import SectionHeader from "./components/ui/SectionHeader";
 import ProjectCard from "./components/ui/ProjectCard";
 import ServiceCard from "./components/ui/ServiceCard";
 import Button from "./components/ui/Button";
+import {
+  HeroSubtitle,
+  HeroHeading,
+  HeroDescription,
+  HeroCTA,
+  ScrollIndicator,
+  CTASection,
+} from "./components/animations/HomeAnimations";
 import { getFeaturedProjects } from "./lib/projects";
 import { services } from "./lib/services";
 import { carrousel } from "./lib/clients";
@@ -31,98 +35,33 @@ export default function Home() {
 
         <div className="relative z-10 max-w-site mx-auto px-6 md:px-12 pt-32 pb-20 w-full">
           <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-6"
-            >
-              <span className="text-accent font-body text-sm font-medium tracking-widest uppercase">
-                Développeur Web Freelance
-              </span>
-            </motion.div>
+            <HeroSubtitle />
 
-            <div className="overflow-hidden">
-              <motion.h1
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.3,
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                }}
-                className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold text-text-primary leading-[1.05] tracking-tight"
-              >
-                Je conçois et développe
-              </motion.h1>
-            </div>
-            <div className="overflow-hidden">
-              <motion.h1
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.4,
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                }}
-                className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold text-text-secondary leading-[1.05] tracking-tight"
-              >
-                des expériences
-              </motion.h1>
-            </div>
-            <div className="overflow-hidden">
-              <motion.h1
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.5,
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                }}
-                className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold text-accent leading-[1.05] tracking-tight"
-              >
-                numériques.
-              </motion.h1>
-            </div>
+            <HeroHeading delay={0.3} className="text-text-primary">
+              Je conçois et développe
+            </HeroHeading>
+            <HeroHeading delay={0.4} className="text-text-secondary">
+              des expériences
+            </HeroHeading>
+            <HeroHeading delay={0.5} className="text-accent">
+              numériques.
+            </HeroHeading>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="mt-8 text-text-secondary text-base md:text-lg max-w-xl leading-relaxed"
-            >
+            <HeroDescription>
               J&apos;accompagne les entreprises dans la création de sites
               vitrine, boutiques e-commerce et applications web sur mesure.
-            </motion.p>
+            </HeroDescription>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-              className="mt-10 flex flex-wrap gap-4"
-            >
+            <HeroCTA>
               <Button href="/contact">Démarrer un projet</Button>
               <Button href="/projets" variant="outline">
                 Voir mes réalisations
               </Button>
-            </motion.div>
+            </HeroCTA>
           </div>
 
           {/* Scroll indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2"
-          >
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-              className="w-5 h-8 border-2 border-text-secondary/30 rounded-full flex justify-center pt-1.5"
-            >
-              <div className="w-1 h-2 bg-text-secondary/50 rounded-full" />
-            </motion.div>
-          </motion.div>
+          <ScrollIndicator />
         </div>
       </section>
 
@@ -191,33 +130,12 @@ export default function Home() {
       {/* ─── CTA Final ─── */}
       <section className="py-24 md:py-32">
         <div className="max-w-content mx-auto px-6 md:px-12 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="font-display text-4xl md:text-6xl lg:text-7xl font-semibold text-text-primary"
-          >
-            Un projet en tête ?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-text-secondary text-lg max-w-md mx-auto"
-          >
-            Discutons de votre projet et trouvons ensemble la meilleure solution.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-10"
+          <CTASection
+            title="Un projet en tête ?"
+            subtitle="Discutons de votre projet et trouvons ensemble la meilleure solution."
           >
             <Button href="/contact">Parlons de votre projet</Button>
-          </motion.div>
+          </CTASection>
         </div>
       </section>
 

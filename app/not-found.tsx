@@ -1,17 +1,10 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Button from "./components/ui/Button";
+import { NotFoundReveal } from "./components/animations/NotFoundAnimation";
 
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-bg-primary flex flex-col items-center justify-center px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-center"
-      >
+      <NotFoundReveal>
         <h1 className="font-display text-[8rem] md:text-[12rem] font-bold text-border leading-none">
           404
         </h1>
@@ -25,7 +18,7 @@ export default function NotFound() {
         <div className="mt-10">
           <Button href="/">Retour à l&apos;accueil</Button>
         </div>
-      </motion.div>
+      </NotFoundReveal>
     </div>
   );
 }

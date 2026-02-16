@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Clash Display"', "sans-serif"],
-        body: ['"Satoshi"', "sans-serif"],
+        display: ["var(--font-clash-display)", "sans-serif"],
+        body: ["var(--font-satoshi)", "sans-serif"],
       },
       colors: {
         bg: {
