@@ -94,13 +94,14 @@ export function GalleryImage({
     <motion.div
       {...fadeUp}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className={`relative rounded-2xl overflow-hidden bg-bg-surface ${className}`}
+      className={`rounded-2xl overflow-hidden bg-bg-surface ${className}`}
     >
       <Image
         src={src}
         alt={alt}
-        fill
-        className="object-cover"
+        width={1920}
+        height={1080}
+        className="w-full h-auto"
         sizes={className.includes("col-span-2") ? "(max-width: 768px) 100vw, 1440px" : "(max-width: 768px) 100vw, 50vw"}
       />
     </motion.div>

@@ -159,8 +159,8 @@ export default async function ProjectDetailPage({
                   index={i}
                   className={
                     i === 0
-                      ? "md:col-span-2 aspect-[16/9]"
-                      : "aspect-[4/3]"
+                      ? "md:col-span-2"
+                      : ""
                   }
                 />
               ))}

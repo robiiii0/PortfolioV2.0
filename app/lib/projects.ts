@@ -2,6 +2,29 @@ import { Project } from "./types";
 
 export const projects: Project[] = [
   {
+    slug: "johan-maillard-paysage",
+    client: "Johan Maillard Paysage",
+    title: "Création du site vitrine d'un paysagiste des Hautes-Alpes",
+    category: "vitrine",
+    description:
+      "Conception et développement complet du site vitrine de Johan Maillard, paysagiste basé à La Roche de Rame. Un site élégant mettant en valeur ses réalisations et ses services d'aménagement paysager.",
+    challenge:
+      "Créer une présence en ligne à la hauteur du savoir-faire artisanal d'un paysagiste, en traduisant la beauté de ses réalisations extérieures dans une expérience web immersive et professionnelle, tout en optimisant la visibilité locale dans les Hautes-Alpes.",
+    solution:
+      "Développement d'un site vitrine moderne avec Next.js et Tailwind CSS, mettant l'accent sur une galerie de projets réalisés, une présentation claire des services et une optimisation SEO locale pour capter la clientèle de la région.",
+    technologies: ["Next.js", "React", "Tailwind CSS"],
+    imgCover: "/JohanMaillard/hero.jpeg",
+    imgArray: [
+      "/JohanMaillard/hero.jpeg",
+      "/JohanMaillard/devis.png",
+      "/JohanMaillard/image2.jpeg",
+    ],
+    date: "Février 2026",
+    year: 2026,
+    link: "https://www.johanmaillardpaysage.fr/",
+    featured: true,
+  },
+  {
     slug: "sentinelle",
     client: "Sentinelle",
     title: "Plateforme IA de prévention des risques en montagne",
