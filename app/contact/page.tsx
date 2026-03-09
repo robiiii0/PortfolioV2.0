@@ -19,6 +19,7 @@ interface FormData {
   phone: string;
   service: string;
   message: string;
+  website: string; // honeypot
 }
 
 const serviceOptions = [
@@ -36,10 +37,12 @@ export default function ContactPage() {
     phone: "",
     service: "",
     message: "",
+    website: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
   const [isError, setIsError] = useState(false);
+  const [formLoadedAt] = useState(() => Date.now());
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -56,13 +59,16 @@ export default function ContactPage() {
       const response = await fetch("/api/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          _loadedAt: formLoadedAt,
+        }),
       });
 
       if (response.ok) {
         setStatusMessage("Message envoyé avec succès !");
         setIsError(false);
-        setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", service: "", message: "", website: "" });
       } else {
         setStatusMessage("Échec de l'envoi. Veuillez réessayer.");
         setIsError(true);
@@ -181,6 +187,19 @@ export default function ContactPage() {
               transition={{ duration: 0.7, delay: 0.3 }}
             >
               <form onSubmit={handleSubmit} className="space-y-5">
+                {/* Honeypot — invisible to users, bots fill it */}
+                <div className="absolute opacity-0 -z-10" aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    value={formData.website}
+                    onChange={handleChange}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
                 <div>
                   <label
                     htmlFor="name"
